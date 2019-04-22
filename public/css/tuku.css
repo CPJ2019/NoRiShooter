@@ -1,0 +1,110 @@
+/* 网页背景 */
+body{
+  background-color:rgb(248, 247, 247);
+}
+/* 按钮 */
+#btn{
+  position:relative;
+}
+#return_btn{
+  position:absolute;
+  display: none;
+  top:0px;
+}
+/* 图片展示框高度 */
+div.show{
+  height:700px;
+  position: relative;
+}
+div.show ul{
+  box-sizing: border-box;
+  display: flex;
+  justify-content:space-between;
+  flex-wrap:wrap;
+}
+/* 图片列表样式 */
+div.show ul li{
+  background-color: rgb(236, 232, 232);
+  float:left;
+  width:32.5%;
+  height:330px;
+  margin:5px 0;
+  text-align: center;
+  padding-top:10px;
+  box-sizing: border-box;
+  font-size: 12px;
+  line-height: 16px;
+}
+/* 设置图片列表居中且自适应 */
+div.show ul li div a{
+  display:block;
+  max-width: 260px;
+  height: 260px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+div.show ul li div img{
+  max-width:100%;
+  max-height:100%;
+}
+/* 文字样式 */
+div.show ul li>span{
+  display:inline-block;
+  width: 100%;
+  margin:5px 0px;
+}
+div.show ul li p.img-bottom{
+  font-size:13px;
+  width: 30%;
+  margin: 5px 0px;
+  float:left;
+}
+div.show ul li p.first{
+  margin-left: 20%;
+}
+/* 热度样式 */
+div.show ul li p span.hot{
+  color:rgba(255, 0, 0, 0.678)
+}
+/* 上下页 */
+div.show button{
+  width: 55px;
+  height: 55px;
+  position: absolute;
+  top: 44.7%;
+  border: none;
+}
+div.show button.left{
+  background: url(../images/iconlist.png);
+  left:0%;
+}
+div.show button.right{
+  background: url(../images/iconlist.png) -58px 0px;
+  right:0%;
+}
+/* 点击细节 */
+#detail{
+  width: 1080px;
+  height: 700px;
+  text-align: center;
+  padding:30px 50px;
+  box-sizing: border-box;
+}
+/* 细节居中 */
+#detail div{
+  width:1000px;
+  height:600px;
+  text-align:center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* 细节图片尺寸 */
+#detail div img{
+  max-width: 100%;
+  max-height:100%;
+}
+
+

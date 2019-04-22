@@ -1,0 +1,28 @@
+section{
+  min-height:810px;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+/* 表单框样式 */
+section>div>div>div{
+  width:450px;
+  height:650px;
+  margin-top:30px;
+  background: #343a4020;
+  padding:40px;
+  font-size:14px;
+  transition: 0.1s;
+  /* color:#fff; */
+}
+/* 提示文字样式 */
+#reg_form>div>div p{
+  color:#dc3545;
+  font-size:14px;
+  line-height:30px;
+}
+/* 单选项大小 */
+#reg_form .sex input{
+  transform: scale(1.5);
+  display: inline-block;
+  vertical-align: middle;
+}

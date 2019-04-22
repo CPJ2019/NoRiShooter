@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="./css/bootstrap.css">
+  <link rel="stylesheet" href="./css/common.css">
+  <link rel="stylesheet" href="./css/tuku.css">
+  <script src="./js/tuku.js"></script>
+  <script src="./js/jquery.min.js"></script>
+	<script src="./js/popper.min.js"></script>
+	<script src="./js/bootstrap.min.js"></script>
+</head>
+<body onload="get_images()">
+  <!-- 排序按钮 -->
+  <div class="container" id="btn">
+    <div class="btn-group" id="sort_btn">
+      <button onclick="by_date()" class="btn btn-primary">按时间倒序</button>
+      <button onclick="by_hot()" class="btn btn-danger">按热度排序</button>
+      <button onclick="by_tid()" class="btn btn-success">按编号排序</button>
+    </div> 
+    <button onclick="return_list(start)"  id="return_btn" class="btn btn-secondary">返回</button>
+  </div>
+  <!-- 展示区域 -->
+  <div class="container show">
+    <ul id="img_show">
+      <!-- <li>
+          <div><a href="#"><img src="images/banner1.jpg"></a></div>
+        <p>上传者-<a href="#">123</a></p>
+        <p>上传时间-123</p> 
+      </li>
+      <li>
+        <div><a href="#"><img src="images/banner1.jpg"></a></div>
+        <p>上传者-<a href="#">123</a></p>
+        <p>上传时间-123</p>
+      </li>
+      <li>
+        <div><a href="#"><img src="images/banner1.jpg"></a></div>
+        <p>上传者-<a href="#">123</a></p>
+        <p>上传时间-123</p>
+      </li>
+      <li>
+        <div><a href="#"><img src="images/banner1.jpg"></a></div>
+        <p>上传者-<a href="#">123</a></p>
+        <p>上传时间-123</p>
+      </li>
+      <li>
+        <div><a href="#"><img src="images/banner1.jpg"></a></div>
+        <p>上传者-<a href="#">123</a></p>
+        <p>上传时间-123</p>
+      </li>
+      <li>
+        <div><a href="#"><img src="images/banner1.jpg"></a></div>
+        <p>上传者-<a href="#">123</a></p>
+        <p>上传时间-123</p>
+      </li> -->
+      <!-- <li id="detail">
+        <div>
+          <img src="images/banner1.jpg">
+        </div>
+        <span>上传时间 123</span>
+        <p>上传者-123</p>
+        <p>热度:12123</p>
+      </li> -->
+    </ul>
+    <div id="button"> 
+    </div>
+  </div>
+</body>
+</html>

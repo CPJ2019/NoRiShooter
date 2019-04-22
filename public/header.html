@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>NoRiShooter</title>
+	<link rel="stylesheet" href="./css/bootstrap.css">
+	<link rel="stylesheet" href="./css/common.css">
+	<link rel="stylesheet" href="./css/header.css">
+	<script src="./js/jquery.min.js"></script>
+	<script src="./js/popper.min.js"></script>
+	<script src="./js/bootstrap.min.js"></script>
+	<script src="./js/header.js"></script>
+	<style>
+	</style>
+</head>
+<body  onload="person_msg()">
+	<!-- 头部 -->
+	<header>
+		<div class="container row">
+			<!-- logo -->
+			<div class="logo col-md-3 col-sm-6"><span><a target="_parent" href="index.html"></a></span></div>
+		  <div class="top_gif col-md-3 col-sm-6"><img src="./images/top.gif">	</div>		
+			<div class="hr col-md-6 col-sm-12">
+				<!-- 信息 -->
+				<ul class="hmsg cf">
+					<li><a href="index.html">首页</a></li>
+					<li><a href="#">动态</a></li>
+					<li class="message"><a href="#"><span></span>消息</a></li>
+					<li id="login_msg">你好,请<a target="_parent" href="user_login.html" title="点击登录">登录</a></li>
+					<li id="reg_msg"><a target="_parent" href="user_reg.html" title="点击注册">注册</a></li>
+				</ul>
+				<!-- 搜索栏 -->
+				<div class="search form-inline">
+						<input type="text" id="search" class="form-control col-form-label" placeholder="请输入要查询的内容">
+						<input type="button" id="search_b" class="click">		
+				</div>
+			</div>
+		</div>
+  </header>
+</body>

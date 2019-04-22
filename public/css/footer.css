@@ -1,0 +1,23 @@
+/* 脚部 */
+footer{
+  margin-top: 20px;
+  padding:20px 0px;
+}
+footer:before{
+  display:table;
+  content:"";
+}
+footer .qq{
+  width: 150px;
+  height:40px;
+  display:inline-block;
+  background:url(../images/iconlist.png) no-repeat -240px 0px ;
+}
+footer .QRCode{
+  width:100px;
+  height:100px;
+}
+footer .footer_msg a{
+  color:#f8f9fa;
+  font-size: 14px;
+}
