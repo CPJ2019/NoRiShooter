@@ -500,13 +500,15 @@ div.zx table tr {
 
 #fes_publish p {
   font-size: 18px;
+  margin: 5px;
+  font-weight: 500;
 }
 
 /* 介绍内容#intro */
 #intro {
   background: #fff;
   padding: 20px;
-  margin-top: 20px;
+  margin-top: 30px;
 }
 
 #intro div {
@@ -519,6 +521,7 @@ div.zx table tr {
 /* 标题 */
 #intro h1 {
   text-align: center;
+  margin: 15px;
 }
 
 #intro h3 {
@@ -538,12 +541,16 @@ div.zx table tr {
   transform: scale(1.1);
 }
 
+/* 介绍文字 */
+/* 标题 */
+#intro div h5{
+  margin: 10px;
+}
+#intro div.intro_content .text{
+  margin-bottom: 10px;
+}
 #intro div.intro_content .text p {
   font-size: 16px;
   text-indent: 2em;
-}
-
-/* 介绍文字 */
-#intro div p {
   margin: 5px;
 }

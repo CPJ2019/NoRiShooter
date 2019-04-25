@@ -131,12 +131,22 @@ a:hover {
 	.my_header {
 		height: 232px;
 	}
-
+	/* 脚部高度 */
 	.my_footer {
 		height: 292px;
 	}
 }
-
+/* 超小屏 */
+@media screen and (max-width:576px){
+		/* header高度 */
+		.my_header {
+			height: 350px;
+		}
+		/* 脚部高度 */
+		.my_footer {
+			height: 456px;
+		}
+}
 /* 头部宽度 */
 .my_header {
 	width: 100%;
