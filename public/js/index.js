@@ -81,13 +81,13 @@ function person_msg(){
 	 return;
  }
  // 自动轮播
- function banner_auto(){
-		 autotimer=setInterval(()=>{
-		 y_angle+=60;
-		 to_right_check()
-		 },3500)  
-		 return;             
- }
+//  function banner_auto(){
+// 		 autotimer=setInterval(()=>{
+// 		 y_angle+=60;
+// 		 to_right_check()
+// 		 },3500)  
+// 		 return;             
+//  }
  function banner_to_left(){ 
 	 clearInterval(autotimer)
 	 y_angle-=60;

@@ -185,11 +185,20 @@ nav div ul li ul li a {
 div.banner {
   max-width: 1440px;
   /* max-height:810px; */
+  height: 431px;
   overflow: hidden;
   margin: 0 auto;
   position: relative;
   display: flex;
-  align-items: middle;
+  perspective: 3000px;
+  margin: 0 auto;
+
+}
+
+/* 阴影效果 */
+.banner-box>li>a>img {
+  box-shadow: 0px 0px 50px 0px rgba(0, 0, 0, 0.3);
+
 }
 
 .banner-box>li>a {
@@ -203,14 +212,36 @@ div.banner {
   list-style-type: none;
   transform-style: preserve-3d;
   /*保留其子元素的3d显示效果*/
-  width: 1440px;
-  height: 810px;
+  width: 500px;
+  height: 281px;
   position: relative;
   /*参照物 定位属性*/
-  margin: 0 auto;
-  transform: rotateY(0deg)
+  margin: 75px auto;
+  transform: rotateY(0deg);
+  z-index: 3;
 }
-
+.banner:after{
+  content:"";
+  display: block;
+  position: absolute;
+  z-index: 2;
+  width: 0px;
+  height:0px;
+  top:100%;
+  left:50%;
+  transform:
+  translate(-50%,-100%)
+  rotateX(85deg);
+  ;
+  margin: 5px auto;
+  /* border-top:50px solid transparent; 
+  border-left:50px solid transparent; 
+  border-right:50px solid transparent; 
+  border-bottom:50px solid #000;  */
+  box-shadow: 0px -50px 500px 200px #000;
+  
+  
+}
 /* 轮播图动画 */
 /* 向左 */
 @keyframes toleft_banner1 {
@@ -338,8 +369,8 @@ div.banner {
   animation-play-state:paused;
 } */
 .banner-box>li {
-  width: 100%;
-  height: 810px;
+  width: 500px;
+  height: 281px;
   /* opacity:.5; */
   /* background:red;  */
   position: absolute;
@@ -348,54 +379,64 @@ div.banner {
 
 /* 盒子每面属性*/
 .banner1 {
-  transform: rotateY(0deg) translateZ(1247px);
+  transform: rotateY(0deg) translateZ(433px);
 }
 
 .banner2 {
-  transform: rotateY(60deg) translateZ(1247px);
+  transform: rotateY(60deg) translateZ(433px);
 }
 
 .banner3 {
-  transform: rotateY(120deg) translateZ(1247px);
+  transform: rotateY(120deg) translateZ(433px);
 }
 
 .banner4 {
-  transform: rotateY(180deg) translateZ(1247px);
+  transform: rotateY(180deg) translateZ(433px);
 }
 
 .banner5 {
-  transform: rotateY(240deg) translateZ(1247px);
+  transform: rotateY(240deg) translateZ(433px);
 }
 
 .banner6 {
-  transform: rotateY(300deg) translateZ(1247px);
+  transform: rotateY(300deg) translateZ(433px);
 }
 
 /* 轮播图按键 */
 /* 样式 */
-div.banner div button {
+div.banner button {
   width: 40px;
   height: 80px;
   background: #00000050;
   position: absolute;
-  top: 46.5%;
+  top: 50%;
+  transform: translate(0, -50%);
   border: none;
   outline: none;
   padding: 0;
   overflow: hidden;
+  opacity: 0;
+  transition: 0.5s;
+  /* 让按键可以在盒子上面 */
+  z-index: 5;
+}
+
+/* 轮播部分悬停后按键过渡出现 */
+div.banner:hover button {
+  opacity: 1;
 }
 
 /* 左右定位 */
-div.banner div button.left {
-  left: 10%;
+div.banner button.left {
+  left: 7%;
 }
 
-div.banner div button.right {
-  right: 10%;
+div.banner button.right {
+  right: 7%;
 }
 
 /* 按键里面的角*/
-div.banner div button div {
+div.banner button div {
   width: 25px;
   height: 25px;
   margin: 0 auto;
@@ -403,22 +444,25 @@ div.banner div button div {
   border-left: 5px solid #f8f9fa;
 }
 
-div.banner div button:hover div {
-  border-top: 5px solid #000;
-  border-left: 5px solid #000;
-}
-
-.btn-light:focus,
-.btn-light.focus {
-  box-shadow: none;
-}
-
+/* 设置箭头位置和角度 */
 button.left div {
   transform: translateX(5px) rotate(-45deg)
 }
 
 button.right div {
   transform: translateX(-5px) rotate(135deg)
+}
+
+/* 按键位置悬浮时箭头变成黑色 */
+div.banner button:hover div {
+  border-top: 5px solid #000;
+  border-left: 5px solid #000;
+}
+
+/* 清除boot点击后的阴影 */
+.btn-light:focus,
+.btn-light.focus {
+  box-shadow: none;
 }
 
 /* 资讯  */
@@ -429,7 +473,7 @@ button.right div {
 
 /* 热事新闻,论坛 */
 section div.zx {
-  margin: 20px 0;
+  margin-bottom: 20px;
   background: #fff;
   min-height: 520px;
   color: #343a40;
@@ -518,15 +562,57 @@ div.zx table tr {
   flex-wrap: wrap;
 }
 
+/* 介绍文本 */
+#intro p {
+  color: #343a40;
+}
+
 /* 标题 */
 #intro h1 {
   text-align: center;
   margin: 15px;
+  font-weight: 800;
 }
 
 #intro h3 {
   text-align: center;
-  margin: 20px auto;
+  margin: 50px 0;
+  font-weight: 800;
+  color: #4500a8;
+  position: relative;
+}
+/* 二级标题上下的三角 */
+
+#intro h3::before,#intro h3:after{
+  content: "";
+  display: inline-block;
+  margin: 0 auto;
+  position: absolute;
+  left: 50%;
+  transform: translate(-25px);
+  border-left: 25px solid transparent;
+  border-right: 25px solid transparent;
+}
+/* 上三角 */
+#intro h3::before{
+  top:-10px;
+  border-top: 5px solid #ff297f;
+  border-bottom: 0px solid transparent;
+}
+/* 下三角 */
+#intro h3:after {
+  top:38px;
+  border-bottom: 5px solid #ff297f;
+  border-top: 0px solid transparent;
+}
+
+#intro h3:target {
+  animation: bounce 0.8s 0.1s;
+}
+
+#intro h5 {
+  font-weight: 700;
+  color: #343a40;
 }
 
 /* 介绍图片宽度位置 */
@@ -543,12 +629,14 @@ div.zx table tr {
 
 /* 介绍文字 */
 /* 标题 */
-#intro div h5{
+#intro div h5 {
   margin: 10px;
 }
-#intro div.intro_content .text{
+
+#intro div.intro_content .text {
   margin-bottom: 10px;
 }
+
 #intro div.intro_content .text p {
   font-size: 16px;
   text-indent: 2em;

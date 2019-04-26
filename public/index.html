@@ -1,9 +1,11 @@
 <!doctype html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>NoRiShooter</title>
+	<link rel="stylesheet" href="./css/animate.css ">
 	<link rel="stylesheet" href="./css/bootstrap.css">
 	<link rel="stylesheet" href="./css/common.css">
 	<link rel="stylesheet" href="./css/index.css">
@@ -14,27 +16,29 @@
 	<style>
 	</style>
 </head>
-<body  onload="auto_load()">
+
+<body onload="auto_load()">
 	<!-- 头部 -->
-		<iframe class="my_header" src="header.html" frameborder="0" scrolling="no"></iframe>
+	<iframe class="my_header" src="header.html" frameborder="0" scrolling="no"></iframe>
 	<!-- 导航 -->
 	<nav>
 		<div class="container">
 			<ul>
 				<li>
-					<a href="#news">新闻</a>
+					<a href="#zx_header">新闻</a>
 					<ul>
 						<li><a href="#news">相关新闻</a></li>
 						<li><a href="#news">祭典公布</a></li>
+						<li><a href="#news">微博热点</a></li>
 					</ul>
 				</li>
 				<li>
-					<a href="#bbs">论坛</a>
+					<a href="#zx_header">论坛</a>
 					<ul>
-						<li><a href="#bbs">论坛热帖</a></li>
-						<li><a href="#bbs">进入论坛</a></li>
-						<li><a href="#bbs">发帖</a></li>
-					</ul>	
+						<li><a href="#bbs_content">进入论坛</a></li>
+						<li><a href="#bbs_content">留言板</a></li>
+						<li><a href="#bbs_content">发帖</a></li>
+					</ul>
 				</li>
 				<li>
 					<a href="#">武器</a>
@@ -53,109 +57,123 @@
 				</li>
 				<li>
 					<a href="#">模式</a>
-						<ul>
-							<li><a href="#td">经典涂地</a></li>
-							<li><a href="#qy">真格区域</a></li>
-							<li><a href="#tt">真格推塔</a></li>
-							<li><a href="#yp">真格鱼泡</a></li>
-							<li><a href="#gl">真格蛤蜊</a></li>
-							<li><a href="#fes">祭典活动</a></li>							
-							<li><a href="#drms">孤胆英雄</a></li>
-							<li><a href="#dlc">地铁DLC</a></li>
-						</ul>
-					</li>
-				<li>
-					<a href="#">技能</a>
 					<ul>
-						<li><a href="#">技能介绍</a></li>
-						<li><a href="#">技能获取</a></li>
-						<li><a href="#">技能推荐</a></li>
+						<li><a href="#td">经典涂地</a></li>
+						<li><a href="#qy">真格区域</a></li>
+						<li><a href="#tt">真格推塔</a></li>
+						<li><a href="#yp">真格鱼泡</a></li>
+						<li><a href="#gl">真格蛤蜊</a></li>
+						<li><a href="#fes">祭典活动</a></li>
+						<li><a href="#drms">孤胆英雄</a></li>
+						<li><a href="#dlc">地铁DLC</a></li>
 					</ul>
 				</li>
 				<li>
 					<a href="#">打工</a>
-					<ul>											
+					<ul>
 						<li><a href="#">简介</a></li>
 						<li><a href="#">地图</a></li>
+						<li><a href="#">时间</a></li>
 						<li><a href="#">武器</a></li>
 						<li><a href="#">BOSS</a></li>
 						<li><a href="#">技巧</a></li>
+						<li><a href="#">奖励</a></li>
+					</ul>
+				</li>
+				<li>
+					<a href="#">攻略</a>
+					<ul>
+						<li><a href="#">技能介绍</a></li>
+						<li><a href="#">技能获取</a></li>
+						<li><a href="#">技能推荐</a></li>
+						<li><a href="#">版本更新</a></li>
+						<li><a href="#">基本用语</a></li>
+						<li><a href="#">世界观</a></li>
+						<li><a href="#intro_first">一代介绍</a></li>
+						<li><a href="#intro_second">二代介绍</a></li>
 					</ul>
 				</li>
 				<li><a href="tuku.html">图库</a></li>
-			</ul>		
+			</ul>
 		</div>
 	</nav>
 	<!-- 轮播图	 -->
-	<div class="banner ">
+	<div class="banner">
 		<ul class="banner-box" id="banner-box">
-      <li class="banner1"><a href="#"><img src="images/banner1.jpg"></a></li>
-	  	<li class="banner2"><a href="#"><img src="images/banner2.jpg"></a></li>
-      <li class="banner3"><a href="#"><img src="images/banner3.jpg"></a></li>
-      <li class="banner4"><a href="#"><img src="images/banner4.jpg"></a></li>
-      <li class="banner5"><a href="#"><img src="images/banner5.jpg"></a></li>
-      <li class="banner6"><a href="#"><img src="images/banner6.jpg"></a></li>
+			<li class="banner1"><a href="#"><img src="images/banner1.jpg"></a></li>
+			<li class="banner2"><a href="#"><img src="images/banner2.jpg"></a></li>
+			<li class="banner3"><a href="#"><img src="images/banner3.jpg"></a></li>
+			<li class="banner4"><a href="#"><img src="images/banner4.jpg"></a></li>
+			<li class="banner5"><a href="#"><img src="images/banner5.jpg"></a></li>
+			<li class="banner6"><a href="#"><img src="images/banner6.jpg"></a></li>
 		</ul>
 		<!-- 轮播按键 -->
-		<div>
-			<button class="left btn btn-light" onclick="banner_to_left()"><div></div></button>
-			<button class="right btn btn-light" onclick="banner_to_right()"><div></div></button>
-		</div>
+		
+			<button class="left btn btn-light" onclick="banner_to_left()">
+				<div></div>
+			</button>
+			<button class="right btn btn-light" onclick="banner_to_right()">
+				<div></div>
+			</button>
+		
 	</div>
 	<!-- 主体内容 -->
 	<section class="container">
 		<!-- 资讯展示 -->
-		<div class="zx">  
-			<h1 class="text-center">圈子热事</h1> 
+		<div class="zx">
+			<h1 class="text-center" id="zx_header">圈子热事</h1>
 			<!-- 热事导航 -->
-		  <div>
+			<div>
 				<ul class="nav nav-pills nav-justufied">
-					<li class="nav-item col-3 text-center" id="news"><a data-toggle="pill" href="#news_content" class="nav-link active">相关新闻</a></li>
-					<li class="nav-item col-3 text-center"><a data-toggle="pill" href="#bbs_content" class="nav-link">论坛热帖</a></li>
-					<li class="nav-item col-3 text-center"><a data-toggle="pill" href="#fes_publish" class="nav-link">祭典公布</a></li>
+					<li class="nav-item col-3 text-center" id="news"><a data-toggle="pill" href="#news_content"
+							class="nav-link active">相关新闻</a></li>
+					<li class="nav-item col-3 text-center"><a data-toggle="pill" href="#bbs_content" class="nav-link">论坛热帖</a>
+					</li>
+					<li class="nav-item col-3 text-center"><a data-toggle="pill" href="#fes_publish" class="nav-link">祭典公布</a>
+					</li>
 					<li class="nav-item col-3 text-center"><a data-toggle="pill" href="#video" class="nav-link">精彩视频</a></li>
 				</ul>
 			</div>
 			<!-- 热事内容 -->
 			<div class="tab-content">
 				<!-- 新闻列表 -->
-        <div class="tab-pane  active" id="news_content">
-          <table class="table table-hover">
+				<div class="tab-pane  active" id="news_content">
+					<table class="table table-hover">
 						<tr>
-								<td><a href="#">这是标题</a></td>
-								<td><a href="#">这是概要很长.............</a></td>
-								<td><a href="#">XX网</a></td>
-								<td>XX-XX XX:XX</td>
+							<td><a href="#">这是标题</a></td>
+							<td><a href="#">这是概要很长.............</a></td>
+							<td><a href="#">XX网</a></td>
+							<td>XX-XX XX:XX</td>
 						</tr>
 						<tr>
-								<td><a href="#">这是标题</a></td>
-								<td><a href="#">这是概要很长.............</a></td>
-								<td><a href="#">XX网</a></td>
-								<td>XX-XX XX:XX</td>
+							<td><a href="#">这是标题</a></td>
+							<td><a href="#">这是概要很长.............</a></td>
+							<td><a href="#">XX网</a></td>
+							<td>XX-XX XX:XX</td>
 						</tr>
 						<tr>
-								<td><a href="#">这是标题</a></td>
-								<td><a href="#">这是概要很长.............</a></td>
-								<td><a href="#">XX网</a></td>
-								<td>XX-XX XX:XX</td>
+							<td><a href="#">这是标题</a></td>
+							<td><a href="#">这是概要很长.............</a></td>
+							<td><a href="#">XX网</a></td>
+							<td>XX-XX XX:XX</td>
 						</tr>
 						<tr>
-								<td><a href="#">这是标题</a></td>
-								<td><a href="#">这是概要很长.............</a></td>
-								<td><a href="#">XX网</a></td>
-								<td>XX-XX XX:XX</td>
+							<td><a href="#">这是标题</a></td>
+							<td><a href="#">这是概要很长.............</a></td>
+							<td><a href="#">XX网</a></td>
+							<td>XX-XX XX:XX</td>
 						</tr>
 						<tr>
-								<td><a href="#">这是标题</a></td>
-								<td><a href="#">这是概要很长.............</a></td>
-								<td><a href="#">XX网</a></td>
-								<td>XX-XX XX:XX</td>
+							<td><a href="#">这是标题</a></td>
+							<td><a href="#">这是概要很长.............</a></td>
+							<td><a href="#">XX网</a></td>
+							<td>XX-XX XX:XX</td>
 						</tr>
-          </table>
+					</table>
 				</div>
 				<!-- 论坛热帖 -->
-        <div class="tab-pane" id="bbs_content">
-          <table class="table table-hover">
+				<div class="tab-pane" id="bbs_content">
+					<table class="table table-hover">
 						<tr class="text-gray-dark">
 							<th>标题</th>
 							<th>发布时间</th>
@@ -189,7 +207,7 @@
 					</table>
 				</div>
 				<!-- 祭典公布 -->
-        <div class="tab-pane" id="fes_publish">
+				<div class="tab-pane" id="fes_publish">
 					<div class="row">
 						<div class="col-md-6 col-sm-12">
 							<div class="d-flex justify-content-around h-100 align-items-center">
@@ -200,13 +218,13 @@
 							<div class=" p-5">
 								<h4 class="m-4">春季祭典主题介绍</h4>
 								<p>北京时间 2019年4月19日16:00 至 2019年4月21日16:00 将举行为期48小时的全球春季喷射节。</p>
-							  <p>本次的主题是：兔子 VS 海龟 你们喜欢哪个呢？龟兔赛跑可是小时候的童话哦</p>
+								<p>本次的主题是：兔子 VS 海龟 你们喜欢哪个呢？龟兔赛跑可是小时候的童话哦</p>
 							</div>
 						</div>
 					</div>
 				</div>
 				<!-- 攻略视频 -->
-        <div class="tab-pane container" id="video">
+				<div class="tab-pane container" id="video">
 					<div class="row">
 						<div class="col-md-6 offset-md-0 col-sm-10 offset-sm-1">
 							<div class="p-5 text-center">
@@ -230,45 +248,47 @@
 		</div>
 		<!-- 游戏介绍 -->
 		<div id="intro">
-			<h1>游戏介绍</h1>	
+			<h1>游戏介绍</h1>
 			<hr>
-			<h3>一代介绍</h3>
+			<h3 id="intro_first">一代介绍</h3>
 			<!-- 一代介绍 -->
 			<div class="row">
-				<div class="intro_img col-4">
+				<div class="intro_img col-4 d-flex justify-content-center">
 					<img class="img-thumbnail" src="images/yidai.jpg">
 				</div>
 				<div class="intro_content col-6 offset-1">
-						<div class="text">
-								<p>
-									「喷射战士」是Nintendo(任天堂)制作发行的第三人称油彩动作射击类游戏；本作基本上采用4Vs4的方式进行战斗，也搭载了专供单人游戏的“英雄模式(ヒーローモード)”。该模式下玩家们需要为所属的军团战斗，并努力使己方变得更加壮大。
-								</p>
-								<p>
-									2015年10月，获第33届金摇杆奖最佳家庭游戏。
-								</p>
-								<p>
-								 《喷射战士》全球销量达406万，日本国内销量突破百万。
-								</p>
-						</div>
+					<div class="text">
+						<p>
+							「喷射战士」是Nintendo(任天堂)制作发行的第三人称油彩动作射击类游戏,由任天堂新一代青年制作人创作；本作基本上采用4Vs4的方式进行战斗，也搭载了专供单人游戏的“英雄模式(ヒーローモード)”。该模式下玩家们需要为所属的军团战斗，并努力使己方变得更加壮大。
+						</p>
+						<p>
+							2015年10月，获第33届金摇杆奖最佳家庭游戏。
+						</p>
+						<p>
+							《喷射战士》全球销量达406万，日本国内销量突破百万。
+						</p>
+					</div>
 				</div>
 			</div>
 			<!-- 二代介绍 -->
-			<h3>一代介绍</h3>
-			<div>			
+			<h3 id="intro_second">二代介绍</h3>
+			<div>
 				<div class="intro_content col-6 offset-1">
-						<div class="text">
-								<p>
-									《喷射战士2》（Splatoon 2），是任天堂游戏公司出版发行的第三人称射击游戏，2017年7月21日独占登陆新主机NS。《喷射战士2》拥有1080P分辨率与60帧率画面，与对新机能“HD振动”的对应。玩家要在对战中展开 4 vs 4 的队伍战，使用各种各样的武器把对战场地的地面涂上我方队伍的颜色，占色面积多的队伍可获得胜利。	      。
-								</p>						
-								<p>
-									2018年12月截止全球累计销量，《喷射战士2》827万份
-								</p>
-						</div>
+					<div class="text">
+						<p>
+							《喷射战士2》（Splatoon
+							2），是任天堂游戏公司出版发行的第三人称射击游戏，2017年7月21日独占登陆新主机NS。《喷射战士2》拥有1080P分辨率与60帧率画面，与对新机能“HD振动”的对应。玩家要在对战中展开 4 vs 4
+							的队伍战，使用各种各样的武器把对战场地的地面涂上我方队伍的颜色，占色面积多的队伍可获得胜利。 。
+						</p>
+						<p>
+							2018年12月截止全球累计销量，《喷射战士2》827万份
+						</p>
+					</div>
 				</div>
 				<div class="intro_img col-4 offset-1">
 					<img class="img-thumbnail" src="images/erdai.jpg">
 				</div>
-			</div>	
+			</div>
 			<!-- 服装系统 -->
 			<h3>服装系统</h3>
 			<div>
@@ -276,32 +296,36 @@
 					<img class="img-thumbnail" src="images/chao.jpg">
 				</div>
 				<div class="intro_content col-md-6 offset-md-1 col-sm-12">
-						<div class="text">
-								<p>
-									服装系统分为帽子，衣服，鞋子这3个种类。在本作中登场的服装能供玩家按照自己喜好来设定，而且还有其他作用，就是服装附加技能。
-									游戏中出现的衣服会根据服装等级出现技能槽，3星的服装会有3个技能槽供玩家使用。
-									本作采用了“3头身”比例的人物和怪物造型。角色装束整体偏向运动时尚，给人以青春活力的感觉。在游戏中，可以到游戏中的商品街搭配装扮造型，自由DIY!
-								</p>
-						</div>
+					<div class="text">
+						<p>
+							服装系统分为帽子，衣服，鞋子这3个种类。在本作中登场的服装能供玩家按照自己喜好来设定，而且还有其他作用，就是服装附加技能。
+						</p>
+						<p>
+							游戏中出现的衣服会根据服装等级出现技能槽，3星的服装会有3个技能槽供玩家使用。
+						</p>
+						<p>
+							本作采用了“3头身”比例的人物和怪物造型。角色装束整体偏向运动时尚，给人以青春活力的感觉。在游戏中，可以到游戏中的商品街搭配装扮造型，自由DIY!
+						</p>
+					</div>
 				</div>
 			</div>
 			<!-- 经典涂地 -->
 			<h3 id="td">经典涂地</h3>
-				<div>			
-					<div class="intro_content col-md-6 offset-md-1 col-sm-12">
-							<div class="text">
-									<h5>常规涂地模式（Regular Battle）</h5>
-									<p>
-										该模式是Splatoon 2最主要模式，能让玩家快速适应Splatoon 2独有对战乐趣。一局时间为3分钟，判断胜负的标准为占领地盘的多少。	      。
-									</p>	
-									<p>
-										使用各种各样的武器把对战场地的地面涂上我方队伍的颜色吧!
-									</p>							
-							</div>
+			<div>
+				<div class="intro_content col-md-6 offset-md-1 col-sm-12">
+					<div class="text">
+						<h5>常规涂地模式（Regular Battle）</h5>
+						<p>
+							该模式是Splatoon 2最主要模式，能让玩家快速适应Splatoon 2独有对战乐趣。一局时间为3分钟，判断胜负的标准为占领地盘的多少。 。
+						</p>
+						<p>
+							使用各种各样的武器把对战场地的地面涂上我方队伍的颜色吧!
+						</p>
 					</div>
-					<div class="intro_img col-md-4 offset-md-1 col-sm-12">
-						<img class="img-thumbnail" src="images/Intro_tudi.jpg">
-					</div>
+				</div>
+				<div class="intro_img col-md-4 offset-md-1 col-sm-12">
+					<img class="img-thumbnail" src="images/Intro_tudi.jpg">
+				</div>
 			</div>
 			<!-- 区域模式 -->
 			<h3 id="qy">区域模式</h3>
@@ -310,34 +334,40 @@
 					<img class="img-thumbnail" src="images/Intro_Zones.jpg">
 				</div>
 				<div class="intro_content col-md-6 offset-md-1 col-sm-12">
-						<div class="text">
-							<h5>
-								排位区域模式（Splat Zones）
-							</h5>
-							<p>
-								属于战斗激烈数倍的涂地模式，双方玩家需要抢夺1-2张小区域地盘，当玩家完全涂抹掉该区域后就开始走时间，需要主要的是：当区域为2块时，需要2个区域都完全涂抹才会开始走时间；另外如果长期被占领会被罚秒，需要重新完全占领后走完罚秒才开始走时间。
-							</p>
-						</div>
+					<div class="text">
+						<h5>
+							区域模式（Splat Zones）
+						</h5>
+						<p>
+							地图内会配置1-2块被限定的决胜区域，两队伍之间相互争夺占地。进行激烈的战斗。
+						</p>
+						<p>
+							一旦决胜区域被涂满7成即可确保，这时计分会开始下降，即开始读秒。需要主要的是：当区域为2块时，需要2个区域都完全涂抹才会开始走时间；另外如果长期被占领会被罚秒，需要重新完全占领后走完罚秒才开始走时间。
+						</p>
+					</div>
 				</div>
-			</div>	
+			</div>
 			<!-- 鱼泡模式 -->
 			<h3 id="yp">鱼泡模式</h3>
 			<div>
 				<div class="intro_content col-md-6 offset-md-1 col-sm-12">
-						<div class="text">
-							<h5>
-								排位运鱼头模式（Rainmaker）
-							</h5>
-							<p>
-								需要玩家抢鱼头并搬运至相应地点。 判断胜负标准为完全达到目标地点以及离目标地点的远近，拿鱼头的玩家只能使用鱼头（蓄力后可以发射一个远程带爆破效果的炸弹）。 这个模式需要注意2点：
-							</p>
-							<p>
-								1.掌握好关键的搬运位置，因为真格模式的地图和普通地图会有区别，增加了不少涂墙的地方，一般通过这些位置可以迅速接近目标，同样的，在领先时也需要注意防守该位置；
-							</p>
-							<p>
-								2.可以拿鱼头跳水自杀来达到让鱼头重置在场景中央的目的，在适合的时候果断拿鱼头自杀。
-							</p>							
-						</div>
+					<div class="text">
+						<h5>
+							鱼泡模式（Rainmaker）
+						</h5>
+						<p>
+							鱼泡在比赛开始时会被放置在场地中央，从道具位置到两队双方的终点距离计分均为100。
+						</p>
+						<p>
+							玩家需要抢夺并搬运至相应地点。 判断胜负标准为完全达到目标地点以及离目标地点的远近。
+						</p>
+						<p>
+							鱼泡外围有一层防护罩，每遭受一次攻击都会膨胀，打破才能取得道具。
+						</p>
+						<p>
+							抢到鱼头后，玩家无法使用自己的武器，但可以使用鱼泡发射一枚子弹，蓄力落地后会爆炸。
+						</p>
+					</div>
 				</div>
 				<div class="intro_img col-md-4 offset-md-1 col-sm-12">
 					<img class="img-thumbnail" src="images/Intro_Rainmaker.jpg">
@@ -352,11 +382,13 @@
 				<div class="intro_content col-md-6 offset-md-1">
 					<div class="text">
 						<h5>
-							排位抢塔模式（Tower Control）
+							抢塔模式（Tower Control）
 						</h5>
+						<p>地图里会有沿着特定路线行进的高塔，占领高塔，率先抵达敌方队伍领地内终点的队伍即获胜。</p>
 						<p>
-							玩家需要站在塔上然后推塔，塔的路线是固定的。途中会有检查点，在检查点上需要攻方玩家持续站立一定时间后才可继续移动。
-						</p>	
+							当塔上只有同队玩家时视为确保，此时高塔开始向着敌方领地前进。向着敌方领地前进同时会开始读秒，倒数到0时等同于到达终点，队伍获胜。
+						</p>
+						<p>保塔上的队友,获得胜利吧!</p>
 					</div>
 				</div>
 			</div>
@@ -366,13 +398,13 @@
 				<div class="intro_content col-md-6 offset-md-1 col-sm-12">
 					<div class="text">
 						<h5>
-							排位蛤蜊模式（Clam Blitz）
+							蛤蜊模式（Clam Blitz）
 						</h5>
 						<p>
-								地图的一些点会有分散的蛤蜊玩家需要收集（队友的蛤蜊的数量会被标出，对面的蛤蜊则是在人形才能看到），10个普通蛤蜊会变成一个橄榄球，并且被标记，类似于抢鱼模式的鱼头，橄榄球可以用于打破对面球框的屏障得分并且进入进攻时间，这时候可以投普通蛤蜊，并且自家的球框自动缩回保护（这时用橄榄球也无法打破屏障），普通蛤蜊不能打破球框的屏障，只能在进攻时间才能投进去，一个橄榄球可以得20分，一个普通蛤蜊可以得3分，这两个都可以延长进攻时间，进攻时间结束以后进攻方会有一个罚分，类似于区域模式的罚分，防守方的篮筐下会掉落一个橄榄球用来进攻。
+							地图的一些点会有分散的蛤蜊玩家需要收集，10个普通蛤蜊会变成一个橄榄球，并且被标记，类似于鱼泡模式的鱼头，橄榄球可以用于打破对面球框的屏障得分并且进入进攻时间，一个橄榄球可以得20分，一个普通蛤蜊可以得3分，这两个都可以延长进攻时间，进攻时间结束以后进攻方会有一个罚分，类似于区域模式的罚分，防守方的篮筐下会掉落一个橄榄球用来进攻。
 						</p>
 						<p>
-								当玩家被击杀后，身上的蛤蜊或者橄榄球会自动掉落，如果几秒内未被拾取将会消失，普通蛤蜊双方都可以捡，而橄榄球只有队友可以捡，有一些大招使用（如超级落地）也会掉落蛤蜊或者橄榄球，拿着橄榄球或者普通蛤蜊是可以传送的。按A可以将普通蛤蜊或橄榄球投掷出去，可以传球给队友。己方墨水上的蛤会在地图上显示出来。
+							当玩家被击杀后，身上的蛤蜊或者橄榄球会自动掉落，如果几秒内未被拾取将会消失，普通蛤蜊双方都可以捡，而橄榄球只有队友可以捡，有一些大招使用（如超级落地）也会掉落蛤蜊或者橄榄球，拿着橄榄球或者普通蛤蜊是可以传送的。按A可以将普通蛤蜊或橄榄球投掷出去，可以传球给队友。己方墨水上的蛤蜊会在地图上显示出来。
 						</p>
 					</div>
 				</div>
@@ -390,11 +422,15 @@
 					<div class="text">
 						<h4>祭典Festival</h4>
 						<p>
-								祭典是《Splatoon》举办的大型线上活动，庆典一般会在开始前几日在游戏中的公告板中查看相关内容，并选择自己喜欢的一边加入。
+							祭典是《Splatoon》举办的大型线上活动，庆典一般会在开始前几日在游戏中的公告板中查看相关内容，并选择自己喜欢的一边加入,以涂地战的规则与敌对阵营展开对战。
 						</p>
 						<p>
-								庆典的主题一般选择两个相似的内容供玩家选择，比如选择喜剧片还是动作片 。在庆典当天，广场会装扮成庆典的样子，乌贼们会穿上庆典的专用T恤衫在广场内载舞。
-						</p>	
+							庆典的主题一般选择两个相似的内容供玩家选择，比如选择喜剧片还是动作片 。在庆典当天，广场会装扮成庆典的样子，乌贼们会穿上庆典的专用T恤衫在广场内载舞。
+						</p>
+						<p>
+							祭典总计24小时，结束后2小时，会发表本次祭典中各阵营的单人模式/朋友模式胜率和得票率，以此决定最终胜利的阵营。
+							参加祭典的玩家均能获得珍贵道具“超级海螺”。
+						</p>
 					</div>
 				</div>
 			</div>
@@ -404,11 +440,10 @@
 				<div class="intro_content col-md-6 offset-md-1 col-sm-12">
 					<div class="text">
 						<p>
-								这个模式里，你将会扮演孤胆英雄(乌贼)与章鱼军团展开关卡制的战斗。基本操作与在线模式相同，关卡中新增了各种解密要素、Boss战、终点等等，解密与动作要素完美结合，像是在玩3D的超级马里奥系列(类似《阳光马里奥》的感觉)。关卡中收集的鱼籽可以给武器装备升级(当然只限英雄模式)，而每关都还有一份“秘密文件”隐藏在深处等着你去收集。单人英雄模式的内容也相当充实。
+							这个模式里，你将会扮演孤胆英雄(乌贼)与章鱼军团展开关卡制的战斗。基本操作与在线模式相同，关卡中新增了各种解密要素、Boss战、终点等等，解密与动作要素完美结合。关卡中收集的鱼籽可以给武器装备升级(当然只限英雄模式)，而每关都还有一份“秘密文件”隐藏在深处等着你去收集。
 						</p>
 						<p>
-								第一次限定武器通关后，将为玩家提供使用其他多种武器
-								通关的选择，而不再是像前作一样从头到尾只能使用单一武器进行战斗了。 玩家在犹豫该选择哪个武器的时候，还可以到英雄模式自带的靶场试手，最大程度帮助你熟悉每一种武器的使用方式，而这些全部都是前作从未出现的。如果你从未玩过Splatoon，那么英雄模式可以说是体验Splatoon世界的绝佳起点。
+							玩家在犹豫该选择哪个武器的时候，还可以到英雄模式自带的靶场试手，最大程度帮助你熟悉每一种武器的使用方式。如果你从未玩过Splatoon，那么英雄模式可以说是体验Splatoon世界的绝佳起点。
 						</p>
 					</div>
 				</div>
@@ -423,21 +458,23 @@
 					<img class="img-thumbnail" src="images/Intro_dlc.jpg">
 				</div>
 				<div class="intro_content col-md-6 offset-md-1">
-						<div class="text">
-							<p>
-								本次的章鱼扩展包中，玩家扮演的是一个代号为「八号特工」的Octoling一名角色（这位角色比其他战役中的角色要友善得多），他/她将与胡子花白的墨鱼船长（Captain Cuttlefish）一道，寻找某位盟友的行踪，并从水下的地牢中脱逃。这个故事的许多情节都可以说是精妙而富有趣味，比如一些具有嘻哈风的角色和你互动，还有一台外形搞笑，会说话的电话，一直想要启动「当代语言风格模式」来和年轻Octoling角色套近乎。而你在通过关卡时找到的各种物品实际上被叫做「物品（thangs）」。
-							</p>	
-							<p>
-								本次推出的内容包含有许多设计精妙的关卡，对玩家的各种技术能力是巨大的考验；有的关卡需要高超的站位和闪避技术，来应对各种压倒性敌人，有些关卡需要你动脑来利用环境，护送脆弱的目标前往目标位置。这款扩展包囊括了各种难度与多样性极高的挑战，加上《喷射战士》系列的阴郁风格，给玩家带来了冲击力十足的单人游戏体验。
-							</p>
-							<p>
-								DLC包含超过80个单人任务，全部完成后玩家可以在多人模式中解锁章鱼角色。
-							</p>
-						</div>
+					<div class="text">
+						<p>
+							在章鱼扩展包中，玩家扮演的是一个代号为「八号特工」的Octoling一名角色（这位角色比其他战役中的角色要友善得多），他/她将与胡子花白的墨鱼船长（Captain
+							Cuttlefish）一道，寻找某位盟友的行踪，并从水下的地牢中脱逃。这个故事的许多情节都可以说是精妙而富有趣味，比如一些具有嘻哈风的角色和你互动，还有一台外形搞笑，会说话的电话，一直想要启动「当代语言风格模式」来和年轻Octoling角色套近乎。而你在通过关卡时找到的各种物品实际上被叫做「物品（thangs）」。
+						</p>
+						<p>
+							本次推出的内容包含有许多设计精妙的关卡，对玩家的各种技术能力是巨大的考验；有的关卡需要高超的站位和闪避技术，来应对各种压倒性敌人，有些关卡需要你动脑来利用环境，护送脆弱的目标前往目标位置。这款扩展包囊括了各种难度与多样性极高的挑战，加上《喷射战士》系列的阴郁风格，给玩家带来了冲击力十足的单人游戏体验。
+						</p>
+						<p>
+							DLC包含超过80个单人任务，全部完成后玩家可以在多人模式中解锁章鱼角色。
+						</p>
 					</div>
 				</div>
-		</div>					
+			</div>
+		</div>
 	</section>
 	<iframe class="my_footer" src="footer.html" frameborder="0" scrolling="no"></iframe>
 </body>
+
 </html>
