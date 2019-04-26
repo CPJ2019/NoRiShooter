@@ -23,8 +23,7 @@ header>div{
 header div.logo span{
   display:block;
   width: 100%;
-  height:100%;
-  background-size: contain;
+  height:110px;
   background:url(../images/logo.png) no-repeat center;
 }
 header div.logo span a{
@@ -99,11 +98,9 @@ div.search{
   vertical-align:middle; 
   background:url(../images/iconlist.png) no-repeat -134px 0px;
   transition: all 0.1s;
-}
-/* 搜索按键点击效果 */
-.click{
   box-shadow: 1px 1px 0px 1px #e89aa8;
 }
-.click:active{
+/* 搜索按键点击效果 */
+#search_b:active{
   box-shadow: 1px 1px 0px 1px #000;
 }
