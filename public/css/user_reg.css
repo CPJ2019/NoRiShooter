@@ -9,9 +9,9 @@ section>div>div>div{
   height:650px;
   margin-top:30px;
   background: #343a4020;
+  border-radius: 10px;
   padding:40px;
   font-size:14px;
-  transition: 0.1s;
   /* color:#fff; */
 }
 /* 提示文字样式 */

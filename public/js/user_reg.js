@@ -6,11 +6,6 @@ var reupwd_pass=0;
 var email_pass=0;
 var phone_pass=0;
 var user_name_pass=0;
-// 按钮锁定
-function btn_check(){
-	if(upwd_pass&&uname_pass)
-	document.getElementById("btn").disabled=false;
-}
 //注册用户名提示
 function uname_tips(){
 	uname_msg.style.color="#007bff";
@@ -228,7 +223,7 @@ function login_check(){
 }	
 // 停止自动跳转
 function stop_skip(){
-	clearTimeout(auto_skip);
+	clearInterval(auto_skip);
 	var alert_div=document.getElementById("alert")
 	alert_div.style.display="none";
 	return;

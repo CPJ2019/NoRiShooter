@@ -44,7 +44,7 @@
 
   nav div ul li ul li a {
     font-size: 14px;
-    letter-spacing: 3px;
+    letter-spacing: 1px;
   }
 
   .nav-pills {
@@ -146,12 +146,13 @@ nav div ul li ul li:hover a {
 
 /* 二级导航 */
 nav div ul ul {
-  visibility: hidden;
+  /* visibility: hidden; */
   position: absolute;
   z-index: 10;
   width: 0%;
   top: 100%;
   left: 100%;
+  padding: 0;
   text-align: center;
   letter-spacing: 5px;
   background: #6c757daa;
@@ -177,7 +178,6 @@ nav div ul li:hover~li ul {
 
 nav div ul li ul li a {
   color: #fff;
-  margin-left: 10px;
   line-height: 40px;
 }
 
@@ -217,164 +217,31 @@ div.banner {
   position: relative;
   /*参照物 定位属性*/
   margin: 75px auto;
-  transform: rotateY(0deg);
+  transform: rotateY(-3600deg);
   z-index: 3;
+  transition: 0.3s ease-out;
 }
-.banner:after{
-  content:"";
+/* 轮播下边阴影 */
+.banner:after {
+  content: "";
   display: block;
   position: absolute;
   z-index: 2;
   width: 0px;
-  height:0px;
-  top:100%;
-  left:50%;
+  height: 0px;
+  top: 100%;
+  left: 50%;
   transform:
-  translate(-50%,-100%)
-  rotateX(85deg);
-  ;
+    translate(-50%, -100%) rotateX(85deg);
   margin: 5px auto;
-  /* border-top:50px solid transparent; 
-  border-left:50px solid transparent; 
-  border-right:50px solid transparent; 
-  border-bottom:50px solid #000;  */
   box-shadow: 0px -50px 500px 200px #000;
-  
-  
-}
-/* 轮播图动画 */
-/* 向左 */
-@keyframes toleft_banner1 {
-  0% {
-    transform: rotateY(0deg)
-  }
-
-  100% {
-    transform: rotateY(60deg)
-  }
 }
 
-@keyframes toleft_banner2 {
-  0% {
-    transform: rotateY(60deg)
-  }
-
-  100% {
-    transform: rotateY(120deg)
-  }
-}
-
-@keyframes toleft_banner3 {
-  0% {
-    transform: rotateY(120deg)
-  }
-
-  100% {
-    transform: rotateY(180deg)
-  }
-}
-
-@keyframes toleft_banner4 {
-  0% {
-    transform: rotateY(180deg)
-  }
-
-  100% {
-    transform: rotateY(240deg)
-  }
-}
-
-@keyframes toleft_banner5 {
-  0% {
-    transform: rotateY(240deg)
-  }
-
-  100% {
-    transform: rotateY(300deg)
-  }
-}
-
-@keyframes toleft_banner6 {
-  0% {
-    transform: rotateY(300deg)
-  }
-
-  100% {
-    transform: rotateY(360deg)
-  }
-}
-
-/* 向右 */
-@keyframes toright_banner1 {
-  0% {
-    transform: rotateY(0deg)
-  }
-
-  100% {
-    transform: rotateY(-60deg)
-  }
-}
-
-@keyframes toright_banner2 {
-  0% {
-    transform: rotateY(-60deg)
-  }
-
-  100% {
-    transform: rotateY(-120deg)
-  }
-}
-
-@keyframes toright_banner3 {
-  0% {
-    transform: rotateY(-120deg)
-  }
-
-  100% {
-    transform: rotateY(-180deg)
-  }
-}
-
-@keyframes toright_banner4 {
-  0% {
-    transform: rotateY(-180deg)
-  }
-
-  100% {
-    transform: rotateY(-240deg)
-  }
-}
-
-@keyframes toright_banner5 {
-  0% {
-    transform: rotateY(-240deg)
-  }
-
-  100% {
-    transform: rotateY(-300deg)
-  }
-}
-
-@keyframes toright_banner6 {
-  0% {
-    transform: rotateY(-300deg)
-  }
-
-  100% {
-    transform: rotateY(-360deg)
-  }
-}
-
-/* .banner-box:hover{
-  animation-play-state:paused;
-} */
+/* 设置盒子单面 */
 .banner-box>li {
   width: 500px;
   height: 281px;
-  /* opacity:.5; */
-  /* background:red;  */
   position: absolute;
-  /*绝对定位*/
 }
 
 /* 盒子每面属性*/
@@ -402,9 +269,9 @@ div.banner {
   transform: rotateY(300deg) translateZ(433px);
 }
 
-/* 轮播图按键 */
+/* 轮播图左右按键 */
 /* 样式 */
-div.banner button {
+div.banner .l_r_btn button {
   width: 40px;
   height: 80px;
   background: #00000050;
@@ -422,21 +289,21 @@ div.banner button {
 }
 
 /* 轮播部分悬停后按键过渡出现 */
-div.banner:hover button {
+div.banner:hover .l_r_btn button {
   opacity: 1;
 }
 
 /* 左右定位 */
-div.banner button.left {
+div.banner .l_r_btn button.left {
   left: 7%;
 }
 
-div.banner button.right {
+div.banner .l_r_btn button.right {
   right: 7%;
 }
 
 /* 按键里面的角*/
-div.banner button div {
+div.banner .l_r_btn button div {
   width: 25px;
   height: 25px;
   margin: 0 auto;
@@ -454,21 +321,51 @@ button.right div {
 }
 
 /* 按键位置悬浮时箭头变成黑色 */
-div.banner button:hover div {
+div.banner .l_r_btn button:hover div {
   border-top: 5px solid #000;
   border-left: 5px solid #000;
 }
 
-/* 清除boot点击后的阴影 */
+/* 清除使用boot之后按钮点击后的阴影 */
 .btn-light:focus,
 .btn-light.focus {
   box-shadow: none;
+}
+/* 跳页按钮 */
+/* 按钮整体 */
+div.banner_to{
+  position:absolute;
+  bottom:3%;
+  left:50%;
+  transform:translate(-50%);
+  z-index: 5;
+}
+/* 单独按钮样式 */
+button.banner_to_btn{
+  width: 15px;
+  height: 15px;
+  border-radius:50%;
+  border:none;
+  outline:none;
+  cursor: pointer;
+  margin: 10px;
+  float: left;
+  background: #FF99CC;
+}
+button.banner_to_btn:first-child{
+  background:#CCFFFF;
+}
+/* 悬停特效 */
+button.banner_to_btn:hover{
+  background:#DC143C;
+  box-shadow:0 0 0 3px #CCFFFF,
+             0 0 0 6px #FF99CC;
 }
 
 /* 资讯  */
 .nav-pills .nav-link.active,
 .nav-pills .show>.nav-link {
-  background: #17a2b8;
+  background: #0099CC;
 }
 
 /* 热事新闻,论坛 */
@@ -573,17 +470,19 @@ div.zx table tr {
   margin: 15px;
   font-weight: 800;
 }
-
+/* 二级标题 */
 #intro h3 {
   text-align: center;
   margin: 50px 0;
   font-weight: 800;
-  color: #4500a8;
+  color: #ba02dc;
   position: relative;
 }
+
 /* 二级标题上下的三角 */
 
-#intro h3::before,#intro h3:after{
+#intro h3::before,
+#intro h3:after {
   content: "";
   display: inline-block;
   margin: 0 auto;
@@ -593,16 +492,18 @@ div.zx table tr {
   border-left: 25px solid transparent;
   border-right: 25px solid transparent;
 }
+
 /* 上三角 */
-#intro h3::before{
-  top:-10px;
-  border-top: 5px solid #ff297f;
+#intro h3::before {
+  top: -10px;
+  border-top: 5px solid #c8f63b;
   border-bottom: 0px solid transparent;
 }
+
 /* 下三角 */
 #intro h3:after {
-  top:38px;
-  border-bottom: 5px solid #ff297f;
+  top: 38px;
+  border-bottom: 5px solid #c8f63b;
   border-top: 0px solid transparent;
 }
 
@@ -641,4 +542,8 @@ div.zx table tr {
   font-size: 16px;
   text-indent: 2em;
   margin: 5px;
+}
+
+#page-1 {
+  background: #17a2b8;
 }

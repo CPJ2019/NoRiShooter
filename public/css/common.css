@@ -84,9 +84,10 @@ a:hover {
 
 /*注册登录背景 */
 .bg {
+	margin-top: 10px;
 	max-width: 1440px;
-	min-height: 810px;
-	background: url(../images/user.jpg) no-repeat;
+	min-height: 678px;
+	background: url(../images/bg.jpg) no-repeat;
 }
 
 /* 处理外边距溢出 */
@@ -160,35 +161,18 @@ a:hover {
 }
 
 /* 弹出框 */
-#alert {
+#alert_div {
 	height: 200px;
+	width:350px;
 	background: #f4e1a9;
 	border-radius: 0.75rem;
 	position: fixed;
-	top: 270px;
+	z-index: 10;
+	top: 50%;
+	left:50.5%;
+	transform: translate(-50%,-50%);
 	display: none;
 	padding-top: 5px;
 	font-size: 18px;
 	line-height: 30px;
-}
-
-@media screen and (min-width:992px) {
-	#alert {
-		width: 30%;
-		left: 35%;
-	}
-}
-
-@media screen and (min-width:768px) and (max-width:991px) {
-	#alert {
-		width: 40%;
-		left: 30%;
-	}
-}
-
-@media screen and (max-width:767px) {
-	#alert {
-		width: 60%;
-		left: 20%;
-	}
 }

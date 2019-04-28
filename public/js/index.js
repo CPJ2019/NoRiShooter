@@ -1,104 +1,126 @@
-// 自动加载的内容
-function auto_load(){
-	banner_auto();
-	person_msg()
-}
-function person_msg(){
-	var urlParams=new URLSearchParams(location.search);
-	var uname=urlParams.get("uname")
-	console.log(uname+"登录");
-	if(uname){
-		var uname=uname.slice(0,4);
-		 login_msg.innerHTML=`欢迎回来 <span class="login_uname">${uname}</span>`;
-		reg_msg.innerHTML=`<a ref="#" title="点击登录">个人中心</a>`;
-	}
-}
 //轮播图部分
- // 定义全局原始角度
- var y_angle=3600;
- // 定义全局定时器
- var autotimer;
- // 轮播图向右判定
- function to_right_check(){
-	 var now=y_angle%360;
-	 switch(now){
-		 case 60:
-		 document.getElementById("banner-box").style.animation="toright_banner1 0.3s 0s 1 ease-out";
-		 document.getElementById("banner-box").style.animationFillMode="both";
-		 break;
-		 case 120:
-		 document.getElementById("banner-box").style.animation="toright_banner2 0.3s 0s 1 ease-out";
-		 document.getElementById("banner-box").style.animationFillMode="both";
-		 break;
-		 case 180:
-		 document.getElementById("banner-box").style.animation="toright_banner3 0.3s 0s 1 ease-out";
-		 document.getElementById("banner-box").style.animationFillMode="both";
-		 break;
-		 case 240:
-		 document.getElementById("banner-box").style.animation="toright_banner4 0.3s 0s 1 ease-out";
-		 document.getElementById("banner-box").style.animationFillMode="both";
-		 break;
-		 case 300:
-		 document.getElementById("banner-box").style.animation="toright_banner5 0.3s 0s 1 ease-out";
-		 document.getElementById("banner-box").style.animationFillMode="both";
-		 break;
-		 case 0:
-		 document.getElementById("banner-box").style.animation="toright_banner6 0.3s 0s 1 ease-out";
-		 document.getElementById("banner-box").style.animationFillMode="both";
-		 break;
-	 }
-	 return;
- }
- // 轮播图向左判定
- function to_left_check(){
-	 var now=y_angle%360;
-	 switch(now){
-		 case 60:
-		 document.getElementById("banner-box").style.animation="toleft_banner3 0.3s 0s 1 ease-out";
-		 document.getElementById("banner-box").style.animationFillMode="both";
-		 break;
-		 case 120:
-		 document.getElementById("banner-box").style.animation="toleft_banner2 0.3s 0s 1 ease-out";
-		 document.getElementById("banner-box").style.animationFillMode="both";
-		 break;
-		 case 180:
-		 document.getElementById("banner-box").style.animation="toleft_banner1 0.3s 0s 1 ease-out";
-		 document.getElementById("banner-box").style.animationFillMode="both";
-		 break;
-		 case 240:
-		 document.getElementById("banner-box").style.animation="toleft_banner6 0.3s 0s 1 ease-out";
-		 document.getElementById("banner-box").style.animationFillMode="both";
-		 break;
-		 case 300:
-		 document.getElementById("banner-box").style.animation="toleft_banner5 0.3s 0s 1 ease-out";
-		 document.getElementById("banner-box").style.animationFillMode="both";
-		 break;
-		 case 0:
-		 document.getElementById("banner-box").style.animation="toleft_banner4 0.3s 0s 1 ease-out";
-		 document.getElementById("banner-box").style.animationFillMode="both";
-		 break;
-	 }
-	 return;
- }
- 自动轮播
- function banner_auto(){
-		 autotimer=setInterval(()=>{
-		 y_angle+=60;
-		 to_right_check()
-		 },3500)  
-		 return;             
- }
- function banner_to_left(){ 
-	 clearInterval(autotimer)
-	 y_angle-=60;
-	 to_left_check()
-	 banner_auto()  
-	 return;  
- }
- function banner_to_right(){
-	 clearInterval(autotimer)
-	 y_angle+=60;
-	 to_right_check()
-	 banner_auto()  
-	 return;  
- }
+var banner = {
+	// 定义原始角度
+	y_angle: -3600,
+	// 定义定时器
+	autotimer: null,
+	// 旋转
+	banner_rotate: function () {
+		console.log(`现在盒子角度为${this.y_angle}`);
+		(() => {
+			document.getElementById("banner-box").style.transform = `rotateY(${this.y_angle}deg`;
+		})()
+	},
+	// 跳转指示
+	banner_point: function () {
+		console.log(`现在是banner${Math.abs((this.y_angle%360)/60)+1}`);
+		for(var i=1;i<=6;i++){
+			if(i==(Math.abs((this.y_angle%360)/60)+1)){
+				document.getElementById(`banner_page_${(Math.abs((this.y_angle%360)/60)+1)}`).style.background="#CCFFFF"
+		}else{
+			document.getElementById(`banner_page_${i}`).style.background = "#FF99CC";
+		}
+		}
+	},
+	//  轮播自动
+	banner_auto: function () {
+		this.autotimer = setInterval(() => {
+			this.y_angle -= 60;
+			this.banner_rotate();
+			this.banner_point();
+		}, 3000)
+	},
+	// 轮播左转
+	banner_to_left: function () {
+
+		(() => {
+			clearInterval(this.autotimer)
+			this.y_angle += 60;
+			this.banner_rotate()
+			this.banner_point()
+			this.banner_auto()
+			return;
+		})()
+	},
+	// 轮播右转
+	banner_to_right: function () {
+		(() => {
+			clearInterval(this.autotimer)
+			this.y_angle -= 60;
+			this.banner_rotate()
+			this.banner_point()
+			this.banner_auto()
+			return;
+		})()
+	},
+	// 点击切换第一页
+	banner_to_1: function () {
+		console.log("切到第一页");
+		(() => {
+			clearInterval(this.autotimer)
+			this.y_angle = Math.ceil(this.y_angle/360)*360;
+			this.banner_rotate()
+			this.banner_point()
+			this.banner_auto()
+		})()
+	},
+	// 点击切换第二页
+	banner_to_2: function () {
+		console.log("切到第二页");
+		(() => {
+			clearInterval(this.autotimer)
+			this.y_angle =Math.ceil(this.y_angle/360)*360 -60;
+			this.banner_rotate()
+			this.banner_point()
+			this.banner_auto()
+		})()
+	},
+	// 点击切换第三页
+	banner_to_3: function () {
+		console.log("切到第三页");
+		(() => {
+			clearInterval(this.autotimer)
+			this.y_angle =Math.ceil(this.y_angle/360)*360 -120;
+			this.banner_rotate()
+			this.banner_point()
+			this.banner_auto()
+		})()
+	},
+	// 点击切换第四页
+	banner_to_4: function () {
+		console.log("切到第四页");
+		(() => {
+			clearInterval(this.autotimer)
+			this.y_angle =Math.ceil(this.y_angle/360)*360 -180;
+			this.banner_rotate()
+			this.banner_point()
+			this.banner_auto()
+		})()
+	},
+	// 点击切换第五页
+	banner_to_5: function () {
+		console.log("切到第五页");
+		(() => {
+			clearInterval(banner.autotimer)
+			this.y_angle =Math.ceil(this.y_angle/360)*360 -240;
+			this.banner_rotate()
+			this.banner_point()
+			this.banner_auto()
+		})()
+	},
+	// 点击切换第六页
+	banner_to_6: function () {
+		console.log("切到六页");
+		(() => {
+			clearInterval(this.autotimer)
+			this.y_angle =Math.ceil(this.y_angle/360)*360 -300;
+			this.banner_rotate()
+			this.banner_point()
+			this.banner_auto()
+		})()
+	}
+};
+// 自动加载的内容
+(() => {
+	banner.banner_auto();
+})()

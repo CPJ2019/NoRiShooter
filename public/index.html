@@ -18,7 +18,7 @@
 	</style>
 </head>
 
-<body onload="auto_load()">
+<body>
 	<!-- 头部 -->
 	<iframe class="my_header" src="header.html" frameborder="0" scrolling="no"></iframe>
 	<!-- 导航 -->
@@ -108,15 +108,24 @@
 			<li class="banner5"><a href="#"><img src="images/banner5.jpg"></a></li>
 			<li class="banner6"><a href="#"><img src="images/banner6.jpg"></a></li>
 		</ul>
-		<!-- 轮播按键 -->
-		
-			<button class="left btn btn-light" onclick="banner_to_left()">
+		<!-- 轮播左右按键 -->
+		<div class="l_r_btn">
+			<button class="left btn btn-light" onclick="banner.banner_to_left()">
 				<div></div>
 			</button>
-			<button class="right btn btn-light" onclick="banner_to_right()">
+			<button class="right btn btn-light" onclick="banner.banner_to_right()">
 				<div></div>
 			</button>
-		
+		</div>
+		<!-- 轮播跳页按钮 -->
+		<div class="banner_to">
+			<button id="banner_page_1" class="banner_to_btn" onclick="banner.banner_to_1()"></button>
+			<button id="banner_page_2" class="banner_to_btn" onclick="banner.banner_to_2()"></button>
+			<button id="banner_page_3" class="banner_to_btn" onclick="banner.banner_to_3()"></button>
+			<button id="banner_page_4" class="banner_to_btn" onclick="banner.banner_to_4()"></button>
+			<button id="banner_page_5" class="banner_to_btn" onclick="banner.banner_to_5()"></button>
+			<button id="banner_page_6" class="banner_to_btn" onclick="banner.banner_to_6()"></button>
+		</div>
 	</div>
 	<!-- 主体内容 -->
 	<section class="container">
@@ -475,6 +484,7 @@
 			</div>
 		</div>
 	</section>
+	<!-- 脚部 -->
 	<iframe class="my_footer" src="footer.html" frameborder="0" scrolling="no"></iframe>
 </body>
 

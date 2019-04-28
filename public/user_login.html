@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<title>用户登录</title>
@@ -11,9 +12,10 @@
 	<script src="./js/jquery.min.js"></script>
 	<script src="./js/popper.min.js"></script>
 	<script src="./js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="./js/user_login.js">		
+	<script type="text/javascript" src="./js/user_login.js">
 	</script>
 </head>
+
 <body>
 	<!-- 头部 -->
 	<iframe class="my_header" src="header.html" frameborder="0" scrolling="no"></iframe>
@@ -21,44 +23,41 @@
 		<!--登录表单-->
 		<div id="login_form" class="container">
 			<!-- 外框 -->
-			<div class="offset-lg-6 offset-md-4 offset-sm-2">	
+			<div>
 				<!-- 表单内容  -->
 				<div>
 					<!-- 标题 -->
-					<div class="cf mb-4">
-						<h4 class="fl">用户登录</h4>				
-						<a href="user_reg.html" title="点击注册" class="fr text-secondary">没有账号?</a>
+					<div class="cf">
+						<h4 class="fl">用户登录</h4>
+						<a href="user_reg.html" title="点击注册" class="fr">没有账号?</a>
 					</div>
 					<!-- 用户名 -->
-					<div class="form-inline">
-						<label class="col-3" for="uname">用户名</label>			
-						<input class="col-9 col-form-label form-control" id="uname"onblur="uname_check()" type="text"  placeholder="请输入你的用户名">
+					<div class="input_box">
+						<input id="uname" onblur="login.uname_check()" onfocus="login.uname_tips()" type="text" required="">
+						<label id="uname_msg" for="uname">用户:</label>
 					</div>
-					<p id="uname_msg" class="offset-3">&nbsp;</p>
-					<!-- 密码	 -->
-					<div class="form-inline">
-						<label class="col-3" for="upwd">密码</label>		
-						<input  class="col-9 col-form-label form-control" id="upwd"onblur="upwd_check()" type="password"  placeholder="请输入你的密码">
+					<div class="input_box">
+						<!-- 密码	 -->
+						<input id="upwd" onblur="login.upwd_check()" onfocus="login.upwd_tips()" type="password" required="min:1">
+						<label id="upwd_msg" for="upwd">密码:</label>
 					</div>
-					<p id="upwd_msg" class="offset-3">&nbsp;</p>	
 					<!-- 自动	-->
-					<div class="form-check mb-3">
-							<input class="class="form-check-input mr-4" type="checkbox" id="auto" checked><label for="auto">自动登录</label>
-					</div>
+					<input type="checkbox" id="auto" checked><label for="auto">自动登录</label>
 					<!-- 登录按钮 -->
-					<button class="btn btn-primary col-12" onclick="login_check()" id="btn" title="点击登录">登录</button>		
-				</div>	
+					<button class="col-12" onclick="login.login_check()" id="btn" title="点击登录"><p>登录</p></button>
+				</div>
 			</div>
 			<!-- 这是弹出框 -->
-			<div id="alert" class="text-center">				
-				&nbsp;<span onclick="stop_skip()" class="close">关闭&times;</span>
+			<div id="alert_div" class="text-center">
+				&nbsp;<span onclick="login.stop_skip()" class="close">关闭&times;</span>
 				<p class="mt-4">登录成功</p>
-				<p>将在 <span id="show" class="text-danger">5</span> 秒后跳转</p>
+				<p>将在 <span id="show" class="text-danger"></span> 秒后跳转</p>
 				<p><a href="javascript:skip()" class="text-primary">点我跳转</a></p>
-			</div>						
+			</div>
 		</div>
 	</section>
 	<!-- 脚部 -->
 	<iframe class="my_footer" src="footer.html" frameborder="0" scrolling="no"></iframe>
 </body>
+
 </html>
