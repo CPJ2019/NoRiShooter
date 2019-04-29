@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<title>用户注册</title>
 	<link rel="stylesheet" href="./css/bootstrap.css">
 	<link rel="stylesheet" href="./css/common.css">
-	<link rel="stylesheet" href="./css/user_reg.css">
+	<link rel="stylesheet" href="./css/user.css">
 	<link rel="icon" href="images/favicon.ico" type="image/x-icon">
 	<style>
 	</style>
@@ -14,78 +15,77 @@
 	<script src="./js/bootstrap.min.js"></script>
 	<script src="./js/user_reg.js"></script>
 </head>
+
 <body>
 	<!-- 头部 -->
 	<iframe class="my_header" src="header.html" frameborder="0" scrolling="no"></iframe>
-	<section class="bg">
-		<div id="reg_form" class="container">
-			<!-- 透明框 -->
-			<div class="offset-lg-6 offset-md-4 offset-sm-2">
+	<section class="bg" id="form">
+		<div class="container">
+			<!-- 外框 -->
+			<div id="reg_form">
 				<!-- 表单内容 -->
-				<div>	
-				<!-- 标题 -->
-					<div class="cf mb-4">
-						<h4 class="fl">用户注册</h4>
-						<a href="user_login.html" title="点击登录" class="fr text-secondary">已注册账号</a>	
-					</div>
+				<div>
+					<div>
+							<!-- 标题 -->
+				<div class="cf">
+					<h4 class="fl">用户注册</h4>
+					<a class="fr" href="user_login.html#form" title="点击登录">已注册账号</a>
+				</div>
+				<!-- 表单输入框 -->
 				<!--用户名  -->
-				<div class="form-inline">
-					<label class="col-3" for="uname">用户名</label>			
-					<input class="col-9 col-form-label form-control" type="text" id="uname" placeholder="请输入你要注册的用户名" onblur="uname_check()" onfocus="uname_tips()">
+				<div class="input_box">
+					<input id="uname" onblur="uname_check()" onfocus="uname_tips()" type="text" required="">
+					<label id="uname_msg" for="uname">用户名:</label>
 				</div>
-				<p id="uname_msg" class="offset-3">&nbsp;</p>
 				<!--密码  -->
-				<div class="form-inline">
-					<label class="col-3" for="upwd">设置密码</label>				
-					<input class="col-9 col-form-label form-control" type="password" id="upwd"placeholder="请设置你的密码" onblur="upwd_check()" onfocus="upwd_tips()">
+				<div class="input_box">
+					<input id="upwd" onblur="upwd_check()" onfocus="upwd_tips()" type="password" required="">
+					<label id="upwd_msg" for="upwd">设置密码:</label>
 				</div>
-				<p class="offset-3" id="upwd_msg">&nbsp;</p>	
 				<!-- 二次密码 -->
-				<div class="form-inline">
-					<label class="col-3"  for="reupwd">重输密码</label>
-					<input class="col-9 col-form-label form-control" type="password" placeholder="请重新输入密码" id="reupwd"  " onblur="reupwd_check()"  onfocus="reupwd_tips()">
+				<div class="input_box">
+					<input id="reupwd" onblur="reupwd_check()" onfocus="reupwd_tips()" type="password" required="">
+					<label id="reupwd_msg" for="reupwd">重输密码:</label>
 				</div>
-				<p class="offset-3" id="reupwd_msg" class="msg">&nbsp;</p>		
 				<!-- 邮箱 -->
-				<div class="form-inline">
-					<label class="col-3"  for="email">邮箱</label>		
-					<input class="col-9 col-form-label form-control" type="text" id="email"onblur="email_check()" onfocus="email_tips()" placeholder="请输入你的邮箱">
+				<div class="input_box">
+					<input id="email" onblur="email_check()" onfocus="email_tips()" type="text" required="">
+					<label id="email_msg" for="email">邮箱:</label>
 				</div>
-				<p class="offset-3" id="email_msg" class="msg">&nbsp;</p>		
 				<!-- 手机号 -->
-				<div class="form-inline">
-					<label class="col-3"  for="phone">手机号码</label></td>				
-					<input class="col-9 col-form-label form-control" type="text" id="phone" placeholder="请输入你的手机号" onblur="phone_check()"onfocus="phone_tips()">
+				<div class="input_box">
+					<input id="phone" onblur="phone_check()" onfocus="phone_tips()" type="text" required="">
+					<label id="phone_msg" for="phone">手机号码:</label></td>
 				</div>
-				<p class="offset-3" id="phone_msg" class="msg">&nbsp;</p>			
-				<!-- 真实姓名 -->
-				<div class="form-inline">
-					<label class="col-3"  for="user_name">真实姓名</label>
-					<input class="col-9 col-form-label form-control" type="text" id="user_name" placeholder="请输入你的真实姓名" onblur="user_name_check()" onfocus="user_name_tips()">
-				</div>
-				<p class="offset-3" id="user_name_msg" class="msg">&nbsp;</p>	
 				<!-- 性别 -->
-				<div class="cf sex">
-					<span class="col-3 text-center d-block fl">性别</span>
-					<label class="col-1 offset-1" for="man">男</label>
-					<input class="col-1" type="radio" checked name="Sex" value="1" id="man">
-					<label class="col-1" for="women">女</label>
-					<input class="col-1" type="radio" name="Sex" value="0" id="women">	
-				</div>				
-				<!-- 按钮 -->			
-					<button class="col-12 btn btn-primary mt-3" onclick="login_check()" title="点击提交注册信息">提交注册</button>		
+				<div class="sex">
+					<span>性别</span>
+					<label for="man">男</label>
+					<input type="radio" checked name="Sex" value="1" id="man">
+					<label for="women">女</label>
+					<input type="radio" name="Sex" value="0" id="women">
+				</div>
+				<!-- 按钮 -->
+				<button id="btn" onclick="login_check()" title="点击提交注册信息">
+					<p>提交注册</p>
+				</button>
+					</div>
 				</div>
 			</div>
 			<!-- 这是弹出框 -->
-			<div id="alert_div" class="text-center">				
-				&nbsp;<span onclick="stop_skip()" class="close">关闭&times;</span>
-				<p class="mt-4">注册成功</p>
-				<p>将在 <span id="show" class="text-danger"></span>  秒后跳转</p>
-				<p><a href="user_login.html" class="text-primary">点我跳转</a></p>
-			</div>	
+			<div id="alert_div" class="text-center">
+				<div onclick="stop_skip()">
+					<span>关闭</span>
+					<span>&times;</span>
+				</div>
+				<p>注册成功</p>
+				<p>将在 <span id="show" class="text-danger"></span> 秒后跳转</p>
+				<p><a href="user_login.html#form">点我跳转</a></p>
+			</div>
 		</div>
 	</section>
 	<!-- 脚部 -->
 	<iframe class="my_footer" src="footer.html" frameborder="0" scrolling="no"></iframe>
 </body>
+
 </html>

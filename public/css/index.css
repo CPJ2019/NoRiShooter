@@ -506,7 +506,7 @@ div.zx table tr {
   border-bottom: 5px solid #c8f63b;
   border-top: 0px solid transparent;
 }
-
+/* 锚点跳转抖动 */
 #intro h3:target {
   animation: bounce 0.8s 0.1s;
 }

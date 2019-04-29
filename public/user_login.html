@@ -5,8 +5,9 @@
 	<meta charset="UTF-8">
 	<title>用户登录</title>
 	<link rel="stylesheet" href="./css/bootstrap.css">
+	<link rel="stylesheet" href="./css/animate.css">
 	<link rel="stylesheet" href="./css/common.css">
-	<link rel="stylesheet" href="./css/user_login.css">
+	<link rel="stylesheet" href="./css/user.css">
 	<link rel="icon" href="images/favicon.ico" type="image/x-icon">
 	<style></style>
 	<script src="./js/jquery.min.js"></script>
@@ -19,40 +20,49 @@
 <body>
 	<!-- 头部 -->
 	<iframe class="my_header" src="header.html" frameborder="0" scrolling="no"></iframe>
-	<section class="bg">
+	<section class="bg" id="form">
 		<!--登录表单-->
-		<div id="login_form" class="container">
+		<div class="container">
 			<!-- 外框 -->
-			<div>
+			<div id="login_form">
 				<!-- 表单内容  -->
 				<div>
-					<!-- 标题 -->
-					<div class="cf">
-						<h4 class="fl">用户登录</h4>
-						<a href="user_reg.html" title="点击注册" class="fr">没有账号?</a>
+					<div>
+						<div>
+							<!-- 标题 -->
+						<div class="cf">
+							<h4 class="fl">用户登录</h4>
+							<a href="user_reg.html#form" title="点击注册" class="fr">没有账号?</a>
+						</div>
+						<!-- 用户名 -->
+						<div class="input_box">
+							<input id="uname" onblur="login.uname_check()" onfocus="login.uname_tips()" type="text" required="">
+							<label id="uname_msg" for="uname">用户:</label>
+						</div>
+						<div class="input_box">
+							<!-- 密码	 -->
+							<input id="upwd" onblur="login.upwd_check()" onfocus="login.upwd_tips()" type="password" required="">
+							<label id="upwd_msg" for="upwd">密码:</label>
+						</div>
+						<!-- 自动	-->
+						<input type="checkbox" id="auto" checked><label for="auto">自动登录</label>
+						<!-- 登录按钮 -->
+						<button onclick="login.login_check()" id="btn" title="点击登录">
+							<p>登录</p>
+						</button>
+						</div>
 					</div>
-					<!-- 用户名 -->
-					<div class="input_box">
-						<input id="uname" onblur="login.uname_check()" onfocus="login.uname_tips()" type="text" required="">
-						<label id="uname_msg" for="uname">用户:</label>
-					</div>
-					<div class="input_box">
-						<!-- 密码	 -->
-						<input id="upwd" onblur="login.upwd_check()" onfocus="login.upwd_tips()" type="password" required="min:1">
-						<label id="upwd_msg" for="upwd">密码:</label>
-					</div>
-					<!-- 自动	-->
-					<input type="checkbox" id="auto" checked><label for="auto">自动登录</label>
-					<!-- 登录按钮 -->
-					<button class="col-12" onclick="login.login_check()" id="btn" title="点击登录"><p>登录</p></button>
 				</div>
 			</div>
 			<!-- 这是弹出框 -->
 			<div id="alert_div" class="text-center">
-				&nbsp;<span onclick="login.stop_skip()" class="close">关闭&times;</span>
-				<p class="mt-4">登录成功</p>
+				<div onclick="login.stop_skip()">
+					<span>关闭</span>
+					<span>&times;</span>
+				</div>
+				<p>注册成功</p>
 				<p>将在 <span id="show" class="text-danger"></span> 秒后跳转</p>
-				<p><a href="javascript:skip()" class="text-primary">点我跳转</a></p>
+				<p><a href="javascript:skip()">点我跳转</a></p>
 			</div>
 		</div>
 	</section>

@@ -15,13 +15,13 @@ var login = {
 	uname_check: function () {
 		if (uname.value.length != 0) {
 			uname.style.borderColor = "#28a745";
-			uname.style.padding = "7px 5%";
+			uname.style.padding = "5px 15px";
 			uname_msg.style.color = "#28a745";
 			uname_msg.innerHTML = "用户名通过";
 			this.uname_pass = 1;
 		} else {
 			uname.style.borderColor = "#dc3545";
-			uname.style.padding = "7px 5%";
+			uname.style.padding = "5px 15px";
 			uname_msg.style.color = "#dc3545"
 			uname_msg.innerHTML = "*用户名不能为空";
 			this.uname_pass = 0;
@@ -36,13 +36,13 @@ var login = {
 	upwd_check: function () {
 		if (upwd.value.length != 0) {
 			upwd.style.borderColor = "#28a745";
-			upwd.style.padding = "7px 5%";
+			upwd.style.padding = "5px 15px";
 			upwd_msg.style.color = "#28a745";
 			upwd_msg.innerHTML = "密码通过";
 			this.upwd_pass = 1;
 		} else {
 			upwd.style.borderColor = "#dc3545";
-			upwd.style.padding = "7px 5%";
+			upwd.style.padding = "5px 15px";
 			upwd_msg.style.color = "#dc3545"
 			upwd_msg.innerHTML = "*密码不能为空";
 			this.upwd_pass = 0;
@@ -115,5 +115,6 @@ var login = {
 
 //直接跳转
 function skip() {
+	console.log(1)
 	window.location.href = `index.html?uname=${uname.value}`
 }
