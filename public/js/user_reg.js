@@ -194,9 +194,10 @@ var reg = {
 			}
 		}
 		var xhr = new XMLHttpRequest();
-		var url = `/user/reg?uname=${uname.value}&upwd=${upwd.value}&email=${email.value}&phone=${phone.value}&sex=${sex}`;
-		xhr.open("get", url, true);
-		xhr.send(null);
+		xhr.open("post", "/user/reg", true);
+		xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+		var FormData=`uname=${uname.value}&upwd=${upwd.value}&email=${email.value}&phone=${phone.value}&sex=${sex}`;
+		xhr.send(FormData);
 		xhr.onreadystatechange = function () {
 			if (xhr.readyState == 4 && xhr.status == 200) {
 				var result = xhr.responseText;

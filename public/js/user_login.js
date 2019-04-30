@@ -59,9 +59,10 @@ var login = {
 			return;
 		}
 		var xhr = new XMLHttpRequest();
-		var url = `/user/login?uname=${uname.value}&upwd=${upwd.value}`;
-		xhr.open("get", url, true);
-		xhr.send(null);
+		xhr.open("post","/user/login", true);
+		xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+		var formdata = `uname=${uname.value}&upwd=${upwd.value}`
+		xhr.send(formdata);
 		xhr.onreadystatechange = function () {
 			if (xhr.readyState == 4 && xhr.status == 200) {
 				var result = xhr.responseText;

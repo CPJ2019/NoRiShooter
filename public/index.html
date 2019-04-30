@@ -5,14 +5,15 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>NoRiShooter</title>
+	<link rel="icon" href="images/favicon.ico" type="image/x-icon">
 	<link rel="stylesheet" href="./css/animate.css ">
 	<link rel="stylesheet" href="./css/bootstrap.css">
 	<link rel="stylesheet" href="./css/common.css">
 	<link rel="stylesheet" href="./css/index.css">
-	<link rel="icon" href="images/favicon.ico" type="image/x-icon">
 	<script src="./js/jquery.min.js"></script>
 	<script src="./js/popper.min.js"></script>
 	<script src="./js/bootstrap.min.js"></script>
+	<script src="./js/common.js"></script>
 	<script src="./js/index.js"></script>
 	<style>
 	</style>
@@ -44,7 +45,7 @@
 				<li>
 					<a href="wuqi.html">武器</a>
 					<ul>
-						<li><a href="#">冲锋枪</a></li>
+						<li><a href="wuqi.html#cfq">冲锋枪</a></li>
 						<li><a href="#">双枪</a></li>
 						<li><a href="#">中后排枪</a></li>
 						<li><a href="#">加特林</a></li>
@@ -84,6 +85,7 @@
 				<li>
 					<a href="data.html">攻略</a>
 					<ul>
+						<li><a href="#">装备系统</a></li>
 						<li><a href="#">技能介绍</a></li>
 						<li><a href="#">技能获取</a></li>
 						<li><a href="#">技能推荐</a></li>
@@ -408,7 +410,7 @@
 						<p>
 							当塔上只有同队玩家时视为确保，此时高塔开始向着敌方领地前进。向着敌方领地前进同时会开始读秒，倒数到0时等同于到达终点，队伍获胜。
 						</p>
-						<p>保塔上的队友,获得胜利吧!</p>
+						<p>保塔上的队友，获得胜利吧!</p>
 					</div>
 				</div>
 			</div>
@@ -442,14 +444,16 @@
 					<div class="text">
 						<h4>祭典Festival</h4>
 						<p>
-							祭典是《Splatoon》举办的大型线上活动，庆典一般会在开始前几日在游戏中的公告板中查看相关内容，并选择自己喜欢的一边加入,以涂地战的规则与敌对阵营展开对战。
+							祭典是《Splatoon》举办的大型线上活动，庆典一般会在开始前几日在游戏中的公告板中查看相关内容，并选择自己喜欢的一边加入，以涂地战的规则与敌对阵营展开对战。
 						</p>
 						<p>
 							庆典的主题一般选择两个相似的内容供玩家选择，比如选择喜剧片还是动作片 。在庆典当天，广场会装扮成庆典的样子，乌贼们会穿上庆典的专用T恤衫在广场内载舞。
 						</p>
 						<p>
 							祭典总计24小时，结束后2小时，会发表本次祭典中各阵营的单人模式/朋友模式胜率和得票率，以此决定最终胜利的阵营。
-							参加祭典的玩家均能获得珍贵道具“超级海螺”。
+						</p>
+						<p>
+								参加祭典的玩家均能获得珍贵道具“超级海螺”。
 						</p>
 					</div>
 				</div>
@@ -496,6 +500,7 @@
 	</section>
 	<!-- 脚部 -->
 	<iframe class="my_footer" src="footer.html" frameborder="0" scrolling="no"></iframe>
+	<!-- 返回首页按钮 -->
 	<div id="to_top_btn" onclick="to_top()">
 		<img src="images/totop.png">
 		<div id="to_top_hover">返回首页</div>

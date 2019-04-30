@@ -248,3 +248,10 @@ a:hover {
 #to_top_btn:hover div {
 	visibility: visible;
 }
+/* 定义boot缩略图组件悬浮放大过渡 */
+.img-thumbnail{
+  transition: 0.2s;
+}
+.img-thumbnail:hover{
+  transform: scale(1.1);
+}

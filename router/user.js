@@ -2,8 +2,8 @@ const express=require('express');
 const pool=require('../pool.js');
 var router=express.Router();
 //用户注册
-router.get('/reg',(req,res)=>{
-	var obj=req.query;
+router.post('/reg',(req,res)=>{
+	var obj=req.body;
 //	var num=400;
 //	for(var key in obj){
 //		num++;
@@ -18,10 +18,10 @@ router.get('/reg',(req,res)=>{
 		if(result.affectedRows>0){
 			console.log("新用户注册")
 			console.log(obj)
-			res.send('恭喜你,注册成功');
+			res.send('1');
 			return;
 //		}else{
-//			res.send('注册失败');
+//			res.send('0');
 //			return;
 		}
 	})
@@ -43,9 +43,9 @@ router.get('/unamecheck',(req,res)=>{
 	})
 })
 //用户登录
-router.get('/login',(req,res)=>{
-	var u=req.query.uname;
-	var p=req.query.upwd;
+router.post('/login',(req,res)=>{
+	var u=req.body.uname;
+	var p=req.body.upwd;
 	//console.log(p)
 //	if(!u){
 //		res.send('用户名不能为空');

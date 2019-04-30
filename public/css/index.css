@@ -453,13 +453,6 @@ div.zx table tr td{
 #fes_publish div div div {
   padding: 20px;
 }
-/* 定义boot缩略图组件悬浮放大过渡 */
-.img-thumbnail{
-  transition: 0.2s;
-}
-.img-thumbnail:hover{
-  transform: scale(1.1);
-}
 /* 祭典介绍文本 */
 #fes_publish p {
   font-size: 18px;

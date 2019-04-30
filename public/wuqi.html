@@ -1,26 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>武器介绍</title>
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="./css/animate.css ">
-	<link rel="stylesheet" href="./css/bootstrap.css">
-	<link rel="stylesheet" href="./css/common.css">
-	<link rel="stylesheet" href="./css/wuqi.css">
-	<script src="./js/jquery.min.js"></script>
-	<script src="./js/popper.min.js"></script>
-	<script src="./js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="./css/bootstrap.css">
+  <link rel="stylesheet" href="./css/common.css">
+  <link rel="stylesheet" href="./css/wuqi.css">
+  <script src="./js/jquery.min.js"></script>
+  <script src="./js/popper.min.js"></script>
+  <script src="./js/bootstrap.min.js"></script>
+  <script src="./js/common.js"></script>
 </head>
+
 <body>
-	<!-- 头部 -->
+  <!-- 头部 -->
   <iframe class="my_header" src="header.html" frameborder="0" scrolling="no"></iframe>
   <section>
-    <div class="continer">
-
+    <div class="container">
+      <div class="intro">
+        <h2 class="text-center fw800">武器系统(Weapons)</h2>
+        <h4>武器获取</h4>
+        <p>玩家等级达到4级时，便可在解锁的武器商店里购买武器。之后每次升级，可购买武器会逐渐增加，直至玩家30级商店可购买武器会全部解锁。</p>
+        <div class="mx-auto my-4">
+          <img class="img-thumbnail" src="images/wuqi/shop.jpg">
+        </div>
+        <h4>贴牌武器</h4>
+        <p>
+          部分武器右下角有品牌，这种武器称之为贴牌武器或者叫做联动版武器。
+        </p>
+        <p>性能和原版武器一样，外观跟有小区别。</p>
+        <h4>英雄武器</h4>
+        <p>英雄模式中使用同一把武器通关所有关卡可以获得该武器的新造型，我们把英雄模式获得的武器称为英雄武器或英雄复刻版武器。
+        </p>
+        <p>性能和原版武器一样，外观跟有较大区别。</p>
+        <div>
+          <div>
+            <img class="img-thumbnail" src="images/wuqi/xl.png">
+            <p>普通小绿</p>
+          </div>
+          <div>
+            <img class="img-thumbnail" src="images/wuqi/tpxl.png">
+            <p>贴牌小绿</p>
+          </div>
+          <div>
+            <img class="img-thumbnail" src="images/wuqi/yxxl.png">
+            <p>英雄小绿</p>
+          </div>
+        </div>
+        <h4>武器性能</h4>
+        <p>
+          所有武器都有三个很直观的参数，不同类别武器参数不同，并配有[副武器]和[特殊武器]。主武器不同，使用特殊武器所需要的特殊能量值(SP值)也不同。</p>
+        </p>
+        <div>
+          <img class="img-thumbnail" src="images/wuqi/wqxn.png">
+        </div>
+      </div>
+      <!-- 主武器 -->
+      <div class="title">
+        <h3>主武器</h3>
+        <h4>武器分类</h4>
+        <p>
+          游戏中的主武器大致分为了下面几种类别，每个类别在造型、攻速和特殊用法等都有鲜明区别。不同类别武器对游动速度.人性速度也有相应影响。</p>
+        </p>
+      </div>
+      <div id="cfq" class="_intro">
+        <h4>冲锋枪 Shooters</H4>
+        <p>冲锋枪是游戏最基础的武器，游戏一开始给玩家配备的就是标准冲锋枪。特点是能够快速的射击墨水，大部分水枪按住能够连续射击。</p>
+      </div>
     </div>
   </section>
   <iframe class="my_footer" src="footer.html" frameborder="0" scrolling="no"></iframe>
+  <!-- 返回首页按钮 -->
+  <div id="to_top_btn" onclick="to_top()">
+    <img src="images/totop.png">
+    <div id="to_top_hover">返回首页</div>
+  </div>
 </body>
+
 </html>
