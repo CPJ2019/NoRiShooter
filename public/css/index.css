@@ -196,19 +196,19 @@ div.banner {
 }
 
 /* 阴影效果 */
-.banner-box>li>a>img {
+.banner_box>li>a>img {
   box-shadow: 0px 0px 50px 0px rgba(0, 0, 0, 0.3);
 
 }
 
-.banner-box>li>a {
+.banner_box>li>a {
   width: 100%;
   height: 100%;
   display: block;
 }
 
 /* 轮播图盒子整体 */
-.banner-box {
+.banner_box {
   list-style-type: none;
   transform-style: preserve-3d;
   /*保留其子元素的3d显示效果*/
@@ -221,6 +221,7 @@ div.banner {
   z-index: 3;
   transition: 0.3s ease-out;
 }
+
 /* 轮播下边阴影 */
 .banner:after {
   content: "";
@@ -238,7 +239,7 @@ div.banner {
 }
 
 /* 设置盒子单面 */
-.banner-box>li {
+.banner_box>li {
   width: 500px;
   height: 281px;
   position: absolute;
@@ -331,41 +332,51 @@ div.banner .l_r_btn button:hover div {
 .btn-light.focus {
   box-shadow: none;
 }
+
 /* 跳页按钮 */
 /* 按钮整体 */
-div.banner_to{
-  position:absolute;
-  bottom:3%;
-  left:50%;
-  transform:translate(-50%);
+div.banner_to {
+  position: absolute;
+  bottom: 3%;
+  left: 50%;
+  transform: translate(-50%);
   z-index: 5;
 }
+
 /* 单独按钮样式 */
-button.banner_to_btn{
+button.banner_to_btn {
   width: 15px;
   height: 15px;
-  border-radius:50%;
-  border:none;
-  outline:none;
+  border-radius: 50%;
+  border: none;
+  outline: none;
   cursor: pointer;
   margin: 10px;
   float: left;
   background: #FF99CC;
 }
-button.banner_to_btn:first-child{
-  background:#CCFFFF;
+
+/* 页面加载时第一个选中效果 */
+button.banner_to_btn:first-child {
+  background: #CCFFFF;
 }
+
 /* 悬停特效 */
-button.banner_to_btn:hover{
-  background:#DC143C;
-  box-shadow:0 0 0 3px #CCFFFF,
-             0 0 0 6px #FF99CC;
+button.banner_to_btn:hover {
+  background: #DC143C;
+  box-shadow: 0 0 0 3px #CCFFFF,
+    0 0 0 6px #FF99CC;
 }
 
 /* 资讯  */
-.nav-pills .nav-link.active,
-.nav-pills .show>.nav-link {
+/* 胶囊被选中的颜色 */
+.nav-pills .nav-link.active {
   background: #0099CC;
+}
+
+/* 胶囊没被选中的颜色 */
+.nav-pills .nav-link:not(.active) {
+  background: #CCFFFF;
 }
 
 /* 热事新闻,论坛 */
@@ -395,38 +406,34 @@ section div.zx h1 {
 div.zx table {
   width: 100%;
   font-size: 14px;
-}
-
-div.zx table tr {
-  font-weight: 500;
+  text-align: center;
+  font-weight: 600;
 }
 
 /* 新闻表格细节  */
-#news_content table tr td:nth-child(3),
-#news_content table tr td:nth-child(4) {
-  text-align: center;
+
+#news_content table tr td:nth-child(1) {
+  width: 65%;
+  text-align: left;
 }
 
-#bbs_content table {
-  text-align: center;
-}
-
-#news_content table tr th:nth-child(1) {
-  width: 25%;
-}
-
-#news_content tr th:nth-child(2) {
-  width: 50%;
-}
-
-#news_content tr th:nth-child(3) {
-  width: 10%;
-  text-align: center;
-}
-
-#news_content tr th:nth-child(4) {
+#news_content tr td:nth-child(2) {
   width: 15%;
-  text-align: center;
+  text-align: left;
+}
+
+#news_content tr td:nth-child(3) {
+  width: 20%;
+}
+
+#news_content tr td:nth-child(1) a,
+#news_content tr td:nth-child(2) a {
+  color: #663300;
+}
+
+#news_content tr td:nth-child(1):hover a,
+#news_content tr td:nth-child(2):hover a {
+  color: #FF9933;
 }
 
 /* 热帖表格 */
@@ -438,11 +445,24 @@ div.zx table tr {
 #fes_publish div div div {
   padding: 20px;
 }
-
+/* 定义boot缩略图组件悬浮放大过渡 */
+.img-thumbnail{
+  transition: 0.2s;
+}
+.img-thumbnail:hover{
+  transform: scale(1.1);
+}
+/* 祭典介绍文本 */
 #fes_publish p {
   font-size: 18px;
   margin: 5px;
   font-weight: 500;
+}
+
+/* 视频框 */
+#video iframe {
+  width: 480px;
+  height: 360px;
 }
 
 /* 介绍内容#intro */
@@ -470,12 +490,13 @@ div.zx table tr {
   margin: 15px;
   font-weight: 800;
 }
+
 /* 二级标题 */
 #intro h3 {
   text-align: center;
   margin: 50px 0;
   font-weight: 800;
-  color: #ba02dc;
+  color: #660000;
   position: relative;
 }
 
@@ -496,16 +517,17 @@ div.zx table tr {
 /* 上三角 */
 #intro h3::before {
   top: -10px;
-  border-top: 5px solid #c8f63b;
+  border-top: 5px solid #FF6666;
   border-bottom: 0px solid transparent;
 }
 
 /* 下三角 */
 #intro h3:after {
   top: 38px;
-  border-bottom: 5px solid #c8f63b;
+  border-bottom: 5px solid #FF6666;
   border-top: 0px solid transparent;
 }
+
 /* 锚点跳转抖动 */
 #intro h3:target {
   animation: bounce 0.8s 0.1s;
@@ -520,14 +542,7 @@ div.zx table tr {
 #intro div div.intro_img img {
   max-width: 100%;
   vertical-align: middle;
-  transition: 0.5s;
 }
-
-/* 悬停图片过渡 */
-#intro div div.intro_img img:hover {
-  transform: scale(1.1);
-}
-
 /* 介绍文字 */
 /* 标题 */
 #intro div h5 {
@@ -542,8 +557,4 @@ div.zx table tr {
   font-size: 16px;
   text-indent: 2em;
   margin: 5px;
-}
-
-#page-1 {
-  background: #17a2b8;
 }

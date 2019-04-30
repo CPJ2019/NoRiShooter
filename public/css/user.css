@@ -40,12 +40,12 @@ section>div>div>div {
 }
 
 section>div>div:after {
-  top: -3px;
-  bottom: -3px;
-  left: -3px;
-  right: -3px;
-  z-index: -2;
-  filter: blur(40px);
+  top: -5px;
+  bottom: -5px;
+  left: -15px;
+  right: -5px;
+  z-index: -5;
+  filter: blur(50px);
 }
 
 /* 外流光 */
@@ -76,7 +76,7 @@ section>div>div:after {
   content: "";
   position: absolute;
   border-radius: 10px;
-  background: linear-gradient(30deg, #CC3399, #FF99CC, #CCFF00, #99CC33);
+  background: linear-gradient(45deg, #CC3399, #FF99CC,  #99CC33,#CCFF00);
 }
 
 /* 内容框 */
@@ -253,15 +253,19 @@ div.input_box label {
   font-size: 18px;
   line-height: 30px;
 }
+/* 清除设置表单框阴影层的背景色带来的影响*/
+#alert_div:after{
+  background:none; 
+}
 
 #alert_div div {
   position: absolute;
   right: 0;
   top: 0;
   margin: 0;
-  line-height: 36px;
-  font-size: 12px;
   cursor: pointer;
+  display: flex;
+  align-items: center;
 }
 
 #alert_div div:hover {
@@ -269,13 +273,14 @@ div.input_box label {
 }
 
 #alert_div span:first-child {
-  margin-top: 6px;
+  font-size: 12px;
+  vertical-align: middle;
 }
 
-#alert_div span:last-child {
+#alert_div span~span {
   font-size: 36px;
+  margin-bottom: 6px;
 }
-
 #alert_div p {
   margin: 10px;
 }
@@ -283,6 +288,7 @@ div.input_box label {
 #alert_div p a {
   margin: 10px;
   text-decoration: underline;
+  color:#0099CC;
 }
 
 #alert_div p a:hover {
@@ -291,4 +297,7 @@ div.input_box label {
 
 #alert_div p a:active {
   color: #FF6666;
+}
+#alert_div #show{
+  font-size: 18px;
 }

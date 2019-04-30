@@ -26,55 +26,55 @@
 				<!-- 表单内容 -->
 				<div>
 					<div>
-							<!-- 标题 -->
-				<div class="cf">
-					<h4 class="fl">用户注册</h4>
-					<a class="fr" href="user_login.html#form" title="点击登录">已注册账号</a>
-				</div>
-				<!-- 表单输入框 -->
-				<!--用户名  -->
-				<div class="input_box">
-					<input id="uname" onblur="uname_check()" onfocus="uname_tips()" type="text" required="">
-					<label id="uname_msg" for="uname">用户名:</label>
-				</div>
-				<!--密码  -->
-				<div class="input_box">
-					<input id="upwd" onblur="upwd_check()" onfocus="upwd_tips()" type="password" required="">
-					<label id="upwd_msg" for="upwd">设置密码:</label>
-				</div>
-				<!-- 二次密码 -->
-				<div class="input_box">
-					<input id="reupwd" onblur="reupwd_check()" onfocus="reupwd_tips()" type="password" required="">
-					<label id="reupwd_msg" for="reupwd">重输密码:</label>
-				</div>
-				<!-- 邮箱 -->
-				<div class="input_box">
-					<input id="email" onblur="email_check()" onfocus="email_tips()" type="text" required="">
-					<label id="email_msg" for="email">邮箱:</label>
-				</div>
-				<!-- 手机号 -->
-				<div class="input_box">
-					<input id="phone" onblur="phone_check()" onfocus="phone_tips()" type="text" required="">
-					<label id="phone_msg" for="phone">手机号码:</label></td>
-				</div>
-				<!-- 性别 -->
-				<div class="sex">
-					<span>性别</span>
-					<label for="man">男</label>
-					<input type="radio" checked name="Sex" value="1" id="man">
-					<label for="women">女</label>
-					<input type="radio" name="Sex" value="0" id="women">
-				</div>
-				<!-- 按钮 -->
-				<button id="btn" onclick="login_check()" title="点击提交注册信息">
-					<p>提交注册</p>
-				</button>
+						<!-- 标题 -->
+						<div class="cf">
+							<h4 class="fl">用户注册</h4>
+							<a class="fr" href="user_login.html#form" title="点击登录">已注册账号</a>
+						</div>
+						<!-- 表单输入框 -->
+						<!--用户名  -->
+						<div class="input_box">
+							<input id="uname" onblur="reg.uname_check()" onfocus="reg.uname_tips()" type="text" required="">
+							<label id="uname_msg" for="uname">用户名:</label>
+						</div>
+						<!--密码  -->
+						<div class="input_box">
+							<input id="upwd" onblur="reg.upwd_check()" onfocus="reg.upwd_tips()" type="password" required="">
+							<label id="upwd_msg" for="upwd">设置密码:</label>
+						</div>
+						<!-- 二次密码 -->
+						<div class="input_box">
+							<input id="reupwd" onblur="reg.reupwd_check()" onfocus="reg.reupwd_tips()" type="password" required="">
+							<label id="reupwd_msg" for="reupwd">重输密码:</label>
+						</div>
+						<!-- 邮箱 -->
+						<div class="input_box">
+							<input id="email" onblur="reg.email_check()" onfocus="reg.email_tips()" type="text" required="">
+							<label id="email_msg" for="email">邮箱:</label>
+						</div>
+						<!-- 手机号 -->
+						<div class="input_box">
+							<input id="phone" onblur="reg.phone_check()" onfocus="reg.phone_tips()" type="text" required="">
+							<label id="phone_msg" for="phone">手机号码:</label></td>
+						</div>
+						<!-- 性别 -->
+						<div class="sex">
+							<span>性别</span>
+							<label for="man">男</label>
+							<input type="radio" checked name="Sex" value="1" id="man">
+							<label for="women">女</label>
+							<input type="radio" name="Sex" value="0" id="women">
+						</div>
+						<!-- 按钮 -->
+						<button id="btn" onclick="reg.reg_check()" title="点击提交注册信息">
+							<p>提交注册</p>
+						</button>
 					</div>
 				</div>
 			</div>
 			<!-- 这是弹出框 -->
 			<div id="alert_div" class="text-center">
-				<div onclick="stop_skip()">
+				<div onclick="reg.stop_skip()">
 					<span>关闭</span>
 					<span>&times;</span>
 				</div>

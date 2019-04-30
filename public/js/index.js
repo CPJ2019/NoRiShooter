@@ -6,20 +6,20 @@ var banner = {
 	autotimer: null,
 	// 旋转
 	banner_rotate: function () {
-		console.log(`现在盒子角度为${this.y_angle}`);
+		// console.log(`现在盒子角度为${this.y_angle}`);
 		(() => {
-			document.getElementById("banner-box").style.transform = `rotateY(${this.y_angle}deg`;
+			banner_box.style.transform = `rotateY(${this.y_angle}deg`;
 		})()
 	},
 	// 跳转指示
 	banner_point: function () {
-		console.log(`现在是banner${Math.abs((this.y_angle%360)/60)+1}`);
-		for(var i=1;i<=6;i++){
-			if(i==(Math.abs((this.y_angle%360)/60)+1)){
-				document.getElementById(`banner_page_${(Math.abs((this.y_angle%360)/60)+1)}`).style.background="#CCFFFF"
-		}else{
-			document.getElementById(`banner_page_${i}`).style.background = "#FF99CC";
-		}
+		// console.log(`现在是banner${Math.abs((this.y_angle%360)/60)+1}`);
+		for (var i = 1; i <= 6; i++) {
+			if (i == (Math.abs((this.y_angle % 360) / 60) + 1)) {
+				document.getElementById(`banner_page_${(Math.abs((this.y_angle%360)/60)+1)}`).style.background = "#CCFFFF";
+			} else {
+				document.getElementById(`banner_page_${i}`).style.background = "#FF99CC";
+			}
 		}
 	},
 	//  轮播自动
@@ -30,16 +30,18 @@ var banner = {
 			this.banner_point();
 		}, 3000)
 	},
+	// 整合函数 旋转+指示器+重新设置自动旋转定时器
+	dobanner: function () {
+		this.banner_rotate()
+		this.banner_point()
+		this.banner_auto()
+	},
 	// 轮播左转
 	banner_to_left: function () {
-
 		(() => {
 			clearInterval(this.autotimer)
 			this.y_angle += 60;
-			this.banner_rotate()
-			this.banner_point()
-			this.banner_auto()
-			return;
+			this.dobanner();
 		})()
 	},
 	// 轮播右转
@@ -47,80 +49,53 @@ var banner = {
 		(() => {
 			clearInterval(this.autotimer)
 			this.y_angle -= 60;
-			this.banner_rotate()
-			this.banner_point()
-			this.banner_auto()
-			return;
+			this.dobanner();
 		})()
 	},
-	// 点击切换第一页
-	banner_to_1: function () {
-		console.log("切到第一页");
+	// 点击切换页
+	banner_to: function (angle) {
+		// angle为实际显示角度
+		console.log(`切到第${angle/60+1}页`);
 		(() => {
 			clearInterval(this.autotimer)
-			this.y_angle = Math.ceil(this.y_angle/360)*360;
-			this.banner_rotate()
-			this.banner_point()
-			this.banner_auto()
-		})()
-	},
-	// 点击切换第二页
-	banner_to_2: function () {
-		console.log("切到第二页");
-		(() => {
-			clearInterval(this.autotimer)
-			this.y_angle =Math.ceil(this.y_angle/360)*360 -60;
-			this.banner_rotate()
-			this.banner_point()
-			this.banner_auto()
-		})()
-	},
-	// 点击切换第三页
-	banner_to_3: function () {
-		console.log("切到第三页");
-		(() => {
-			clearInterval(this.autotimer)
-			this.y_angle =Math.ceil(this.y_angle/360)*360 -120;
-			this.banner_rotate()
-			this.banner_point()
-			this.banner_auto()
-		})()
-	},
-	// 点击切换第四页
-	banner_to_4: function () {
-		console.log("切到第四页");
-		(() => {
-			clearInterval(this.autotimer)
-			this.y_angle =Math.ceil(this.y_angle/360)*360 -180;
-			this.banner_rotate()
-			this.banner_point()
-			this.banner_auto()
-		})()
-	},
-	// 点击切换第五页
-	banner_to_5: function () {
-		console.log("切到第五页");
-		(() => {
-			clearInterval(banner.autotimer)
-			this.y_angle =Math.ceil(this.y_angle/360)*360 -240;
-			this.banner_rotate()
-			this.banner_point()
-			this.banner_auto()
-		})()
-	},
-	// 点击切换第六页
-	banner_to_6: function () {
-		console.log("切到六页");
-		(() => {
-			clearInterval(this.autotimer)
-			this.y_angle =Math.ceil(this.y_angle/360)*360 -300;
-			this.banner_rotate()
-			this.banner_point()
-			this.banner_auto()
+			// 获取当前圈数向上取整再乘以360得到初始角度,并让盒子旋转应该显示的角度 使旋转更加平滑
+			this.y_angle = Math.ceil(this.y_angle / 360) * 360 - angle;
+			this.dobanner();
 		})()
 	}
 };
+// 回顶部
+function to_top() {
+	(() => {
+		// 防止还在回顶部的过程中重复设置定时器
+		clearInterval(timer);
+		var timer;
+		// 当前屏幕滚动位置
+		var target = document.documentElement.scrollTop;
+		// 回到首页字样隐藏
+		to_top_hover.style.display = "none";
+		// 开始回滚图标的动画并保持最后一帧
+		to_top_btn.style.animation = "totop1 0.2s 1 forwards";
+		var timer = setInterval(function () {
+			console.log(target);
+			//做减速运动 每次回滚当前的10%
+			//向上取整是为了当位置为<=10时 每次回滚距离都为1 可以使回滚位置能到达0
+			target -= Math.ceil(target / 10);
+			window.scrollTo(0, target);
+			if (target == 0) {
+				clearInterval(timer);
+				// 回滚图标恢复原样
+				to_top_btn.style.animation = "totop2 0.2s 1 forwards";
+				// 恢复原样后回到首页字样重新显示 0.5s更舒适
+				setTimeout(function () {
+					to_top_hover.style.display = "block";
+				}, 500)
+				return;
+			}
+		}, 10);
+	})()
+}
 // 自动加载的内容
 (() => {
-	banner.banner_auto();
+	window.onload = banner.banner_auto();
 })()

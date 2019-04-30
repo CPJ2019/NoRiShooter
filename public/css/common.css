@@ -13,6 +13,7 @@ body {
 	font-weight: 600;
 	color: black;
 	background: #dadada;
+	position: relative;
 }
 
 section {
@@ -151,3 +152,98 @@ a:hover {
 	vertical-align: top;
 }
 
+/* 回滚首页按键 */
+#to_top_btn {
+	width: 60px;
+	height: 70px;
+	position: fixed;
+	right: 5%;
+	bottom: 35%;
+	transform: translate(50%, 0%);
+}
+
+/* 按钮图片随外框大小变化 */
+#to_top_btn img {
+	width: 100%;
+	height: 100%;
+}
+
+/* 回滚开始 */
+@keyframes totop1 {
+	0% {
+		width: 60px;
+		height: 70px
+	}
+
+	25% {
+		width: 70px;
+		height: 55px
+	}
+
+	50% {
+		width: 60px;
+		height: 70px
+	}
+
+	75% {
+		width: 50px;
+		height: 90px
+	}
+
+	100% {
+		width: 50px;
+		height: 90px
+	}
+}
+
+/* 回滚结束 */
+@keyframes totop2 {
+	0% {
+		width: 50px;
+		height: 90px
+	}
+
+	25% {
+		width: 50px;
+		height: 90px
+	}
+
+	50% {
+		width: 60px;
+		height: 70px
+	}
+
+	75% {
+		width: 70px;
+		height: 55px
+	}
+
+	100% {
+		width: 60px;
+		height: 70px
+	}
+}
+
+/* 回到首页字样 */
+#to_top_btn div {
+	position: absolute;
+	top: 0;
+	/* 控制在按钮上层 */
+	z-index: 1;
+	width: 100%;
+	height: 100%;
+	border-radius: 10px;
+	background: #01d800;
+	color:#fff;
+	font-size: 25px;
+	line-height: 35px;
+	text-align: center;
+	visibility: hidden;
+	transition: 0.2s;
+
+}
+
+/* 悬浮时显示遮挡按钮图片 */
+#to_top_btn:hover div {
+	visibility: visible;
+}

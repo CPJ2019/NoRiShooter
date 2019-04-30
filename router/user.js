@@ -44,7 +44,6 @@ router.get('/unamecheck',(req,res)=>{
 })
 //用户登录
 router.get('/login',(req,res)=>{
-	console.log(1)
 	var u=req.query.uname;
 	var p=req.query.upwd;
 	//console.log(p)

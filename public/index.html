@@ -100,7 +100,7 @@
 	</nav>
 	<!-- 轮播图	 -->
 	<div class="banner">
-		<ul class="banner-box" id="banner-box">
+		<ul class="banner_box" id="banner_box">
 			<li class="banner1"><a href="#"><img src="images/banner1.jpg"></a></li>
 			<li class="banner2"><a href="#"><img src="images/banner2.jpg"></a></li>
 			<li class="banner3"><a href="#"><img src="images/banner3.jpg"></a></li>
@@ -119,12 +119,12 @@
 		</div>
 		<!-- 轮播跳页按钮 -->
 		<div class="banner_to">
-			<button id="banner_page_1" class="banner_to_btn" onclick="banner.banner_to_1()"></button>
-			<button id="banner_page_2" class="banner_to_btn" onclick="banner.banner_to_2()"></button>
-			<button id="banner_page_3" class="banner_to_btn" onclick="banner.banner_to_3()"></button>
-			<button id="banner_page_4" class="banner_to_btn" onclick="banner.banner_to_4()"></button>
-			<button id="banner_page_5" class="banner_to_btn" onclick="banner.banner_to_5()"></button>
-			<button id="banner_page_6" class="banner_to_btn" onclick="banner.banner_to_6()"></button>
+			<button id="banner_page_1" class="banner_to_btn" onclick="banner.banner_to(0)"></button>
+			<button id="banner_page_2" class="banner_to_btn" onclick="banner.banner_to(60)"></button>
+			<button id="banner_page_3" class="banner_to_btn" onclick="banner.banner_to(120)"></button>
+			<button id="banner_page_4" class="banner_to_btn" onclick="banner.banner_to(180)"></button>
+			<button id="banner_page_5" class="banner_to_btn" onclick="banner.banner_to(240)"></button>
+			<button id="banner_page_6" class="banner_to_btn" onclick="banner.banner_to(300)"></button>
 		</div>
 	</div>
 	<!-- 主体内容 -->
@@ -150,34 +150,32 @@
 				<div class="tab-pane  active" id="news_content">
 					<table class="table table-hover">
 						<tr>
-							<td><a href="#">这是标题</a></td>
-							<td><a href="#">这是概要很长.............</a></td>
-							<td><a href="#">XX网</a></td>
-							<td>XX-XX XX:XX</td>
+							<td><a href="https://bbs.nga.cn/read.php?tid=17033674">[Splatoon系列] 《Splatoon2》4.7.0补丁更新 武器调整相关
+									(2019年4月24日 配信预定)</a></td>
+							<td>来源:<a href="https://www.ithome.com/">NGA.CN</a></td>
+							<td>2019-04-23</td>
 						</tr>
 						<tr>
-							<td><a href="#">这是标题</a></td>
-							<td><a href="#">这是概要很长.............</a></td>
-							<td><a href="#">XX网</a></td>
-							<td>XX-XX XX:XX</td>
+							<td><a href="https://www.ithome.com/0/420/396.htm">《优衣库×《喷射战士》合作款UT上架：79元</a></td>
+							<td>来源:<a href="#">IT之家</a></td>
+							<td>2019-04-22</td>
 						</tr>
 						<tr>
-							<td><a href="#">这是标题</a></td>
-							<td><a href="#">这是概要很长.............</a></td>
-							<td><a href="#">XX网</a></td>
-							<td>XX-XX XX:XX</td>
+							<td><a
+									href="https://weibo.com/5746979958/HqLpqeM6U?from=page_1005055746979958_profile&wvr=6&mod=weibotime&type=comment#_rnd1556524766201">祭典结束!
+									恭喜兔子队！！！</a></td>
+							<td>来源:<a href="https://weibo.com/">新浪微博</a></td>
+							<td>2019-04-22</td>
 						</tr>
 						<tr>
-							<td><a href="#">这是标题</a></td>
-							<td><a href="#">这是概要很长.............</a></td>
-							<td><a href="#">XX网</a></td>
-							<td>XX-XX XX:XX</td>
+							<td><a href="https://www.3dmgame.com/gl/3764687.html">《喷射战士2》春季祭典主题介绍 本次的主题是：兔子 VS 海龟</a></td>
+							<td>来源:<a href="https://www.3dmgame.com/">3DMGAME</a></td>
+							<td>2019-04-01</td>
 						</tr>
 						<tr>
-							<td><a href="#">这是标题</a></td>
-							<td><a href="#">这是概要很长.............</a></td>
-							<td><a href="#">XX网</a></td>
-							<td>XX-XX XX:XX</td>
+							<td><a href="http://www.yxdown.com/news/201903/447710.html">任天堂推《喷射战士2》免费体验版 支持好友联机畅玩</a></td>
+							<td>来源:<a href="http://www.yxdown.com/">游迅网</a></td>
+							<td>2019-03-15</td>
 						</tr>
 					</table>
 				</div>
@@ -221,14 +219,15 @@
 					<div class="row">
 						<div class="col-md-6 col-sm-12">
 							<div class="d-flex justify-content-around h-100 align-items-center">
-								<img class="w-75" src="images/fes.jpg">
+								<img class="w-75 img-thumbnail" src="images/fes.jpg">
 							</div>
 						</div>
 						<div class="col-md-6 col-sm-12 p-5">
-							<div class=" p-5">
-								<h4 class="m-4">春季祭典主题介绍</h4>
+							<div class="fes_text">
+								<h4 class="my-4 text-center">春季祭典主题介绍</h4>
 								<p>北京时间 2019年4月19日16:00 至 2019年4月21日16:00 将举行为期48小时的全球春季喷射节。</p>
-								<p>本次的主题是：兔子 VS 海龟 你们喜欢哪个呢？龟兔赛跑可是小时候的童话哦</p>
+								<p>本次的主题是：兔子 VS 海龟</p>
+								<p>你们喜欢哪个呢？龟兔赛跑可是小时候的童话哦</p>
 							</div>
 						</div>
 					</div>
@@ -236,20 +235,29 @@
 				<!-- 攻略视频 -->
 				<div class="tab-pane container" id="video">
 					<div class="row">
-						<div class="col-md-6 offset-md-0 col-sm-10 offset-sm-1">
-							<div class="p-5 text-center">
-								<h6 class="text-center mb-3">视频标题</h6>
-								<a href="#"><img class="w-100 pl-5 pr-5 " src="images/video.jpg"></a>
-								<p class="mt-5"><a href="#">来源:XXXX</a></p>
-								<p class="mt-3">简介----------------------------------------</p>
+						<div class="col-xl-6 col-sm-12 ">
+							<div class=" text-center">
+								<h6 class="text-center m-4"><a
+										href="https://www.bilibili.com/video/av21932750?from=search&seid=13478811140868827966">Splatoon2
+										来看看世界顶级狙击手之一的TOMO有多强</a></h6>
+								<iframe src="https://player.bilibili.com/player.html?aid=21932750&cid=36222576&page=1" scrolling="no"
+									border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+								<p class="m-3">来源:<a href="https://www.bilibili.com/">哔哩哔哩动画</a></p>
+								<p class="mb-3 px-5">集合了他近期的视频，之前的有更多打得非常漂亮的视频，已经做成合集并且微博和B站其他人都有转载所以就没有放在里面。</p>
 							</div>
 						</div>
-						<div class="col-md-6 offset-md-0 col-sm-10 offset-sm-1">
-							<div class="p-5 text-center">
-								<h6 class="text-center mb-3">视频标题</h6>
-								<a href="#"><img class="w-100 pl-5 pr-5 " src="images/video.jpg"></a>
-								<p class="mt-5"><a href="#">来源:XXXX</a></p>
-								<p class="mt-3">简介----------------------------------------</p>
+						<div class="col-xl-6 col-sm-12">
+							<div class=" text-center">
+								<h6 class="text-center m-4"><a
+										href="https://www.bilibili.com/video/av50819834?from=search&seid=8458747893026659360">【splatoon2】小学五年级女生实况
+										最得意的区域地图</a> </h6>
+								<iframe src="https://player.bilibili.com/player.html?aid=21932750&cid=36222576&page=1" scrolling="no"
+									border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+								<p class="m-3">来源:<a href="https://www.bilibili.com/">哔哩哔哩动画</a></p>
+								<p class="mb-3 px-5">ほのか的介绍：已经小学五年级啦！
+									splatoon玩的贼溜。
+									全规则X级别！
+								</p>
 							</div>
 						</div>
 					</div>
@@ -326,8 +334,10 @@
 					<div class="text">
 						<h5>常规涂地模式（Regular Battle）</h5>
 						<p>
-							该模式是Splatoon 2最主要模式，能让玩家快速适应Splatoon 2独有对战乐趣。一局时间为3分钟，判断胜负的标准为占领地盘的多少。 。
+							常规比赛采用的是涂地模式，两队双方各4名队员，在3分钟内用自己队伍颜色的墨水在整个地图喷涂地板，当比赛结束时，将根据最后覆盖率决定胜利者。
 						</p>
+						<p>
+							该模式是Splatoon 2最主要模式，能让玩家快速适应Splatoon 2独有对战乐趣。</p>
 						<p>
 							使用各种各样的武器把对战场地的地面涂上我方队伍的颜色吧!
 						</p>
@@ -366,13 +376,13 @@
 							鱼泡模式（Rainmaker）
 						</h5>
 						<p>
-							鱼泡在比赛开始时会被放置在场地中央，从道具位置到两队双方的终点距离计分均为100。
-						</p>
-						<p>
-							玩家需要抢夺并搬运至相应地点。 判断胜负标准为完全达到目标地点以及离目标地点的远近。
+							比赛开始时地图的中心会有一个被护盾保护的鱼泡。
 						</p>
 						<p>
 							鱼泡外围有一层防护罩，每遭受一次攻击都会膨胀，打破才能取得道具。
+						</p>
+						<p>
+							玩家需要抢夺并搬运至相应地点。 判断胜负标准为完全达到目标地点以及离目标地点的远近。
 						</p>
 						<p>
 							抢到鱼头后，玩家无法使用自己的武器，但可以使用鱼泡发射一枚子弹，蓄力落地后会爆炸。
@@ -394,7 +404,7 @@
 						<h5>
 							抢塔模式（Tower Control）
 						</h5>
-						<p>地图里会有沿着特定路线行进的高塔，占领高塔，率先抵达敌方队伍领地内终点的队伍即获胜。</p>
+						<p>在地图的中心会有一个巨大蓝色立方体塔沿着特定路线行，占领高塔，率先抵达敌方队伍领地内终点的队伍即获胜。</p>
 						<p>
 							当塔上只有同队玩家时视为确保，此时高塔开始向着敌方领地前进。向着敌方领地前进同时会开始读秒，倒数到0时等同于到达终点，队伍获胜。
 						</p>
@@ -486,6 +496,10 @@
 	</section>
 	<!-- 脚部 -->
 	<iframe class="my_footer" src="footer.html" frameborder="0" scrolling="no"></iframe>
+	<div id="to_top_btn" onclick="to_top()">
+		<img src="images/totop.png">
+		<div id="to_top_hover">返回首页</div>
+	</div>
 </body>
 
 </html>
