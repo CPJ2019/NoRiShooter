@@ -33,9 +33,9 @@ section>div>div {
 /* 边框外阴影 */
 section>div>div>div {
   position: relative;
-  /* 给里面的div限制实现流光 */
   border-radius: 10px;
-  padding: 2px;
+  /* 给里面的div限制实现流光 */
+  padding: 3px;
   overflow: hidden;
 }
 
