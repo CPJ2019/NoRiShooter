@@ -3,7 +3,6 @@ function to_top() {
 	(() => {
 		// 防止还在回顶部的过程中重复设置定时器
 		clearInterval(timer);
-		var timer;
 		// 当前屏幕滚动位置
 		var target = document.documentElement.scrollTop;
 		// 回到首页字样隐藏
