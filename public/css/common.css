@@ -19,6 +19,7 @@ body {
 section {
 	max-width: 1440px;
 	margin: 0 auto;
+	position: relative;
 }
 
 ul,
@@ -234,7 +235,7 @@ a:hover {
 	height: 100%;
 	border-radius: 15px;
 	background: #fff;
-	color:#fb21c1;
+	color: #fb21c1;
 	font-size: 25px;
 	font-weight: 900;
 	line-height: 35px;
@@ -248,10 +249,55 @@ a:hover {
 #to_top_btn:hover div {
 	visibility: visible;
 }
+
 /* 定义boot缩略图组件悬浮放大过渡 */
-.img-thumbnail{
-  transition: 0.2s;
+.img-thumbnail {
+	transition: 0.2s;
 }
-.img-thumbnail:hover{
-  transform: scale(1.1);
+
+.img-thumbnail:hover {
+	transform: scale(1.1);
+}
+
+/* 网易云外链部分 */
+#music {
+	position: fixed;
+	z-index: 20;
+	top: 61%;
+	left: 5%;
+	transform: translate(-50px, -50%);
+	width: 90px;
+	height: 90px;
+	transition: 0.2s;
+	border-radius: 20px;
+	overflow: hidden;
+}
+
+#music div {
+	position: absolute;
+	z-index: 1;
+	background: rgba(0, 0, 0, 0.3);
+	color: #fff;
+	width: 90px;
+	height: 90px;
+	font-size: 25px;
+	font-weight: 900;
+	line-height: 35px;
+	text-align: center;
+	letter-spacing: 5px;
+	padding: 10px;
+}
+
+#music>iframe {
+	transition: 0.3s;
+	transform: translate(-10px, -10px)
+}
+
+#music:hover {
+	width: 310px;
+	height: 430px;
+}
+
+#music:hover div {
+	display: none;
 }

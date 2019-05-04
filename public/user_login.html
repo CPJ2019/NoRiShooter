@@ -30,26 +30,26 @@
 					<div>
 						<div>
 							<!-- 标题 -->
-						<div class="cf">
-							<h4 class="fl">用户登录</h4>
-							<a href="user_reg.html#form" title="点击注册" class="fr">没有账号?</a>
-						</div>
-						<!-- 用户名 -->
-						<div class="input_box">
-							<input id="uname" onblur="login.uname_check()" onfocus="login.uname_tips()" type="text" required="">
-							<label id="uname_msg" for="uname">用户:</label>
-						</div>
-						<div class="input_box">
-							<!-- 密码	 -->
-							<input id="upwd" onblur="login.upwd_check()" onfocus="login.upwd_tips()" type="password" required="">
-							<label id="upwd_msg" for="upwd">密码:</label>
-						</div>
-						<!-- 自动	-->
-						<input type="checkbox" id="auto" checked><label for="auto">自动登录</label>
-						<!-- 登录按钮 -->
-						<button onclick="login.login_check()" id="btn" title="点击登录">
-							<p>登录</p>
-						</button>
+							<div class="cf">
+								<h4 class="fl">用户登录</h4>
+								<a href="user_reg.html#form" title="点击注册" class="fr">没有账号?</a>
+							</div>
+							<!-- 用户名 -->
+							<div class="input_box">
+								<input id="uname" onblur="login.uname_check()" onfocus="login.uname_tips()" type="text" required="">
+								<label id="uname_msg" for="uname">用户:</label>
+							</div>
+							<div class="input_box">
+								<!-- 密码	 -->
+								<input id="upwd" onblur="login.upwd_check()" onfocus="login.upwd_tips()" type="password" required="">
+								<label id="upwd_msg" for="upwd">密码:</label>
+							</div>
+							<!-- 自动	-->
+							<input type="checkbox" id="auto" checked><label for="auto">自动登录</label>
+							<!-- 登录按钮 -->
+							<button onclick="login.login_check()" id="btn" title="点击登录">
+								<p>登录</p>
+							</button>
 						</div>
 					</div>
 				</div>
@@ -68,6 +68,12 @@
 	</section>
 	<!-- 脚部 -->
 	<iframe class="my_footer" src="footer.html" frameborder="0" scrolling="no"></iframe>
+	<!-- 网易云外部链接 -->
+	<div id="music">
+		<div>原声大碟</div>
+		<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=450
+			src="//music.163.com/outchain/player?type=0&id=2782418236&auto=1&height=430"></iframe>
+	</div>
 </body>
 
 </html>

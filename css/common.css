@@ -1,0 +1,257 @@
+/*通用*/
+html {
+	width: 100vw;
+	overflow-x: hidden;
+}
+
+body {
+	margin: 0px;
+	padding: 0px;
+	font-family: "幼圆", "微软雅黑";
+	font-size: 12px;
+	line-height: 24px;
+	font-weight: 600;
+	color: black;
+	background: #dadada;
+	position: relative;
+}
+
+section {
+	max-width: 1440px;
+	margin: 0 auto;
+}
+
+ul,
+li,
+ol,
+dt,
+dd,
+p,
+div,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+input,
+button,
+img,
+span,
+iframe {
+	margin: 0px;
+	padding: 0px;
+}
+
+ul,
+ol {
+	list-style: none;
+}
+
+input,
+button {
+	font-family: "微软雅黑";
+	outline: none;
+	border: none;
+}
+
+.fl {
+	float: left;
+}
+
+.fr {
+	float: right;
+}
+
+a {
+	text-decoration: none;
+	color: black
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+/* .container{
+  max-width:1000px;
+	margin:0px auto;
+	padding:0px;
+} */
+.cf:after {
+	content: "";
+	display: block;
+	clear: both;
+}
+
+/* 自定义响应 */
+/* 大屏 */
+@media screen and (min-width:992px) {
+
+	/* header高度 */
+	.my_header {
+		height: 120px;
+	}
+
+	/* footer高度 */
+	.my_footer {
+		height: 208px;
+	}
+}
+
+/* 中屏 */
+@media screen and (min-width:768px) and (max-width:991px) {
+
+	/* header高度 */
+	.my_header {
+		height: 120px;
+	}
+
+	/* footer高度 */
+	.my_footer {
+		height: 292px;
+	}
+}
+
+/* 小屏 */
+@media screen and (min-width:576px) and (max-width:767px) {
+
+	/* header高度 */
+	.my_header {
+		height: 232px;
+	}
+
+	/* 脚部高度 */
+	.my_footer {
+		height: 292px;
+	}
+}
+
+/* 超小屏 */
+@media screen and (max-width:576px) {
+
+	/* header高度 */
+	.my_header {
+		height: 350px;
+	}
+
+	/* 脚部高度 */
+	.my_footer {
+		height: 456px;
+	}
+}
+
+/* 头部宽度 */
+.my_header {
+	width: 100%;
+	vertical-align: bottom;
+}
+
+/* 脚宽度 */
+.my_footer {
+	width: 100%;
+	vertical-align: top;
+}
+
+/* 回滚首页按键 */
+#to_top_btn {
+	width: 60px;
+	height: 70px;
+	position: fixed;
+	right: 5%;
+	bottom: 35%;
+	transform: translate(50%, 0%);
+}
+
+/* 按钮图片随外框大小变化 */
+#to_top_btn img {
+	width: 100%;
+	height: 100%;
+}
+
+/* 回滚开始 */
+@keyframes totop1 {
+	0% {
+		width: 60px;
+		height: 70px
+	}
+
+	25% {
+		width: 70px;
+		height: 55px
+	}
+
+	50% {
+		width: 60px;
+		height: 70px
+	}
+
+	75% {
+		width: 50px;
+		height: 90px
+	}
+
+	100% {
+		width: 50px;
+		height: 90px
+	}
+}
+
+/* 回滚结束 */
+@keyframes totop2 {
+	0% {
+		width: 50px;
+		height: 90px
+	}
+
+	25% {
+		width: 50px;
+		height: 90px
+	}
+
+	50% {
+		width: 60px;
+		height: 70px
+	}
+
+	75% {
+		width: 70px;
+		height: 55px
+	}
+
+	100% {
+		width: 60px;
+		height: 70px
+	}
+}
+
+/* 回到首页字样 */
+#to_top_btn div {
+	position: absolute;
+	top: 0;
+	/* 控制在按钮上层 */
+	z-index: 1;
+	width: 100%;
+	height: 100%;
+	border-radius: 15px;
+	background: #fff;
+	color:#fb21c1;
+	font-size: 25px;
+	font-weight: 900;
+	line-height: 35px;
+	text-align: center;
+	visibility: hidden;
+	transition: 0.2s;
+
+}
+
+/* 悬浮时显示遮挡按钮图片 */
+#to_top_btn:hover div {
+	visibility: visible;
+}
+/* 定义boot缩略图组件悬浮放大过渡 */
+.img-thumbnail{
+  transition: 0.2s;
+}
+.img-thumbnail:hover{
+  transform: scale(1.1);
+}
