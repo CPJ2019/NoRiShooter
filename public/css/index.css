@@ -65,15 +65,8 @@ nav div {
 
 /*文字属性 */
 nav>div>ul>li {
-  float: left;
   width: 14.28%;
   position: relative;
-}
-
-nav>div>ul:after {
-  content: "";
-  display: block;
-  clear: both;
 }
 
 nav>div>ul>li>a {
@@ -146,7 +139,7 @@ nav div ul li ul li:hover a {
 
 /* 二级导航 */
 nav div ul ul {
-  /* visibility: hidden; */
+  visibility: hidden;
   position: absolute;
   z-index: 10;
   width: 0%;
@@ -163,6 +156,7 @@ nav div ul ul li {
   white-space: nowrap;
   transition: none;
   overflow: hidden;
+  height: 35px;
 }
 
 nav div ul li:hover ul {

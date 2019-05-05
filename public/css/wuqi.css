@@ -32,7 +32,6 @@ div.intro {
   margin: 20px 0;
   font-weight: 900;
 }
-
 .intro>div {
   display: flex;
   justify-content: space-around;
@@ -109,8 +108,19 @@ img.shop {
 ._intro>h4{
   font-weight: 600;
 } 
+._intro>.main_show_pic{
+  margin: 10px 0;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
 ._intro>p {
   padding: 20px 0;
+}
+._intro>.main_show_pic>img{
+  min-width: 320px;
+  margin:0 10px;
 }
 
 .card-body {

@@ -1,0 +1,112 @@
+/* 导航 */
+div.nav_box {
+  background: #6c757d;
+}
+
+ul.nav li {
+  text-align: center;
+  width: 14.28%;
+}
+
+ul.nav li a {
+  width: 100%;
+  font-size: 20px;
+  color: #fff;
+  line-height: 50px;
+}
+
+/* 主体内容样式 */
+div.box {
+  background: #fff;
+  padding: 20px;
+  margin: 10px;
+}
+
+div.box h2 {
+  text-align: center
+}
+
+.srm {
+  display: block;
+  margin: 10px auto;
+}
+
+div.box h4 {
+  margin: 20px 0;
+}
+
+div.box p {
+  font-size: 16px;
+  margin: 5px 0;
+}
+
+/* 商店预览 */
+.shop_show {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.shop_show img {
+  margin: 20px;
+}
+
+.shop_show p {
+  text-align: center;
+}
+
+/* 等级表 */
+table {
+  font-size: 16px;
+}
+
+/* 地图介绍 */
+.map_intro {
+  display: flex;
+}
+
+.map_intro img {
+  width: 30%;
+  height: 30%;
+}
+
+.box .map_intro>p {
+  margin-left: 50px;
+  ;
+}
+
+/* 武器介绍 */
+.wq_intro {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.box .wq_intro div p {
+  margin: 10px;
+}
+.box .wq_intro>div {
+  width: 50%;
+  text-align: center;
+}
+/* boss */
+.boss_intro div{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  margin: 20px;
+}
+.boss_intro div img{
+  height: 100%;
+  max-height:300px;
+}
+/* 技巧 */
+#jq a{
+  font-size: 16px;
+  color: #990033;
+}
+#jq a:hover{
+  font-size: 16px;
+  color: #fd651a;
+}

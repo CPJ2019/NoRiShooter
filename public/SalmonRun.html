@@ -1,27 +1,305 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Salmon Run</title>
   <link rel="stylesheet" href="./css/animate.css ">
-	<link rel="stylesheet" href="./css/bootstrap.css">
-	<link rel="stylesheet" href="./css/common.css">
+  <link rel="stylesheet" href="./css/bootstrap.css">
+  <link rel="stylesheet" href="./css/common.css">
   <link rel="stylesheet" href="./css/SalmonRun.css">
   <link rel="icon" href="images/favicon.ico" type="image/x-icon">
-	<script src="./js/jquery.min.js"></script>
-	<script src="./js/popper.min.js"></script>
-	<script src="./js/bootstrap.min.js"></script>
+  <script src="./js/common.js"></script>
+  <script src="./js/jquery.min.js"></script>
+  <script src="./js/popper.min.js"></script>
+  <script src="./js/bootstrap.min.js"></script>
 </head>
-<body>
-	<!-- 头部 -->
-  <iframe class="my_header" src="header.html" frameborder="0" scrolling="no"></iframe>
-  <section>
-    <div class="continer">
 
+<body>
+  <!-- 头部 -->
+  <iframe class="my_header" src="header.html" frameborder="0" scrolling="no"></iframe>
+  <!-- 导航栏 -->
+  <div class="nav_box">
+    <div class="container">
+      <ul class="nav justify-content-around">
+        <li><a href="#intro">简介</a></li>
+        <li><a href="#rule">规则</a></li>
+        <li><a href="#reward">奖励</a></li>
+        <li><a href="#map">地图</a></li>
+        <li><a href="#wuqi">武器</a></li>
+        <li><a href="#boss">BOSS</a></li>
+        <li><a href="#jq">技巧</a></li>
+      </ul>
+    </div>
+  </div>
+  <section>
+    <!-- 主体 -->
+    <div class="container">
+      <!-- 介绍 -->
+      <div id="intro" class="box">
+        <img class="srm" src="images/dagong/Salmon_Run.png" alt="">
+        <h2>简介</h2>
+        <p>打工是喷射战士2中的多人合作模式(PVE)，最多可以四个玩家一起组队，能够获得金币、装备和技能饮料兑换票等物品。
+        </p>
+        <P>
+          当玩家等级达到4级时，就会对玩家解锁该模式。在广场按X打开菜单，选择左下角熊先生商会按钮或是直接走到广场左侧通道尽头，就可进入熊先生商会打工。
+        </P>
+        <div class="shop_show">
+          <div>
+            <img src="images/dagong/shop1.jpg" alt="">
+            <p>商会内部</p>
+          </div>
+          <div>
+            <img src="images/dagong/shop2.jpg" alt="">
+            <p>个人信息</p>
+          </div>
+        </div>
+      </div>
+      <!-- 规则 -->
+      <div id="rule" class="box">
+        <h2>规则</h2>
+        <!-- 流程规矩 -->
+        <h4>打工规则</h4>
+        <p>
+          1.每局打工分为三个回合(WAVE)，每个回合100秒,包括玩家在内4人组成打工小队，完成每回合收集金蛋的目标。
+        </p>
+        <p>2.玩家们击败一批批怪物并将金蛋放入箩筐中完成回合目标。如果每回合结束没有完成回合目标或玩家全部阵亡，则打工失败。 </p>
+        <p>3.不能携带自己的装备和武器，全由打工方提供。</p>
+        <p>4.商会每次开放打工都会变更打工地图和分配给玩家的武器。每回合，系统会在玩家中随机分配武器。每局打工，只能使用特殊武器两次。</p>
+        <p>5.只有击倒BOSS才会出现“金蛋”,如果金蛋在一定时间内没有被拾取，就会出现小鲑鱼来抢夺。</p>
+        <p>
+          6.玩家死亡后会暂时变成救生圈(金蛋不丢失，但无法将金蛋放入箩筐中)，其他队员可以喷墨复活，刚复活有短时间的无敌时间。每名玩家每次只能携带一枚金蛋。
+        </p>
+        <p>7.顺利完成每局三回合(WAVE)，可以提升玩家评级。随着评级提升，每局打工结束后获得的P值也越高，但难度也加大。（P数关系奖励）</p>
+        <div class="d-flex justify-content-around mt-4 mb-4">
+          <img src="images/dagong/gz1.JPG" alt="">
+          <img src="images/dagong/gz2.JPG" alt="">
+        </div>
+        <!-- 打工等级 -->
+        <h4>打工等级</h4>
+        <table class="table">
+          <tr>
+            <th>打工评级</th>
+            <th>评价条</th>
+            <th>P数奖励比率</th>
+          </tr>
+          <tr>
+            <td>实习(けんしゅう)(Intern)</td>
+            <td>0~99</td>
+            <td>90%</td>
+          </tr>
+          <tr>
+            <td>学徒(かけだし)(Apprentice)</td>
+            <td>0~99</td>
+            <td>90%~110%</td>
+          </tr>
+          <tr>
+            <td>兼职(はんにんまえ)(Part-Timer)</td>
+            <td>0~99</td>
+            <td>115%~135%</td>
+          </tr>
+          <tr>
+            <td>全职(いちにんまえ)(Go-Getter)</td>
+            <td>0~99</td>
+            <td>140%~160%</td>
+          </tr>
+          <tr>
+            <td>熟练(じゅくれん)(Overachiever)</td>
+            <td>0~99</td>
+            <td>165%~185%</td>
+          </tr>
+          <tr>
+            <td>达人(たつじん)(Profreshional)</td>
+            <td>0~999</td>
+            <td>190%~435%</td>
+          </tr>
+        </table>
+        <!-- 点数说明 -->
+        <h5>打工评级点数说明</h5>
+        <p>
+          当玩家通过三个回合后，评价点数会上升20点。如果第一波失败，则点数下降20点;如果第二波失败，则点数下降10点;如果第3波失败，则点数保持不变。当分数到达满分(非达人时),就会升阶到下一头衔且初始分数为40。反之,若是分数为0时,自动降级。
+        </p>
+        <p>需要注意的是,假如是组队打工,以等级最低的队友为基准,三波完成后,此队友可以获得加分奖励,等级高的玩家只能够掉分而不能加分。</p>
+      </div>
+      <!-- 打工奖励 -->
+      <div id="reward" class="box">
+        <h2>奖励</h2>
+        <p>
+          玩家可以在每一局打工结束后，根据局内运蛋数和奖励加成获得相应的积分。在前面1200积分内，每100积分可以获得一个扭蛋（这就是低保），1200之后每200积分获得一个扭蛋。</p>
+        <p>
+          扭蛋可以开到限定的服装,金币,饮料卷或者碎片</p>
+        <p>装备技能是随机的,如果玩家在此之前已经拥有,可以选择用新装备替换或者把新装备出售。出售后可以得到金币或者技能碎片。</p>
+        <p>
+          扭蛋存储上限时99个,请记得在溢出之前领取奖励。
+        </p>
+        <div class="d-flex justify-content-around mt-4">
+          <img src="images/dagong/reward.png" alt="">
+        </div>
+      </div>
+      <!-- 地图 -->
+      <div id="map" class="box">
+        <h2>地图</h2>
+        <p>总共有5张打工模式专属的地图</p>
+        <h4>大坝</h4>
+        <div class="map_intro">
+          <img src="images/dagong/map_db.png" alt="">
+          <p>地图介绍.......................</p>
+        </div>
+        <h4>破难船</h4>
+        <div class="map_intro">
+          <img src="images/dagong/map_pn.png" alt="">
+          <p>地图介绍.......................</p>
+        </div>
+        <h4>集落</h4>
+        <div class="map_intro">
+          <img src="images/dagong/map_jl.png" alt="">
+          <p>地图介绍.......................</p>
+        </div>
+        <h4>工坊</h4>
+        <div class="map_intro">
+          <img src="images/dagong/map_gf.png" alt="">
+          <p>地图介绍.......................</p>
+        </div>
+        <h4>方舟</h4>
+        <div class="map_intro">
+          <img src="images/dagong/map_fz.jpg" alt="">
+          <p>地图介绍.......................</p>
+        </div>
+      </div>
+      <!-- 武器 -->
+      <div id="wuqi" class="box">
+        <h2>武器</h2>
+        <p>总共有4把打工模式专属的武器</p>
+        <div class="wq_intro">
+          <div>
+            <h4>熊泡</h4>
+            <img src="images/dagong/wq_xp.png" alt="">
+            <p>武器介绍........................</p>
+          </div>
+          <div>
+            <h4>熊伞</h4>
+            <img src="images/dagong/wq_xs.png" alt="">
+            <p>武器介绍........................</p>
+          </div>
+          <div>
+            <h4>熊狙</h4>
+            <img src="images/dagong/wq_xj.png" alt="">
+            <p>武器介绍........................</p>
+          </div>
+          <div>
+            <h4>熊桶</h4>
+            <img src="images/dagong/wq_xt.png" alt="">
+            <p>武器介绍........................</p>
+          </div>
+        </div>
+      </div>
+      <!-- boss -->
+      <div id="boss" class="box">
+        <h2>BOSS</h2>
+        <p class="my-4">boss总介绍</p>
+        <!-- 绿帽 -->
+        <div class="boss_intro">
+          <h4>绿帽</h4>
+          <div>
+            <img src="images/dagong/boss_lm1.jpg" alt="">
+            <img src="images/dagong/boss_lm2.png" alt="">
+          </div>
+          <p>介绍</p>
+          <p>弱点.....</p>
+          <p>打法应对...............................................................</p>
+        </div>
+        <!-- 垃圾桶 -->
+        <div class="boss_intro">
+          <h4>垃圾桶</h4>
+          <div>
+            <img src="images/dagong/boss_ljt1.jpg" alt="">
+            <img src="images/dagong/boss_ljt2.jpg" alt="">
+          </div>
+          <p>介绍</p>
+          <p>弱点.....</p>
+          <p>打法应对...............................................................</p>
+        </div>
+        <!-- 蛇(龙) -->
+        <div class="boss_intro">
+          <h4>蛇(龙)</h4>
+          <div>
+            <img src="images/dagong/boss_s1.jpg" alt="">
+            <img src="images/dagong/boss_s2.PNG" alt="">
+          </div>
+          <p>介绍</p>
+          <p>弱点.....</p>
+          <p>打法应对...............................................................</p>
+        </div>
+        <!-- 雨伞 -->
+        <div class="boss_intro">
+          <h4>雨伞</h4>
+          <div>
+            <img src="images/dagong/boss_ys1.jpg" alt="">
+            <img src="images/dagong/boss_ys2.jpg" alt="">
+          </div>
+          <p>介绍</p>
+          <p>弱点.....</p>
+          <p>打法应对...............................................................</p>
+        </div>
+        <!-- 塔 -->
+        <div class="boss_intro">
+          <h4>塔</h4>
+          <div>
+            <img src="images/dagong/boss_t1.jpg" alt="">
+            <img src="images/dagong/boss_t2.PNG" alt="">
+          </div>
+          <p>介绍</p>
+          <p>弱点.....</p>
+          <p>打法应对...............................................................</p>
+        </div>
+        <!-- 车 -->
+        <div class="boss_intro">
+          <h4>车</h4>
+          <div>
+            <img src="images/dagong/boss_c1.jpg" alt="">
+            <img src="images/dagong/boss_c2.PNG" alt="">
+          </div>
+          <p>介绍</p>
+          <p>弱点.....</p>
+          <p>打法应对...............................................................</p>
+        </div>
+        <!-- 鱼 -->
+        <div class="boss_intro">
+          <h4>鱼</h4>
+          <div>
+            <img src="images/dagong/boss_y1.jpg" alt="">
+            <img src="images/dagong/boss_y2.jpg" alt="">
+          </div>
+          <p>介绍</p>
+          <p>弱点.....</p>
+          <p>打法应对...............................................................</p>
+        </div>
+      </div>
+      <!-- 技巧攻略 -->
+      <div id="jq" class="box">
+        <h2>技巧</h2>
+        <p>看视频,就这样,看完就是400了。</p>
+        <a href="https://www.bilibili.com/video/av26791717/">打工模式全面攻略教程·入门篇P1·通常WAVE前篇【splatoon2】</a></br>
+        <a href="https://www.bilibili.com/video/av28982731/">打工模式全面攻略教程·入门篇P2·通常WAVE前篇【splatoon2】</a></br>
+        <a href="https://www.bilibili.com/video/av39085500/">打工模式全面攻略教程·入门篇P3·特殊WAVE篇【splatoon2】</a></br>
+        <a href="https://www.bilibili.com/video/av50470639/">打工模式全面攻略教程·入门篇P4·补充篇【splatoon2】</a></br>
+      </div>
     </div>
   </section>
   <iframe class="my_footer" src="footer.html" frameborder="0" scrolling="no"></iframe>
+  <!-- 返回首页按钮 -->
+  <div id="to_top_btn" onclick="to_top()">
+    <img src="images/totop.png">
+    <div id="to_top_hover">返回首页</div>
+  </div>
+  <!-- 网易云外部链接 -->
+  <div id="music">
+    <div>原声音乐</div>
+    <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=450
+      src="//music.163.com/outchain/player?type=0&id=2782418236&auto=1&height=430"></iframe>
+  </div>
 </body>
+
 </html>

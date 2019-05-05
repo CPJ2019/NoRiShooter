@@ -56,7 +56,7 @@ section>div>div>div>div:before {
   right: -200px;
   z-index: -1;
   /* 调用旋转动画 */
-  animation: turn 5s infinite;
+  animation: turn 4s infinite;
 }
 
 /* 背景旋转加外框padding 隐藏限制实现流光 */
