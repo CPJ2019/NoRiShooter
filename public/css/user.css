@@ -1,6 +1,6 @@
 /*注册登录背景 */
 .bg {
-  margin-top: 20px;
+  margin-top: 10px;
   max-width: 1440px;
   min-height: 810px;
   background: url(../images/bg.jpg);
@@ -145,6 +145,7 @@ div.input_box label {
 
 /* 聚焦文字特效 */
 .input_box input:focus~label {
+ color:#0066FF !important;
   width: 100%;
   left: 20px;
 }
@@ -153,7 +154,20 @@ div.input_box label {
 .input_box input:valid~label {
   top: -15px;
 }
-
+/* 通过提示样式 */
+.input_box input.pass{
+  border-color: #28a745;
+}
+.input_box input.pass~label{
+  color:#28a745;
+}
+/* 错误提示样式 */
+.input_box input.nopass{
+  border-color: #dc3545;
+}
+.input_box input.nopass~label{
+  color:#dc3545;
+}
 /* 提交按键 */
 #btn {
   width: 100%;

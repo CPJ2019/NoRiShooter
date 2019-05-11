@@ -1,0 +1,116 @@
+/* 导航 */
+/* 背景色 */
+div.nav_box {
+  background: #6c757d;
+}
+
+ul.nav li {
+  text-align: center;
+  width: 14.28%;
+}
+/* 导航文字 */
+ul.nav li a {
+  width: 100%;
+  font-size: 20px;
+  color: #fff;
+  line-height: 50px;
+}
+/* 主体 */
+/* 内容盒子 */
+.intro_box{
+  background: #fff;
+  padding:20px;
+  margin: 5px 0;
+}
+/* 盒子大标题 */
+.intro_box h2{
+  text-align: center;
+  margin: 20px;
+}
+/* 盒子文本 */
+.intro_box p{
+  font-size: 16px;
+  text-indent:20px;
+  margin: 5px 0;
+}
+/* 展示图片 */
+.img_show{
+  display: flex;
+  justify-content:space-around;
+  flex-wrap:wrap;
+}
+/* 图片宽高 */
+.img_show img{
+  width: 60%;
+  height:60%;
+  margin: 20px;
+}
+/* 底下文字 */
+.img_show p{
+  width: 100%;
+  text-align: center;
+}
+/* 技能 */
+/* 元素垂直居中 */
+.skill_table{
+  margin: 30px 0;
+  width:100%;
+  background: #FFFFCC80;
+}
+/* 单元格 */
+.skill_table tr th,
+.skill_table tr td{
+  font-size:14px;
+  padding:5px 0;
+  border-spacing: 5px;
+  text-align: center;
+  border-bottom: 1px dashed rgba(0,0,0,0.2);
+}
+/* 技能名称和描述居左 */
+.skill_table tr td:nth-child(1),
+.skill_table tr td:nth-child(2){
+  text-align: left !important;
+}
+.skill_table tr td:nth-child(2){
+  text-indent:20px;
+}
+/* 给除技能描述外最低宽度 */
+.skill_table tr th:nth-child(1){
+  min-width: 130px;
+}
+.skill_table tr th:nth-child(3){
+  min-width: 70px;
+}
+.skill_table tr th:nth-child(4),
+.skill_table tr th:nth-child(5){
+  min-width:120px;
+}
+/* 技能图标大小 */
+.skill_table tr td img{
+  width:36px;
+  margin:0px 10px 5px ;
+}
+/* 非第一行列悬浮特效 */
+.skill_table tr{
+  transition:0.2s;
+}
+.skill_table tr:not(:first-child):hover{
+  background: #FFFF99;
+}
+/* 技能养成 */
+
+#jnglow h5{
+  margin: 10px; 
+}
+.intro_box .yyjs{
+  background: #FFFFCC80;
+  padding: 20px;
+}
+.intro_box .jnglow h4,
+.intro_box .yyjs h4{
+  margin: 20px;
+}
+/* 技巧 */
+#jq a,#bbgx a{
+  font-size:16px;
+}

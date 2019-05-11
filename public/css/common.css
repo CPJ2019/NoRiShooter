@@ -228,11 +228,13 @@ a:hover {
 /* 回到首页字样 */
 #to_top_btn div {
 	position: absolute;
-	top: 0;
+	top: 50%;
+	left:50%;
+	transform: translate(-50%,-50%);
 	/* 控制在按钮上层 */
 	z-index: 1;
-	width: 100%;
-	height: 100%;
+	width: 0%;
+	height: 0%;
 	border-radius: 15px;
 	background: #fff;
 	color: #fb21c1;
@@ -240,14 +242,15 @@ a:hover {
 	font-weight: 900;
 	line-height: 35px;
 	text-align: center;
-	visibility: hidden;
 	transition: 0.2s;
+	overflow: hidden;
 
 }
 
 /* 悬浮时显示遮挡按钮图片 */
 #to_top_btn:hover div {
-	visibility: visible;
+	height: 100%;
+	width: 100%;
 }
 
 /* 定义boot缩略图组件悬浮放大过渡 */
@@ -269,7 +272,7 @@ a:hover {
 	width: 90px;
 	height: 90px;
 	transition: 0.2s;
-	border:1px solid rgba(0,0,0,0.3);
+	border: 1px solid rgba(0, 0, 0, 0.3);
 	border-radius: 20px;
 	overflow: hidden;
 }
@@ -290,7 +293,7 @@ a:hover {
 }
 
 #music>iframe {
-	transition: 0.3s;
+	transition: 0.5s;
 	transform: translate(-10px, -10px)
 }
 
@@ -301,4 +304,12 @@ a:hover {
 
 #music:hover div {
 	display: none;
+}
+/* 自定义链接样式 */
+a.my_a {
+	color: #0066CC !important;
+}
+
+a.my_a:hover {
+	color: #f56000 !important;
 }

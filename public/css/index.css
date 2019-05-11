@@ -189,23 +189,23 @@ div.banner {
 
 }
 
-/* 阴影效果 */
+/* 盒子图片阴影效果 */
 .banner_box>li>a>img {
   box-shadow: 0px 0px 50px 0px rgba(0, 0, 0, 0.3);
 
 }
 
-.banner_box>li>a {
+/* .banner_box>li>a {
   width: 100%;
   height: 100%;
   display: block;
-}
+} */
 
 /* 轮播图盒子整体 */
 .banner_box {
   list-style-type: none;
-  transform-style: preserve-3d;
   /*保留其子元素的3d显示效果*/
+  transform-style: preserve-3d;
   width: 500px;
   height: 281px;
   position: relative;
@@ -302,8 +302,8 @@ div.banner .l_r_btn button div {
   width: 25px;
   height: 25px;
   margin: 0 auto;
-  border-top: 5px solid #f8f9fa;
-  border-left: 5px solid #f8f9fa;
+  border-top: 5px solid #CCFFFF;
+  border-left: 5px solid #CCFFFF;
 }
 
 /* 设置箭头位置和角度 */
@@ -315,10 +315,10 @@ button.right div {
   transform: translateX(-5px) rotate(135deg)
 }
 
-/* 按键位置悬浮时箭头变成黑色 */
+/* 按键位置悬浮时箭头变成粉色 */
 div.banner .l_r_btn button:hover div {
-  border-top: 5px solid #000;
-  border-left: 5px solid #000;
+  border-top: 5px solid #FF99CC;
+  border-left: 5px solid #FF99CC;
 }
 
 /* 清除使用boot之后按钮点击后的阴影 */
@@ -329,7 +329,7 @@ div.banner .l_r_btn button:hover div {
 
 /* 跳页按钮 */
 /* 按钮整体 */
-div.banner_to {
+#banner_to {
   position: absolute;
   bottom: 3%;
   left: 50%;
@@ -338,7 +338,7 @@ div.banner_to {
 }
 
 /* 单独按钮样式 */
-button.banner_to_btn {
+#banner_to button{
   width: 15px;
   height: 15px;
   border-radius: 50%;
@@ -350,14 +350,13 @@ button.banner_to_btn {
   background: #FF99CC;
 }
 
-/* 页面加载时第一个选中效果 */
-button.banner_to_btn:first-child {
+/* 页面加载时第一个指示器被选中 */
+#banner_to button:first-child {
   background: #CCFFFF;
 }
 
 /* 悬停特效 */
-button.banner_to_btn:hover {
-  background: #DC143C;
+#banner_to button:hover {
   box-shadow: 0 0 0 3px #CCFFFF,
     0 0 0 6px #FF99CC;
 }

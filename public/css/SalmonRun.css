@@ -19,7 +19,7 @@ ul.nav li a {
 div.box {
   background: #fff;
   padding: 20px;
-  margin: 10px;
+  margin: 5px;
 }
 
 div.box h2 {
@@ -29,6 +29,7 @@ div.box h2 {
 .srm {
   display: block;
   margin: 10px auto;
+  width: 80%;
 }
 
 div.box h4 {
@@ -37,6 +38,7 @@ div.box h4 {
 
 div.box p {
   font-size: 16px;
+  text-indent:20px;
   margin: 5px 0;
 }
 
@@ -47,12 +49,24 @@ div.box p {
   flex-wrap: wrap;
 }
 
-.shop_show img {
+.shop_show img{
+  width: 60%;
+  height: 60%;
   margin: 20px;
 }
 
 .shop_show p {
+  width: 100%;
   text-align: center;
+}
+/* 打工规则 */
+#rule div{
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+#rule div img{
+  margin: 10px;
 }
 
 /* 等级表 */
@@ -90,6 +104,14 @@ table {
   text-align: center;
 }
 /* boss */
+.boss_main div img{
+  height: 200px;
+}
+.boss_main div p{
+  text-align: center;
+  text-indent:0px;
+}
+.boss_main,
 .boss_intro div{
   display: flex;
   flex-wrap: wrap;
@@ -100,13 +122,11 @@ table {
 .boss_intro div img{
   height: 100%;
   max-height:300px;
+  margin: 10px 0px;
 }
+
 /* 技巧 */
 #jq a{
   font-size: 16px;
-  color: #990033;
 }
-#jq a:hover{
-  font-size: 16px;
-  color: #fd651a;
-}
+

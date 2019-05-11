@@ -2,8 +2,8 @@ const express=require('express');
 const pool=require('../pool.js');
 var router=express.Router();
 //用户注册
-router.get('/reg',(req,res)=>{
-	var obj=req.query;
+router.post('/reg',(req,res)=>{
+	var obj=req.body;
 //	var num=400;
 //	for(var key in obj){
 //		num++;
@@ -29,7 +29,6 @@ router.get('/reg',(req,res)=>{
 //注册用户名重复验证
 router.get('/unamecheck',(req,res)=>{
 	var u=req.query.uname;
-	console.log(1)
 	var sql='SELECT*FROM nori_user WHERE uname=?';
 	pool.query(sql,[u],(err,result)=>{
 		if(err) throw err;
@@ -43,9 +42,9 @@ router.get('/unamecheck',(req,res)=>{
 	})
 })
 //用户登录
-router.get('/login',(req,res)=>{
-	var u=req.query.uname;
-	var p=req.query.upwd;
+router.post('/login',(req,res)=>{
+	var u=req.body.uname;
+	var p=req.body.upwd;
 	//console.log(p)
 //	if(!u){
 //		res.send('用户名不能为空');
