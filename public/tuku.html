@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -9,65 +10,48 @@
   <link rel="stylesheet" href="./css/common.css">
   <link rel="stylesheet" href="./css/tuku.css">
   <link rel="icon" href="images/favicon.ico" type="image/x-icon">
-  <script src="./js/tuku.js"></script>
   <script src="./js/jquery.min.js"></script>
-	<script src="./js/popper.min.js"></script>
-	<script src="./js/bootstrap.min.js"></script>
+  <script src="./js/popper.min.js"></script>
+  <script src="./js/bootstrap.min.js"></script>
 </head>
-<body onload="get_images()">
-  <!-- 排序按钮 -->
-  <div class="container" id="btn">
-    <div class="btn-group" id="sort_btn">
-      <button onclick="by_date()" class="btn btn-primary">按时间倒序</button>
-      <button onclick="by_hot()" class="btn btn-danger">按热度排序</button>
-      <button onclick="by_tid()" class="btn btn-success">按编号排序</button>
-    </div> 
-    <button onclick="return_list(start)"  id="return_btn" class="btn btn-secondary">返回</button>
-  </div>
+
+<body>
+  <!-- 头部 -->
+  <iframe class="my_header" src="header.html" frameborder="0" scrolling="no"></iframe>
   <!-- 展示区域 -->
-  <div class="container show">
-    <ul id="img_show">
-      <!-- <li>
-          <div><a href="#"><img src="images/banner1.jpg"></a></div>
-        <p>上传者-<a href="#">123</a></p>
-        <p>上传时间-123</p> 
-      </li>
-      <li>
-        <div><a href="#"><img src="images/banner1.jpg"></a></div>
-        <p>上传者-<a href="#">123</a></p>
-        <p>上传时间-123</p>
-      </li>
-      <li>
-        <div><a href="#"><img src="images/banner1.jpg"></a></div>
-        <p>上传者-<a href="#">123</a></p>
-        <p>上传时间-123</p>
-      </li>
-      <li>
-        <div><a href="#"><img src="images/banner1.jpg"></a></div>
-        <p>上传者-<a href="#">123</a></p>
-        <p>上传时间-123</p>
-      </li>
-      <li>
-        <div><a href="#"><img src="images/banner1.jpg"></a></div>
-        <p>上传者-<a href="#">123</a></p>
-        <p>上传时间-123</p>
-      </li>
-      <li>
-        <div><a href="#"><img src="images/banner1.jpg"></a></div>
-        <p>上传者-<a href="#">123</a></p>
-        <p>上传时间-123</p>
-      </li> -->
-      <!-- <li id="detail">
-        <div>
-          <img src="images/banner1.jpg">
+  <div class="container">
+    <div class="btn_div">
+      <div class="img_btn">
+        <div class="return_btn">
+          <button btn-return="return">按我或图片返回</button>
         </div>
-        <span>上传时间 123</span>
-        <p>上传者-123</p>
-        <p>热度:12123</p>
-      </li> -->
-    </ul>
-    <div id="button"> 
+        <div class="sort_btn">
+          <button btn-sort="click_count" >按热度</button>
+          <button btn-sort="tid">按编号</button>
+          <button btn-sort="uploader">按上传者</button>
+          <button btn-sort="upload_datetime">按上传时间</button>
+        </div>
+
+      </div>
+    </div>
+    <!-- 图片展示模块 -->
+    <div class="main_show">
+       <button class="left c_btn" data-change="-"></button>
+       <button class="right c_btn" data-change="+"></button>
+      <div class="main">
+      </div>
     </div>
   </div>
+  <!-- 脚部 -->
+  <iframe class="my_footer" src="footer.html" frameborder="0" scrolling="no"></iframe>
+  <!-- 网易云外部链接 -->
+  <div id="music">
+    <div>原声音乐</div>
+    <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=450
+      src="//music.163.com/outchain/player?type=0&id=2782418236&auto=1&height=430"></iframe>
+  </div>
+  <script src="./js/tuku.js"></script>
+
 </body>
+
 </html>

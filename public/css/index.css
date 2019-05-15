@@ -98,8 +98,8 @@ nav>div>ul>li:hover::after {
 /* 下划线 */
 nav div>ul>li::before {
   content: "";
-  border-top: 2px solid #e89aa8;
-  border-bottom: 2px solid #e89aa8;
+  border-top: 2px solid #ea8685;
+  border-bottom: 2px solid #ea8685;
   position: absolute;
   height: 100%;
   width: 0%;
@@ -113,7 +113,7 @@ nav div>ul>li:hover::before {
 }
 
 nav div>ul>li:hover>a {
-  color: #000;
+  color: #2C3A47;
 }
 
 nav div>ul>li:hover~li::before {
@@ -126,7 +126,7 @@ nav div ul li a {
 
 /* 二级显示 */
 nav div ul li ul li:hover {
-  background: #9a273cbb;
+  background: #ea8685;
 }
 
 nav div ul li ul li a {
@@ -134,7 +134,7 @@ nav div ul li ul li a {
 }
 
 nav div ul li ul li:hover a {
-  color: #000;
+  color: #2f3640;
 }
 
 /* 二级导航 */
@@ -184,6 +184,7 @@ div.banner {
   margin: 0 auto;
   position: relative;
   display: flex;
+  /* 视距 */
   perspective: 3000px;
   margin: 0 auto;
 
@@ -266,7 +267,7 @@ div.banner {
 
 /* 轮播图左右按键 */
 /* 样式 */
-div.banner .l_r_btn button {
+div.banner button.btn {
   width: 40px;
   height: 80px;
   background-color: rgba(0, 0, 0, 0.3);
@@ -280,45 +281,48 @@ div.banner .l_r_btn button {
   opacity: 0;
   transition: 0.5s;
   /* 让按键可以在盒子上面 */
-  z-index: 5;
+  z-index: 4;
 }
 
 /* 轮播部分悬停后按键过渡出现 */
-div.banner:hover .l_r_btn button {
+div.banner:hover button.btn {
   opacity: 1;
 }
 
 /* 左右定位 */
-div.banner .l_r_btn button.left {
+div.banner button.left {
   left: 7%;
 }
 
-div.banner .l_r_btn button.right {
+div.banner button.right {
   right: 7%;
 }
 
 /* 按键里面的角*/
-div.banner .l_r_btn button div {
+div.banner button.btn:before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
   width: 25px;
   height: 25px;
-  margin: 0 auto;
   border-top: 5px solid #CCFFFF;
   border-left: 5px solid #CCFFFF;
 }
 
 /* 设置箭头位置和角度 */
-button.left div {
-  transform: translateX(5px) rotate(-45deg)
+button.left:before {
+  transform: translate(-25%, -50%) rotate(-45deg);
 }
 
-button.right div {
-  transform: translateX(-5px) rotate(135deg)
+button.right:before {
+  transform: translate(-75%, -50%) rotate(135deg);
 }
 
 /* 按键位置悬浮时箭头变成粉色 */
-div.banner .l_r_btn button:hover div {
-  border-top: 5px solid #FF99CC;
-  border-left: 5px solid #FF99CC;
+div.banner button.btn:hover:before {
+  border-top: 5px solid #ffb8b8;
+  border-left: 5px solid #ffb8b8;
 }
 
 /* 清除使用boot之后按钮点击后的阴影 */
@@ -338,7 +342,7 @@ div.banner .l_r_btn button:hover div {
 }
 
 /* 单独按钮样式 */
-#banner_to button{
+#banner_to button {
   width: 15px;
   height: 15px;
   border-radius: 50%;
@@ -347,29 +351,31 @@ div.banner .l_r_btn button:hover div {
   cursor: pointer;
   margin: 10px;
   float: left;
-  background: #FF99CC;
+  background: #ffb8b8;
+  box-shadow: 0px 0px 8px 0px #ffb8b8;
 }
 
-/* 页面加载时第一个指示器被选中 */
-#banner_to button:first-child {
-  background: #CCFFFF;
+/* 指示器被选中 */
+#banner_to button.active {
+  background: #9AECDB;
+  box-shadow: 0px 0px 8px 0px #9AECDB;
 }
 
 /* 悬停特效 */
 #banner_to button:hover {
-  box-shadow: 0 0 0 3px #CCFFFF,
-    0 0 0 6px #FF99CC;
+  box-shadow: 0 0 0 3px #9AECDB,
+    0 0 0 6px #ffb8b8;
 }
 
 /* 资讯  */
 /* 胶囊被选中的颜色 */
 .nav-pills .nav-link.active {
-  background: #0099CC;
+  background: #0984e3;
 }
 
 /* 胶囊没被选中的颜色 */
 .nav-pills .nav-link:not(.active) {
-  background: #CCFFFF;
+  background: #9AECDB;
 }
 
 /* 热事新闻,论坛 */
@@ -403,10 +409,11 @@ div.zx table {
   font-weight: 600;
 }
 
-div.zx table tr td{
-  padding:12px 5px;
-  vertical-align:middle;
+div.zx table tr td {
+  padding: 12px 5px;
+  vertical-align: middle;
 }
+
 /* 新闻表格细节  */
 #news_content table tr td:nth-child(1) {
   text-align: left;
@@ -416,7 +423,8 @@ div.zx table tr td{
   min-width: 120px;
   text-align: left;
 }
-#news_content tr td:nth-child(2) span{
+
+#news_content tr td:nth-child(2) span {
   display: inline-block;
   width: 40px;
 }
@@ -427,12 +435,13 @@ div.zx table tr td{
 
 #news_content tr td a {
   color: #663300;
-  transition:0.1s;
+  transition: 0.1s;
 }
 
 #news_content tr td:hover a {
   color: #FF9966;
 }
+
 #news_content tr td a:hover {
   color: #FF6666;
 }
@@ -446,6 +455,7 @@ div.zx table tr td{
 #fes_publish div div div {
   padding: 20px;
 }
+
 /* 祭典介绍文本 */
 #fes_publish p {
   font-size: 18px;
@@ -458,14 +468,17 @@ div.zx table tr td{
   width: 480px;
   height: 360px;
 }
-#video h6{
-  font-weight:600;
+
+#video h6 {
+  font-weight: 600;
 }
-#video p a{
-  color:#da5d83;
+
+#video p a {
+  color: #da5d83;
 }
-#video p a:hover{
-  color:#00a1d6;
+
+#video p a:hover {
+  color: #00a1d6;
 }
 
 /* 介绍内容#intro */
@@ -484,7 +497,7 @@ div.zx table tr td{
 
 /* 介绍文本 */
 #intro p {
-  color: #343a40;
+  /* color: #e5e7e9; */
 }
 
 /* 标题 */
@@ -499,7 +512,7 @@ div.zx table tr td{
   text-align: center;
   margin: 50px 0;
   font-weight: 800;
-  color: #660000;
+  color: #2C3A47;
   position: relative;
 }
 
@@ -520,14 +533,14 @@ div.zx table tr td{
 /* 上三角 */
 #intro h3::before {
   top: -10px;
-  border-top: 5px solid #FF6666;
+  border-top: 5px solid #e74c3c;
   border-bottom: 0px solid transparent;
 }
 
 /* 下三角 */
 #intro h3:after {
   top: 38px;
-  border-bottom: 5px solid #FF6666;
+  border-bottom: 5px solid #e74c3c;
   border-top: 0px solid transparent;
 }
 
@@ -546,6 +559,7 @@ div.zx table tr td{
   max-width: 100%;
   vertical-align: middle;
 }
+
 /* 介绍文字 */
 /* 标题 */
 #intro div h5 {

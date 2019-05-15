@@ -25,10 +25,10 @@ CREATE TABLE nori_tuku(
 );
 INSERT INTO nori_tuku VALUES
 (1,'/images/tuku/1.jpg','NoYo',5,'2019-01-01'),
-(null,'/images/tuku/2.jpg','NoYo',887,'2019-01-02'),
-(null,'/images/tuku/3.jpg','NoYo',41,'2019-01-03'),
-(null,'/images/tuku/4.jpg','NoYo',456,'2019-01-04'),
-(null,'/images/tuku/5.jpg','NoYo',55,'2019-01-05'),
+(null,'/images/tuku/2.jpg','aoYo',887,'2019-01-02'),
+(null,'/images/tuku/3.jpg','boYo',41,'2019-01-03'),
+(null,'/images/tuku/4.jpg','coYo',456,'2019-01-04'),
+(null,'/images/tuku/5.jpg','moYo',55,'2019-01-05'),
 (null,'/images/tuku/6.jpg','NoYo',123,'2019-05-06'),
 (null,'/images/tuku/7.jpg','NoYo',456,'2019-01-07'),
 (null,'/images/tuku/8.jpg','NoYo',456,'2019-8-08'),
@@ -72,7 +72,7 @@ INSERT INTO nori_tuku VALUES
 (null,'/images/tuku/46.jpg','NoYo',123,'2019-01-06'),
 (null,'/images/tuku/47.jpg','NoYo',456,'2019-01-07'),
 (null,'/images/tuku/48.jpg','NoYo',48756,'2019-01-08'),
-(null,'/images/tuku/49.jpg','NoYo',4856,'2019-01-09'),
+(null,'/images/tuku/49.jpg','NoYo',48756,'2019-01-08'),
 (null,'/images/tuku/50.jpg','NoYo',150,'2019-01-10'),
 (null,'/images/tuku/51.jpg','NoYo',58,'2019-01-01'),
 (null,'/images/tuku/52.jpg','NoYo',887,'2019-5-02'),

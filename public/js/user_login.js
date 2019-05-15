@@ -6,25 +6,30 @@
 	var upwd_pass = 0;
 	// 自动跳转计时器
 	var auto_skip = null;
+	// 获取弹窗
+	var alert_div = document.getElementById("alert_div")
+	// 获取需要绑定函数的表单元素input
+	var uname = document.getElementById("uname")
+	var upwd = document.getElementById("upwd")
 	// 用户名提示
 	uname.onfocus = function () {
-		uname_msg.innerHTML = "请输入你的用户名";
+		this.nextElementSibling = "请输入你的用户名";
 	};
 	// 密码提示
 	upwd.onfocus = function () {
-		upwd_msg.innerHTML = "请输入你的密码";
+		this.nextElementSibling = "请输入你的密码";
 	};
 	//网页验证用户名是否正确
 	uname.onblur = uname_check = function () {
 		if (uname.value.length != 0) {
 			uname.className = "pass";
 			uname.style.padding = "5px 15px";
-			uname_msg.innerHTML = "用户名通过";
+			uname.nextElementSibling.innerHTML = "用户名通过";
 			uname_pass = 1;
 		} else {
 			uname.className = "nopass";
 			uname.style.padding = "5px 15px";
-			uname_msg.innerHTML = "*用户名不能为空";
+			uname.nextElementSibling = "*用户名不能为空";
 			uname_pass = 0;
 		}
 	}
@@ -33,12 +38,12 @@
 		if (upwd.value.length != 0) {
 			upwd.className = "pass";
 			upwd.style.padding = "5px 15px";
-			upwd_msg.innerHTML = "密码通过";
+			upwd.nextElementSibling = "密码通过";
 			upwd_pass = 1;
 		} else {
 			upwd.className = "nopass";
 			upwd.style.padding = "5px 15px";
-			upwd_msg.innerHTML = "*密码不能为空";
+			upwd.nextElementSibling = "*密码不能为空";
 			upwd_pass = 0;
 		}
 	}
@@ -63,7 +68,7 @@
 					switch (code) {
 						case 0:
 							upwd.className = "nopass";
-							upwd_msg.innerHTML = "*密码错误";
+							upwd.nextElementSibling.innerHTML = "*密码错误";
 							upwd_pass = 0;
 							break;
 						case 1:
@@ -87,7 +92,7 @@
 							break;
 						case 2:
 							uname.className = "nopass";
-							uname_msg.innerHTML = "*用户名不存在";
+							uname.nextElementSibling.innerHTML = "*用户名不存在";
 							uname_pass = 0;
 							break;
 					}

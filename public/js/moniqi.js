@@ -1,6 +1,8 @@
 // 现在选择的武器类型
 var wuqi_class_select;
 // 武器类型选择绑定函数
+// 获得武器类型sel
+var wqt = document.getElementById("wqt")
 wqt.onchange = function () {
   wqt = this;
   var i = wqt.selectedIndex - 1;
@@ -8,7 +10,7 @@ wqt.onchange = function () {
   if (i >= 0) {
     var wuqis = wuqi_class[i];
     var frag = document.createDocumentFragment();
-    frag.appendChild(new Option("-请选择-"));
+    frag.appendChild(new Option("-请选择武器-"));
     for (var wuqi of wuqis) {
       frag.appendChild(new Option(wuqi.wname))
     }
@@ -30,7 +32,7 @@ wq_list.onchange = function () {
   if (i >= 0) {
     // 获取介绍文本内容元素
     var wuqi_intro_text = document.getElementById("wuqi_intro_text");
-    // 拼接html片段
+    // html片段
     var html = `
     <h4>基础属性</h4>
     <p>武器名称；<span>${list_now[i].wname}</span></p>
@@ -42,7 +44,7 @@ wq_list.onchange = function () {
     <p>主武器耗墨：<span>${list_now[i].miu}%</span></p>
     <p>副武器：<span>${list_now[i].sub}</span>
     <img src="images/wuqi/sub_${list_now[i].subimg}_logo.png"></p>
-    <p>副武器耗墨：<span>${list_now[i].siu}</span></p>
+    <p>副武器耗墨：<span>${list_now[i].siu}%</span></p>
     <p>基础游速：<span>${list_now[i].wsp}%</span></p>
     <p>基础走速：<span>${list_now[i].rsp}%</span></p>
     <p>特殊武器：<span>${list_now[i].spw}</span>
@@ -80,13 +82,11 @@ var iru_range = document.getElementById("iru_range");
 var qsj_range = document.getElementById("qsj_range");
 // 复活缩短
 var qrt_range = document.getElementById("qrt_range");
-// 充能加快
-// var scu_range = document.getElementById("scu_range");
 // sp保留
 var ses_range = document.getElementById("ses_range");
 
 function create_range1() {
-  // 根据武器数据以及技能影响计算出实际数据 视情况是否取两位小数 并为了显示效果分别放大不同的倍数
+  // 根据武器数据以及技能影响计算出实际数据 视情况是否取两数 并为了显示效果分别放大不同的倍数
   // 伤害
   var dmg_num = wuqi_select.dmg;
   create_range2.call(dmg_range, dmg_num * 2, dmg_num);
@@ -128,81 +128,87 @@ function create_range2(num1, num2) {
   this.nextElementSibling.innerHTML = `${num2}`
 }
 
-// 获取技能选择下拉框
-var skill_selects = document.querySelectorAll(".skill_div select")
-// // 生成下拉内容option
-// var frag = document.createDocumentFragment();
-// frag.appendChild(new Option("主省","miu"));
-// frag.appendChild(new Option("副省","siu"));
-// 遍历
-for (var select of skill_selects) {
-  // // 生成下拉内容option
-  var frag = document.createDocumentFragment();
-  frag.appendChild(new Option("主省", "miu"));
-  frag.appendChild(new Option("副省", "siu"));
-  frag.appendChild(new Option("SP加快", "spp"));
-  frag.appendChild(new Option("游速", "wsp"));
-  frag.appendChild(new Option("走速", "rsp"));
-  frag.appendChild(new Option("回墨速度", "iru"));
-  frag.appendChild(new Option("超级跳跃", "qsj"));
-  // 插入下拉内容
-  select.appendChild(frag);
-  // 绑定函数
-  select.onchange = function () {
-    // i为最后已选择技能对象的下标
-    var i = this.name - 1;
-    get_skill_name.call(this, i)
+// 获取技能div
+var skill_div = document.querySelector("div.skill_div");
+//获取模拟下拉
+var selects = document.querySelectorAll(".select_box span")
+// 定义模拟option选项(li)
+var option_html = `
+<li class="miu" title="主省"></li>
+<li class="siu" title="副省"></li>
+<li class="wsp" title="游速"></li>
+<li class="rsp" title="走速"></li>
+<li class="spp" title="SP加快"></li>
+<li class="ses" title="SP保留"></li>
+<li class="iru" title="回墨速度"></li>
+<li class="qsj" title="超级跳"></li>
+<li class="qrt" title="复活加速"></li>
+`
+// 往模拟select后的ul插入模拟option(li)
+for (var select of selects) {
+  select.nextElementSibling.innerHTML = option_html;
+}
+// 给window绑定事件 冒泡
+window.onclick = function (e) {
+  var click = e.target;
+  // 点击模拟select
+  if (click.nodeName === "SPAN" && click.nextElementSibling.nodeName === "UL") {
+    click.nextElementSibling.className = "active"
+  }
+  // 点击模拟option 
+  else if (click.nodeName === "LI") {
+    // 获取模拟option列表
+    var ul = click.parentNode;
+    // 获取模拟select
+    var select = ul.previousElementSibling;
+    // 获取click的className并重新修改select的classname 下拉列表的效果
+    select.className = e.target.className;
+    // 关闭option列表
+    ul.className = "";
+    // 获取data对象对应的下标i data-num为自定义select的编号 1对应data的下标0
+    var i = select.getAttribute("data-num") - 1;
+    // 获取要写入的技能名字
+    var sname = click.className;
+    // 调用写入函数
+    get_skill(i, sname)
+  }
+  // 点击其他
+  else {
+    // 关闭模拟select
+    for (var select of selects) {
+      select.nextElementSibling.className = "";
+    }
   }
 }
-
 // 获得技能名并写入已选择技能对象
-function get_skill_name(i) {
-  var selected = this.querySelector("option:checked")
-  skill_selected[i].skill_name = selected.value
+function get_skill(i, sname) {
+  skill_selected[i].skill_name = sname
   get_effect()
 }
 
 // 计算技能效果
 function get_effect() {
-  // 从已选择技能对象获取每个技能的点数
+  // 先获得每个技能的技能点的数量
   // 主省
-  // 重置0 防止无限增加
-  var miu_point = 0;
-  for (var skill of skill_selected) {
-    (skill.skill_name == "miu") && (miu_point += parseInt(skill.point))
-  }
+  var miu_point = get_point("miu");
   // 副省
-  var siu_point = 0;
-  for (var skill of skill_selected) {
-    (skill.skill_name == "siu") && (siu_point += parseInt(skill.point))
-  }
+  var siu_point = get_point("siu");
   // SP加快
-  var spp_point = 0;
-  for (var skill of skill_selected) {
-    (skill.skill_name == "spp") && (spp_point += parseInt(skill.point))
-  }
+  var spp_point = get_point("spp");
   // 游速
-  var wsp_point = 0;
-  for (var skill of skill_selected) {
-    (skill.skill_name == "wsp") && (wsp_point += parseInt(skill.point))
-  }
+  var wsp_point = get_point("miu");
   //走速
-  var rsp_point = 0;
-  for (var skill of skill_selected) {
-    (skill.skill_name == "rsp") && (rsp_point += parseInt(skill.point))
-  }
+  var rsp_point = get_point("rsp");
   //回墨速度
-  var iru_point = 0;
-  for (var skill of skill_selected) {
-    (skill.skill_name == "iru") && (iru_point += parseInt(skill.point))
-  }
+  var iru_point = get_point("iru");
   //超级跳跃速度
-  var qsj_point = 0;
-  for (var skill of skill_selected) {
-    (skill.skill_name == "qsj") && (qsj_point += parseInt(skill.point))
-  }
+  var qsj_point = get_point("qsj");
+  //复活缩短
+  var qrt_point = get_point("qrt");
+  //sp保留
+  var ses_point = get_point("ses");
 
-  // 根据数据计算影响
+  // 根据技能点数计算影响
   // 主省影响效果
   miu_effect = skill_miu_min[miu_point]
   // 副省影响效果
@@ -216,25 +222,37 @@ function get_effect() {
   // 回墨速度影响效果
   iru_effect = 180 / skill_iru_swin[iru_point]
   // 超级跳跃速度影响效果
-  qsj =  eval(skill_qsj[qsj_point])/60
+  qsj = eval(skill_qsj[qsj_point]) / 60
+  // 超级跳跃速度影响效果
+  qrt = eval(`${skill_qrt[qrt_point]}*4+150`) / 60
+  // 超级跳跃速度影响效果
+  ses_effect = skill_ses[ses_point] * 2
 
   // 重新生成
   create_range1()
+}
+// 从已选择技能对象计算出每个技能的点数
+function get_point(sname) {
+  var point = 0;
+  for (var skill of skill_selected) {
+    (skill.skill_name == sname) && (point += parseInt(skill.point))
+  }
+  return point;
 }
 
 // 定义固定属性
 // 回墨速度
 const iru = 100;
-// 超级跳时间
-var qsj = 4;
-// 复活时间
-var  qrt = 8.5;
 // sp保留
 const ses = 50;
 
 // 重置技能
 var rebtn = document.getElementById("rebtn")
 rebtn.onclick = function () {
+  // 重置模拟select
+  for (var select of selects) {
+    select.className = "sel_base";
+  }
   // 重置技能影响
   set_effect();
   // 重置已选技能对象
@@ -254,7 +272,7 @@ function set_effect() {
   // 走速
   rsp_effect = 1;
   // 超级跳
-  qsj = 4;
+  qsj = 3.98;
   // 复活时间
   qrt = 8.5;
   // 回墨速度
@@ -319,4 +337,5 @@ function set_select_skill() {
 }
 // 网页加载时定义技能初始效果effect
 window.onload = set_effect();
+// 定义选择技能对象
 window.onload = set_select_skill();

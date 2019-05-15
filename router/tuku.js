@@ -8,7 +8,7 @@ router.get('/get_images',(req,res)=>{
 	console.log(sort)
 	var start=parseInt(req.query.start);
 	var count=parseInt(req.query.count);
-	var sql="select*from nori_tuku "+sort+" LIMIT ?,?";
+	var sql="select*from nori_tuku "+sort+"tid ASC LIMIT ?,?";
 	// console.log(sql)
 	pool.query(sql,[start,count],(err,result)=>{
 		if(err) throw err;

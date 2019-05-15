@@ -1,110 +1,235 @@
-/* 网页背景 */
-body{
-  background-color:rgb(248, 247, 247);
+.btn_div {
+  position: relative;
+  perspective: 800px;
+  height: 45px;
+  width: 100%;
+  margin-top: 5px;
 }
-/* 按钮 */
-#btn{
-  position:relative;
+
+.img_btn {
+  position: relative;
+  margin: 0 auto;
+  width: 400px;
+  height: 35px;
+  transform: rotateX(0deg);
+  transition: 0.5s;
+  transform-style: preserve-3d;
 }
-#return_btn{
-  position:absolute;
-  display: none;
-  top:0px;
+
+.img_btn button {
+  height: 35px;
+  outline: none;
+  border: 2px solid black;
+  box-sizing: border-box;
 }
-/* 图片展示框高度 */
-div.show{
-  height:700px;
+
+.img_btn .sort_btn {
+  position: absolute;
+  transform: rotateX(0deg)translateZ(1px)
+}
+
+/* 阴影效果 */
+.img_btn .sort_btn:after {
+  content: "";
+  display: block;
+  position: absolute;
+  z-index: -1;
+  top: -5px;
+  left: 0px;
+  bottom: 15px;
+  right: 0px;
+  background: #dadada;
+}
+
+.return_btn {
+  position: absolute;
+  transform: rotateY(180deg)translateZ(1px)
+}
+
+.img_btn .sort_btn button {
+  width: 100px;
+  float: left;
+  transition: 0.1s;
+  box-shadow: 0 5px 5px 0 #000;
+}
+
+.sort_btn button:first-child {
+  border-radius: 15px 0 0 15px;
+  border-right-width: 1px;
+  background: #ff7675;
+}
+
+.sort_btn button:nth-child(2) {
+  background: #74b9ff;
+}
+
+.sort_btn button:nth-child(3) {
+  background: #00b894;
+}
+
+.sort_btn button~button {
+  border-left-width: 1px;
+  border-right-width: 1px;
+}
+
+.sort_btn button:last-child {
+  background: #a29bfe;
+  border-radius: 0 15px 15px 0;
+  border-left-width: 1px;
+}
+
+.return_btn button {
+  background: #b2bec3;
+  width: 400px;
+  border-radius: 15px;
+  box-shadow: 0 12px 11px 0 #000;
+}
+
+div.btn_div .img_btn button.active {
+  transform: translateY(5px);
+  background: #fff;
+}
+
+div.btn_div .img_btn button.active::after {
+  content: "倒序"
+}
+
+div.btn_div .img_btn button.active.asc::after {
+  content: "顺序"
+}
+
+div.main_show {
   position: relative;
 }
-div.show ul{
-  box-sizing: border-box;
+
+div.main {
   display: flex;
-  justify-content:space-between;
-  flex-wrap:wrap;
-}
-/* 图片列表样式 */
-div.show ul li{
-  background-color: rgb(236, 232, 232);
-  float:left;
-  width:32.5%;
-  height:330px;
-  margin:5px 0;
-  text-align: center;
-  padding-top:10px;
-  box-sizing: border-box;
-  font-size: 12px;
-  line-height: 16px;
-}
-/* 设置图片列表居中且自适应 */
-div.show ul li div a{
-  display:block;
-  max-width: 260px;
-  height: 260px;
-  margin: 0 auto;
-  display: flex;
+  justify-content: space-around;
   align-items: center;
-  justify-content: center;
+  flex-wrap: wrap;
+  background: #dff9fb;
+  padding: 0.5rem;
 }
-div.show ul li div img{
-  max-width:100%;
-  max-height:100%;
+
+div.main>div {
+  background: #ced6e0;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  margin: 0.5rem 0;
 }
-/* 文字样式 */
-div.show ul li>span{
-  display:inline-block;
+
+div.main>div.normal {
+  width: 32%;
+}
+
+div.main>div.normal div.img_show {
+  height: 300px;
+}
+
+div.main>div.full {
   width: 100%;
-  margin:5px 0px;
 }
-div.show ul li p.img-bottom{
-  font-size:13px;
-  width: 30%;
-  margin: 5px 0px;
-  float:left;
+
+div.main>div.full div.img_show {
+  height: 600px;
 }
-div.show ul li p.first{
-  margin-left: 20%;
-}
-/* 热度样式 */
-div.show ul li p span.hot{
-  color:rgba(255, 0, 0, 0.678)
-}
-/* 上下页 */
-div.show button{
-  width: 55px;
-  height: 55px;
-  position: absolute;
-  top: 44.7%;
-  border: none;
-}
-div.show button.left{
-  background: url(../images/iconlist.png);
-  left:0%;
-}
-div.show button.right{
-  background: url(../images/iconlist.png) -58px 0px;
-  right:0%;
-}
-/* 点击细节 */
-#detail{
-  width: 1080px;
-  height: 700px;
-  text-align: center;
-  padding:30px 50px;
-  box-sizing: border-box;
-}
-/* 细节居中 */
-#detail div{
-  width:1000px;
-  height:600px;
-  text-align:center;
+
+div.img_show {
+  width: 100%;
+  overflow: hidden;
   display: flex;
+  justify-content: space-around;
   align-items: center;
-  justify-content: center;
+  margin-bottom: 0.5rem;
 }
-/* 细节图片尺寸 */
-#detail div img{
+
+div.img_show img {
+  max-height: 100%;
   max-width: 100%;
-  max-height:100%;
+  cursor: pointer;
 }
 
+.img_msg {
+  max-width: 500px;
+  margin: 0 auto;
+}
 
+.img_msg p:nth-child(1) {
+  text-align: right;
+}
+
+.img_msg p:nth-child(2) {
+  text-align: center;
+  font-size: 1.1rem;
+}
+
+.img_msg>p:nth-child(2) span {
+  color: red;
+}
+
+.img_msg p:nth-child(3) {
+  text-align: center;
+}
+
+.img_msg p:nth-child(3) span {
+  margin: 0 5px;
+}
+
+/* 左右按键 */
+div.main_show>button.c_btn {
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  outline: none;
+  border-radius: 50%;
+  background: #e55039;
+  top: 50%;
+  margin-top: -50px;
+  transition: 0.2s;
+  filter: blur(0.6px)
+}
+
+div.main_show>button.c_btn:hover {
+  background: #ecf0f1;
+}
+
+/* 按键三角 */
+div.main_show>button.c_btn:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -25px;
+  border-top: 25px solid transparent;
+  border-bottom: 25px solid transparent;
+  transition: 0.2s;
+}
+
+button.c_btn.left {
+  left: -10%;
+}
+
+button.c_btn.left:after {
+  margin-left: -58px;
+  border-right: 35px solid #ecf0f1;
+  border-left: 35px solid transparent;
+}
+
+div.main_show>button.c_btn.left:hover:after {
+  border-right-color: #e55039;
+}
+
+button.c_btn.right {
+  right: -10%;
+}
+
+button.c_btn.right:after {
+  margin-left: -12px;
+  border-left: 35px solid #ecf0f1;
+  border-right: 35px solid transparent;
+}
+
+div.main_show>button.c_btn.right:hover:after {
+  border-left-color: #e55039;
+}

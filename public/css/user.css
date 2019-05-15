@@ -42,10 +42,10 @@ section>div>div>div {
 section>div>div:after {
   top: -5px;
   bottom: -5px;
-  left: -15px;
+  left: -5px;
   right: -5px;
   z-index: -5;
-  filter: blur(50px);
+  filter: blur(60px);
 }
 
 /* 外流光 */
@@ -76,7 +76,7 @@ section>div>div:after {
   content: "";
   position: absolute;
   border-radius: 10px;
-  background: linear-gradient(45deg, #CC3399, #FF99CC,  #99CC33,#CCFF00);
+  background: linear-gradient(40deg, #ff3838, #ffaf40,  #7efff5,#32ff7e);
 }
 
 /* 内容框 */
@@ -90,7 +90,7 @@ section>div>div>div>div {
 /* 标题 */
 section>div>div h4,
 section>div>div a {
-  color: #000;
+  color: #2c3e50;
   font-weight: 600;
 }
 
@@ -112,7 +112,7 @@ section>div>div a:hover {
   transform: translate(-50%);
   padding: 5px 20px;
   width: 80%;
-  border: 3px solid #33CCFF;
+  border: 3px solid #74b9ff;
   outline: none;
   border-radius: 20px;
   transition: 0.3s;
@@ -126,7 +126,7 @@ section>div>div a:hover {
 /* 提示文字样式 */
 div.input_box label {
   width: 80%;
-  color: #33CCFF;
+  color: #74b9ff;
   position: absolute;
   top: 50%;
   left: 57px;
@@ -140,12 +140,12 @@ div.input_box label {
 .input_box input:focus {
   width: 100%;
   padding: 5px 20px !important;
-  border-color: #0066FF !important;
+  border-color: #0984e3 !important;
 }
 
 /* 聚焦文字特效 */
 .input_box input:focus~label {
- color:#0066FF !important;
+ color:#0984e3 !important;
   width: 100%;
   left: 20px;
 }
@@ -156,24 +156,24 @@ div.input_box label {
 }
 /* 通过提示样式 */
 .input_box input.pass{
-  border-color: #28a745;
+  border-color: #20bf6b;
 }
 .input_box input.pass~label{
-  color:#28a745;
+  color:#20bf6b;
 }
 /* 错误提示样式 */
 .input_box input.nopass{
-  border-color: #dc3545;
+  border-color: #ff4d4d;
 }
 .input_box input.nopass~label{
-  color:#dc3545;
+  color:#ff4d4d;
 }
 /* 提交按键 */
 #btn {
   width: 100%;
   height: 36px;
   margin-top: 10px;
-  background: #0066FF;
+  background: #0984e3;
   position: relative;
   border-radius: 18px;
   border: 0;
@@ -184,7 +184,7 @@ div.input_box label {
 /* 文字样式且在最上面 */
 #btn p {
   position: absolute;
-  color: #0066FF;
+  color: #0984e3;
   font-size: 16px;
   font-weight: 600;
   z-index: 2;
@@ -199,7 +199,7 @@ div.input_box label {
   display: block;
   position: absolute;
   z-index: 1;
-  background: #33CCFF;
+  background: #4bcffa;
   border-radius: 18px;
   width: 100%;
   height: 100%;
@@ -220,19 +220,48 @@ div.input_box label {
 }
 
 /* 登录限定 */
-/* 自动勾大小 */
-#auto {
-  transform: scale(1.5);
+/* 自动登录 */
+.chb_box{
+  display: flex;
+  margin-left: 10%;
+  color:#2c3e50;
+}
+/* 隐藏勾 */
+.chb_box input{
+  display: none;
+}
+/* 点击块样式 */
+.chb_box .click_box{
   display: inline-block;
-  vertical-align: middle;
-  margin-right: 1rem;
-  margin-left: 1rem;
-  margin-left: 15%;
+  width: 50px;
+  height: 24px;
+  border-radius: 12px;
+  background: #74b9ff;
+  overflow: hidden;
+  cursor: pointer;
+  transition: 0.4s;
+  position: relative;
+}
+/* 圈样式 */
+.chb_box .click_box:before{
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border-radius:50%;
+  right:4px;
+  top:4px;
+  background: #fff;
+  transition: 0.4s;
+}
+/* checked的状态 */
+.chb_box input:checked+.click_box{
+  background: #0984e3;
+}
+.chb_box input:checked+.click_box:before{
+ right:30px;
 }
 
-#auto~label {
-  color: #000;
-}
 
 /* 注册限定 */
 /* 单选样式 */

@@ -1,72 +1,71 @@
 (() => {
 	//轮播图部分
+
 	// 定义原始角度
 	var y_angle = -3600;
 	// 定义定时器
 	var autotimer = null;
+
 	// 旋转
+	// 获取旋转盒子的元素
+	var banner_box = document.getElementById("banner_box")
 	banner_rotate = function () {
 		// console.log(`现在盒子角度为${y_angle}`);
 		banner_box.style.transform = `rotateY(${y_angle}deg`;
+		// 获取指示器位置
+		var banner = (y_angle % 360) / -60 + 1;
+		// 修改指示器
+		banner_point(banner);
 	};
-	// 跳转指示
-	banner_point = function () {
+	// 跳转指示器
+	banner_point = function (banner) {
 		// console.log(`现在是banner${Math.abs((this.y_angle%360)/60)+1}`);
+		// 获得需要active的bannner的位置
+		var i = banner
 		// 获取指示圈
 		var banner_to = document.getElementById("banner_to")
-		var point = banner_to.getElementsByTagName("button")
-		// 跳转的点变色,其他变回本色
-		// Math.abs((y_angle % 360) / 60的值为盒子显示的面 0是第一面 与point[0]第一个点相对应
-		for (var i = 0; i < 6; i++) {
-			if (i == (Math.abs((y_angle % 360) / 60))) {
-				point[i].style.background = "#CCFFFF";
-			} else {
-				point[i].style.background = "#FF99CC";
-			}
-		}
+		// 获取已经是active状态的指示btn
+		var point_has_active = banner_to.querySelector('button.active')
+		// 重置
+		point_has_active.className = "";
+		// 获取应该显示为active的指示btn
+		var banner_active = banner_to.querySelector(`button[value="${i}"]`)
+		// 修改
+		banner_active.className = "active";
 	};
 	// 轮播自动
 	banner_auto = function () {
 		autotimer = setInterval(() => {
 			y_angle -= 60;
 			banner_rotate();
-			banner_point();
 		}, 3000)
 	};
-	// 整合函数 旋转+指示器+重新设置自动旋转定时器
-	dobanner = function () {
-		banner_rotate()
-		banner_point()
-		banner_auto()
-	};
-	// 轮播左转
-	banner_to_left.onclick = function () {
-		clearInterval(autotimer)
-		y_angle += 60;
-		dobanner.call();
-	};
-	// 轮播右转
-	banner_to_right.onclick = function () {
-		clearInterval(autotimer)
-		y_angle -= 60;
-		dobanner.call();
-	};
-	// 点击切换页
-	// 获取需要点击的圈的父级ul  利用冒泡
-	var banner_to = document.getElementById("banner_to")
+	// 轮播左右转
+	// 指示器切换页
+	// 获取需要父级元素banner  利用冒泡
+	var banner = document.querySelector(".banner")
 	// 绑定点击函数 
-	banner_to.onclick = function (e) {
+	banner.onclick = function (e) {
 		var btn = e.target;
 		// 判定是否点击到的是button标签
 		if (btn.nodeName === "BUTTON") {
-			// 获取当前指示位置 value=1就是盒子banner1应该展示 盒子旋转360*n-0deg
-			var deg = (btn.value - 1) * 60;
+			console.log(btn.value)
 			// 清除自动轮播
-			clearInterval(autotimer);
-			// 获取当前圈数向上取整再乘以360得到初始角度,并让盒子旋转到应该显示的一面 使旋转更加平滑
-			y_angle = Math.ceil(y_angle / 360) * 360 - deg;
+			clearInterval(autotimer)
+			// 判断是否是左右按钮 非数字就是左右 数字就是指示器
+			if (isNaN(btn.value)) {
+				// +为右转 角度-60
+				btn.value == "+" ? y_angle -= 60 : y_angle += 60;
+			} else {
+				// 获取当前指示位置 value=1就是盒子banner1应该展示 盒子旋转360*n-0deg
+				var deg = (btn.value - 1) * 60;
+				// 获取当前圈数向上取整再乘以360得到初始角度,并让盒子旋转到应该显示的一面 使旋转更加平滑
+				y_angle = Math.ceil(y_angle / 360) * 360 - deg;
+			}
 			// 做banner动作
-			dobanner.call();
+			banner_rotate()
+			// 重新设置定时器
+			banner_auto()
 		}
 	}
 	// 网页自动加载
