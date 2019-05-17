@@ -1,21 +1,61 @@
 <!DOCTYPE html>
-<html lang="en">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<html>
 
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>Document</title>
-	<style>
-		
-	</style>
+	    <title>div拖拽测试</title>
+	    <script type="text/javascript">
+		var mouseX, mouseY;
+		var objX, objY;
+		var isDown = false; //是否按下鼠标
+		function mouseDown(obj, e) {
+			obj.style.cursor = "move";
+			var div = document.getElementsByName("change")[0];
+			objX = div.style.left;
+			objY = div.style.top;
+			mouseX = e.clientX;
+			mouseY = e.clientY;
+			isDown = true;
+		}
+
+		function mouseMove(e) {
+			var div = document.getElementsByName("change")[0];
+			var x = e.clientX;
+			var y = e.clientY;
+			if (isDown) {
+				div.style.left = parseInt(objX) + parseInt(x) - parseInt(mouseX) + "px";
+				div.style.top = parseInt(objY) + parseInt(y) - parseInt(mouseY) + "px";
+			}
+		}
+
+		function mouseUp(e) {
+			if (isDown) {
+				var x = e.clientX;
+				var y = e.clientY;
+				var div = document.getElementsByName("change")[0];
+				div.style.left = (parseInt(x) - parseInt(mouseX) + parseInt(objX)) + "px";
+				div.style.top = (parseInt(y) - parseInt(mouseY) + parseInt(objY)) + "px";
+				mouseX = x;
+				rewmouseY = y;
+				mydiv.style.cursor = "default";
+				isDown = false;
+			}
+		}
+	</script>
 </head>
 
 <body>
-	
-	<script>
-	
-	</script>
+
+
+	<div id="mydiv" name="change"
+		style="background-color: #708090;height: 300px;width: 300px;position: relative;top: 300px; left: 300px;"
+		onmousedown="mouseDown(this,event)" onmousemove="mouseMove(event)" onmouseup="mouseUp(event)">
+	</div>
 </body>
 
 </html>
+---------------------
+作者：湛岚
+来源：CSDN
+原文：https://blog.csdn.net/zfqiannian/article/details/49069871
+版权声明：本文为博主原创文章，转载请附上博文链接！

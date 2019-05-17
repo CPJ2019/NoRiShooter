@@ -3,7 +3,7 @@
 
 <head>
 	<meta charset="UTF-8">
-	<title>用户登录</title>
+	<title>用户登录-NoRiShooter-为喷友提供更好、更轻松的交流与资讯攻略</title>
 	<link rel="icon" href="images/favicon.ico" type="image/x-icon">
 	<link rel="stylesheet" href="./css/bootstrap.css">
 	<link rel="stylesheet" href="./css/animate.css">
@@ -17,7 +17,7 @@
 
 <body>
 	<!-- 头部 -->
-	<iframe class="my_header" src="header.html" frameborder="0" scrolling="no"></iframe>
+	<header id="header"></header>
 	<section class="bg" id="form">
 		<!--登录表单-->
 		<div class="container">
@@ -39,7 +39,7 @@
 							</div>
 							<div class="input_box">
 								<!-- 密码	 -->
-								<input id="upwd" type="password"  required="">
+								<input id="upwd" type="password" required="">
 								<label id="upwd_msg" for="upwd">密码:</label>
 							</div>
 							<!-- 自动	-->
@@ -69,15 +69,17 @@
 		</div>
 	</section>
 	<!-- 脚部 -->
-	<iframe class="my_footer" src="footer.html" frameborder="0" scrolling="no"></iframe>
+	<footer id="footer"></footer>
 	<!-- 网易云外部链接 -->
 	<div id="music">
 		<div>原声音乐</div>
 		<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=450
 			src="//music.163.com/outchain/player?type=0&id=2782418236&auto=1&height=430"></iframe>
 	</div>
-	<script type="text/javascript" src="./js/user_login.js">
-	</script>
+	<script src="./js/common.js"></script>
+	<script src="./js/header.js"></script>
+	<script src="./js/footer.js"></script>
+	<script src="./js/user_login.js"></script>
 </body>
 
 </html>

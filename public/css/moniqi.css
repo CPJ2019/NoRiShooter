@@ -1,6 +1,7 @@
-.container {
+header+.container {
   background: #fff;
 }
+
 /* 模拟器主要区域 */
 .main {
   padding: 10px 0;
@@ -14,6 +15,7 @@
   display: block;
   clear: both;
 }
+
 /* 左侧信息以及选择栏 */
 #wuqi_div {
   float: left;
@@ -22,27 +24,32 @@
   margin-right: 1%;
   background: #FFFF9980;
 }
+
 /* 清除外边框溢出 */
 #wuqi_div::before {
   content: "";
   display: table;
 }
+
 /* 清除浮动 */
 #wuqi_div:after {
   content: "";
   display: block;
   clear: both;
 }
+
 /* 信息及选择左侧 信息  */
 #wuqi_intro_left {
   width: 40%;
   padding-left: 10px;
   float: left;
 }
+
 /* 标题 */
 #wuqi_intro_left h4 {
   margin-top: 50px;
 }
+
 /* 介绍区域 */
 #wuqi_intro {
   height: 500px;
@@ -56,6 +63,7 @@
   line-height: 32px;
   margin: 10px;
 }
+
 /* 副武器和特殊武器后的图片间隔 */
 #w_sub+span img,
 #w_spw+span img {
@@ -67,28 +75,34 @@
   width: 60%;
   height: 100%;
   float: left;
-  padding-right:5px;
+  padding-right: 5px;
 }
+
 /* 最上端武器类型选择和武器选择 */
 #wuqi_intro_right .wuqi_sel {
   background: #fffefa;
-  border-radius:10px;
-  margin: 5px auto;;
+  border-radius: 10px;
+  margin: 5px auto;
+  ;
   display: flex;
   align-items: center;
   height: 40px;
 }
+
 /* select样式 */
 #wuqi_div select {
   font-size: 16px;
   width: 40%;
   margin-left: 6.66%;
   height: 20px;
+  cursor: url("../images/my_pointer.cur"), pointer;
 }
+
 /* 武器选择隐藏 */
 .hide {
   visibility: hidden;
 }
+
 /* 武器介绍图片 */
 #wuqi_intro_img {
   height: 200px;
@@ -98,34 +112,41 @@
   background: #d5e000;
   border-radius: 20px;
 }
+
 /* 图片尺寸 */
-#wuqi_intro_img img{
+#wuqi_intro_img img {
   max-width: 90%;
   max-height: 180px;
   border-radius: 20px;
 }
+
 /* 技能栏下的每个尺寸位置 */
-.skill_div>div{
-  padding:10px 0 ;
+.skill_div>div {
+  padding: 10px 0;
   border-radius: 20px;
   margin: 5px auto;
 }
+
 /* 帽子 */
 div.cup {
   background: #ee7b66;
 }
+
 /* 衣服 */
 div.cloth {
   background: #7cefae;
 }
+
 /* 鞋子 */
 div.shoes {
   background: #f17c1f;
 }
+
 /* 各自标题 */
-.skill_div h5{
+.skill_div h5 {
   margin-left: 10px
 }
+
 /* 各自技能栏 弹性布局 集显对齐 还原游戏 */
 .skill_sel {
   display: flex;
@@ -133,6 +154,7 @@ div.shoes {
   align-items: baseline;
   flex-wrap: wrap;
 }
+
 /* 模拟下拉框功能 */
 .select_box {
   position: relative;
@@ -143,54 +165,66 @@ div.shoes {
   width: 80px;
   height: 80px;
 }
+
 /* 副技能大小尺寸 */
 .select_box.sub_skill {
   width: 60px;
   height: 60px;
 }
+
 /* select样式*/
 .select_box span {
   display: block;
   width: 100%;
   height: 100%;
-  border-radius:50%;
+  border-radius: 50%;
   position: relative;
   z-index: 1;
   top: 0px;
   left: 0px;
+  cursor: url("../images/my_pointer.cur"), pointer;
 }
+
 /* option列表 */
 .select_box ul {
   background: #000;
   list-style: none;
   position: absolute;
   top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translateY( -50%);
   width: 100%;
-  height: 0px;
   box-sizing: border-box;
   border: 1px solid black;
-  transition: 0.4s;
+  transition: 4s;
   overflow: hidden;
   z-index: 0;
 }
+
 /* 主技能下拉 */
 .select_box.main_skill ul {
-  padding-top: 80px;
+  height: 80px;
+  padding-top:40px;
+  padding-bottom:40px;
   border-radius: 40px;
 }
+
 /* 副技能下拉 */
 .select_box.sub_skill ul {
-  padding-top: 60px;
+  height: 60px;
+  padding-top:30px;
+  padding-bottom:30px;
   border-radius: 30px;
 }
+
 /* 模拟option */
 .select_box ul li {
   width: 100%;
-  height: 40px;
+  height: 0px;
+  transition: 4s;
   position: relative;
+  cursor: url("../images/my_this.cur"), pointer;
 }
+
 /* 生成option背景颜色 */
 .select_box ul li:after {
   position: absolute;
@@ -203,19 +237,24 @@ div.shoes {
   background: #c7ecee;
   z-index: -2;
 }
+
 /* 模拟option 悬停变色 */
 .select_box ul li:hover:after {
   background: #00d2d3;
 }
+
 /* 模拟select点击时 */
 .select_box.main_skill .active,
 .select_box.sub_skill .active {
   background: #c7ecee;
-  padding-top: 0px;
+  padding-top:0px ;
+  padding-bottom:0px ;
   height: 365px;
   z-index: 5;
 }
-
+.select_box ul.active li{
+  height: 40px;
+}
 /* 模拟select和option背景 */
 .select_box span,
 .select_box ul li {
@@ -223,51 +262,62 @@ div.shoes {
   background-repeat: no-repeat;
   background-position: center center;
 }
+
 /* 加载时模拟select的样式 */
 .sel_base {
   background-image: url("../images/gl/sel_base.png");
 }
+
 /* 主省 */
 .miu {
   background: url("../images/gl/skill_zs.png");
 }
+
 /* 副省 */
 .siu {
   background: url("../images/gl/skill_fs.png");
 }
+
 /* 游速 */
 .wsp {
   background: url("../images/gl/skill_ysu.png");
 }
+
 /* 走速 */
 .rsp {
   background: url("../images/gl/skill_zsu.png");
 }
+
 /* sp加速 */
 .spp {
   background: url("../images/gl/skill_spjs.png");
 }
+
 /* sp保留 */
 .ses {
   background: url("../images/gl/skill_spbl.png");
 }
+
 /* 墨水回复 */
 .iru {
   background: url("../images/gl/skill_hm.png");
 }
+
 /* 超级跳 */
 .qsj {
   background: url("../images/gl/skill_cjt.png");
 }
+
 /* 复活缩短 */
 .qrt {
   background: url("../images/gl/skill_fhsd.png");
 }
+
 /* 重置按钮 */
 #rebtn {
   width: 60%;
   margin-left: 20%;
-  margin-top:5px;
+  margin-top: 5px;
   outline: none;
   border: none;
   height: 30px;
@@ -275,10 +325,12 @@ div.shoes {
   background: #34ace0;
   color: #f7f1e3;
 }
+
 /* 按钮悬浮 */
 #rebtn:hover {
   background: #84817a;
 }
+
 /* 武器range属性展示 */
 #shuxing {
   width: 45%;
@@ -287,18 +339,21 @@ div.shoes {
   background: #CCFF99;
   padding: 50px 10px 0;
 }
+
 /* 文本 */
 #shuxing p,
 #shuxing span {
   font-size: 16px;
   line-height: 24px;
 }
+
 /* 清除没给range条里面元素的浮动 */
 .range_div:after {
   content: "";
   display: block;
   clear: both;
 }
+
 /* range条样式 */
 .range {
   float: left;
@@ -308,6 +363,7 @@ div.shoes {
   transition: 0.8s;
   border-radius: 8px;
 }
+
 /* 接在range条后面的文字 */
 .range~span {
   float: left;

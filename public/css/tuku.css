@@ -1,11 +1,20 @@
+/* ******************************按键********************************* */
+/* 按键鼠标样式 */
+.container button {
+  cursor: url("../images/my_pointer.cur"), pointer;
+}
+
+/* 按键集合框 */
 .btn_div {
   position: relative;
   perspective: 800px;
   height: 45px;
   width: 100%;
   margin-top: 5px;
+  background: #dff9fb;
 }
 
+/* 按键组 */
 .img_btn {
   position: relative;
   margin: 0 auto;
@@ -16,6 +25,7 @@
   transform-style: preserve-3d;
 }
 
+/* 按键公共样式 */
 .img_btn button {
   height: 35px;
   outline: none;
@@ -23,117 +33,235 @@
   box-sizing: border-box;
 }
 
+/* 排序按键  按键组*/
 .img_btn .sort_btn {
   position: absolute;
   transform: rotateX(0deg)translateZ(1px)
 }
 
-/* 阴影效果 */
+/* 排序按键 */
+.img_btn .sort_btn button {
+  width: 100px;
+  float: left;
+  transition: 0.1s;
+  overflow: hidden;
+}
+
+/* 按键上层div  */
+.img_btn .sort_btn button div {
+  width: 100%;
+  height: 100%;
+  line-height: 35px
+}
+
+/* 翻转遮挡 */
 .img_btn .sort_btn:after {
   content: "";
   display: block;
   position: absolute;
   z-index: -1;
-  top: -5px;
+  top: 0px;
   left: 0px;
   bottom: 15px;
   right: 0px;
-  background: #dadada;
+  background: #dff9fb;
 }
 
-.return_btn {
-  position: absolute;
-  transform: rotateY(180deg)translateZ(1px)
-}
-
-.img_btn .sort_btn button {
-  width: 100px;
-  float: left;
-  transition: 0.1s;
-  box-shadow: 0 5px 5px 0 #000;
-}
-
+/* 按热度排序 */
 .sort_btn button:first-child {
   border-radius: 15px 0 0 15px;
   border-right-width: 1px;
-  background: #ff7675;
+  background: #eb4d4b;
 }
 
+/* 按编号排序 */
 .sort_btn button:nth-child(2) {
-  background: #74b9ff;
+  background: #0984e3;
 }
 
+/* 按上传者排序 */
 .sort_btn button:nth-child(3) {
-  background: #00b894;
+  background: #6c5ce7
 }
 
-.sort_btn button~button {
+/* 中间边框1 */
+.sort_btn button:nth-child(2),
+.sort_btn button:nth-child(3) {
   border-left-width: 1px;
   border-right-width: 1px;
 }
 
+/* 按上传时间排序 */
 .sort_btn button:last-child {
-  background: #a29bfe;
+  background: #FC427B;
   border-radius: 0 15px 15px 0;
   border-left-width: 1px;
+  border-right-width: 2px;
 }
 
+/* 返回按键组 */
+.return_btn {
+  position: absolute;
+  /* 翻转180度 */
+  transform: rotateY(180deg)translateZ(1px)
+}
+
+/* 返回按键 */
 .return_btn button {
   background: #b2bec3;
   width: 400px;
   border-radius: 15px;
-  box-shadow: 0 12px 11px 0 #000;
+  box-shadow: 0 9px 5px 0 #2C3A47;
 }
 
-div.btn_div .img_btn button.active {
+/* 排序按钮激活时 */
+div.btn_div .img_btn .sort_btn button.active {
   transform: translateY(5px);
-  background: #fff;
 }
 
-div.btn_div .img_btn button.active::after {
+/* 修改按键内部div 背景透明 按键显示渐变  默认样式*/
+div.btn_div .img_btn button.active div {
+  background: linear-gradient(to top, #ffffff80, #ffffff00);
+}
+
+/* 默认倒序 */
+div.btn_div .img_btn button.active div::after {
   content: "倒序"
 }
 
-div.btn_div .img_btn button.active.asc::after {
+/* 正序样式 */
+div.btn_div .img_btn button.active.asc div {
+  background: linear-gradient(to bottom, #ffffff80, #ffffff00);
+}
+
+/* 正序 */
+div.btn_div .img_btn button.active.asc div::after {
   content: "顺序"
 }
 
-div.main_show {
-  position: relative;
+/* 左右按键 */
+button.c_btn {
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  outline: none;
+  border-radius: 50%;
+  background: #e55039;
+  top: 410px;
+  transition: 0.2s;
+  filter: blur(0.6px);
 }
 
+/* 按键悬浮 */
+button.c_btn:hover {
+  background: #ecf0f1;
+}
+
+/* 按键三角 */
+/* 生成after */
+button.c_btn:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -25px;
+  border-top: 25px solid transparent;
+  border-bottom: 25px solid transparent;
+  transition: 0.2s;
+}
+
+/* 左定位 */
+button.c_btn.left {
+  left: -7%;
+}
+
+/* 形成三角 */
+button.c_btn.left:after {
+  margin-left: -58px;
+  border-right: 35px solid #ecf0f1;
+  border-left: 35px solid transparent;
+}
+
+button.c_btn.right {
+  right: -7%;
+}
+
+button.c_btn.right:after {
+  margin-left: -12px;
+  border-left: 35px solid #ecf0f1;
+  border-right: 35px solid transparent;
+}
+
+/* 悬浮 */
+button.c_btn.left:hover:after {
+  border-right-color: #e55039;
+}
+
+button.c_btn.right:hover:after {
+  border-left-color: #e55039;
+}
+/***************************************图片**********************************************/
+/* 图片展示 */
+div.main_show {
+  position: relative;
+  background: #dff9fb;
+  overflow: hidden;
+  height: 800px;
+  box-sizing: border-box;
+}
+
+/* 6图展示 */
 div.main {
   display: flex;
   justify-content: space-around;
   align-items: center;
   flex-wrap: wrap;
-  background: #dff9fb;
-  padding: 0.5rem;
+  overflow: hidden;
+  height: 800px;
+  width: 1110px;
 }
 
+/* 展示图片盒子 */
 div.main>div {
   background: #ced6e0;
   border-radius: 0.5rem;
-  padding: 0.5rem;
-  margin: 0.5rem 0;
-}
-
-div.main>div.normal {
+  padding: 5px;
   width: 32%;
 }
 
-div.main>div.normal div.img_show {
+/* 图片展示高度 */
+div.main div.img_show {
   height: 300px;
 }
 
-div.main>div.full {
+/* 单独展示 */
+div.full_show {
+  position: absolute;
+  top: 0%;
+  left: 0;
   width: 100%;
+  height: 0;
+  background: #00000080;
+  transition: 0.3s;
+  overflow: hidden;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
-div.main>div.full div.img_show {
+/* 单独图片展示高度 */
+div.full_show div.img_show {
   height: 600px;
 }
 
+/* 单独展示被激活 */
+div.full_show.active {
+  height: 800px;
+}
+
+/* 图片展示共用样式 */
 div.img_show {
   width: 100%;
   overflow: hidden;
@@ -146,90 +274,98 @@ div.img_show {
 div.img_show img {
   max-height: 100%;
   max-width: 100%;
-  cursor: pointer;
+  cursor: url("../images/my_pointer.cur"), pointer;
+  overflow: hidden;
 }
 
+/* 6图图片信息 */
 .img_msg {
-  max-width: 500px;
+  width: 300px;
   margin: 0 auto;
 }
 
+/* 单独图片信息 */
+div.full_show .img_msg {
+  background: #ffcccc;
+  position: absolute;
+  top: 50px;
+  left: 800px;
+  width: 250px;
+  height: 150px;
+  padding: 30px 20px;
+  border-radius: 50%;
+  /* 全屏时过渡延迟出现 */
+  transition: opacity 0.2s 0.3s;
+  opacity: 0;
+}
+
+div.full_show.active .img_msg {
+  opacity: 1;
+}
+
+/* 三角 与信息框合成会话框样式 */
+div.full_show .img_msg:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: -15px;
+  transform: translateY(100px) rotateZ(40deg);
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-top: 80px solid #ffcccc;
+}
+
+/* 编号 */
 .img_msg p:nth-child(1) {
   text-align: right;
+  font-size: 0.8rem;
 }
 
+/* 热度 */
 .img_msg p:nth-child(2) {
   text-align: center;
-  font-size: 1.1rem;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center
 }
 
+/* 热度数字 */
 .img_msg>p:nth-child(2) span {
   color: red;
+  font-size: 1rem;
 }
 
+/* 图片被点击时 激活 */
+.img_msg>p:nth-child(2) span.my_click {
+  animation: good 0.5s;
+}
+
+/* 热度数字放大缩小 */
+@keyframes good {
+  0% {
+    font-size: 1rem;
+  }
+
+  50% {
+    font-size: 1.4rem;
+  }
+
+  100% {
+    font-size: 1rem;
+  }
+}
+
+/* 上传 */
 .img_msg p:nth-child(3) {
   text-align: center;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
 }
 
 .img_msg p:nth-child(3) span {
   margin: 0 5px;
-}
-
-/* 左右按键 */
-div.main_show>button.c_btn {
-  position: absolute;
-  width: 70px;
-  height: 70px;
-  outline: none;
-  border-radius: 50%;
-  background: #e55039;
-  top: 50%;
-  margin-top: -50px;
-  transition: 0.2s;
-  filter: blur(0.6px)
-}
-
-div.main_show>button.c_btn:hover {
-  background: #ecf0f1;
-}
-
-/* 按键三角 */
-div.main_show>button.c_btn:after {
-  content: "";
-  display: block;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  margin-top: -25px;
-  border-top: 25px solid transparent;
-  border-bottom: 25px solid transparent;
-  transition: 0.2s;
-}
-
-button.c_btn.left {
-  left: -10%;
-}
-
-button.c_btn.left:after {
-  margin-left: -58px;
-  border-right: 35px solid #ecf0f1;
-  border-left: 35px solid transparent;
-}
-
-div.main_show>button.c_btn.left:hover:after {
-  border-right-color: #e55039;
-}
-
-button.c_btn.right {
-  right: -10%;
-}
-
-button.c_btn.right:after {
-  margin-left: -12px;
-  border-left: 35px solid #ecf0f1;
-  border-right: 35px solid transparent;
-}
-
-div.main_show>button.c_btn.right:hover:after {
-  border-left-color: #e55039;
+  font-size: 0.9rem;
 }

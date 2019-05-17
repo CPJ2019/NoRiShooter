@@ -348,11 +348,11 @@ div.banner button.btn:hover:before {
   border-radius: 50%;
   border: none;
   outline: none;
-  cursor: pointer;
+  cursor: url("../images/my_pointer.cur"),pointer;
   margin: 10px;
   float: left;
   background: #ffb8b8;
-  box-shadow: 0px 0px 8px 0px #ffb8b8;
+  box-shadow: 0px 0px 2px 0px #ffb8b8;
 }
 
 /* 指示器被选中 */
@@ -435,7 +435,6 @@ div.zx table tr td {
 
 #news_content tr td a {
   color: #663300;
-  transition: 0.1s;
 }
 
 #news_content tr td:hover a {
@@ -493,11 +492,6 @@ div.zx table tr td {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-}
-
-/* 介绍文本 */
-#intro p {
-  /* color: #e5e7e9; */
 }
 
 /* 标题 */

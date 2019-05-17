@@ -61,7 +61,7 @@ li.message span{
   vertical-align: middle;
 }
 /* 登录注册 */
-#login_msg span.login_uname{
+#login_msg a.login_uname{
   color:#df484d;
 }
 
@@ -93,12 +93,13 @@ div.search{
   width:34px;
   height:34px;
   border-radius:1px;
-  margin-top: -3px;
+  margin-top: -2px;
   transform: translateX(-19px);
   vertical-align:middle; 
   background:url(../images/iconlist.png) no-repeat -134px 0px;
   transition: all 0.1s;
   box-shadow: 1px 1px 0px 1px #e89aa8;
+  cursor:url("../images/my_pointer.cur"), pointer;
 }
 /* 搜索按键点击效果 */
 #search_b:active{

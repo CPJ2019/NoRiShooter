@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+  <title>图库-NoRiShooter-为喷友提供更好、更轻松的交流与资讯攻略</title>
   <link rel="stylesheet" href="./css/bootstrap.css">
   <link rel="stylesheet" href="./css/common.css">
   <link rel="stylesheet" href="./css/tuku.css">
@@ -17,39 +17,61 @@
 
 <body>
   <!-- 头部 -->
-  <iframe class="my_header" src="header.html" frameborder="0" scrolling="no"></iframe>
+  <header id="header"></header>
   <!-- 展示区域 -->
-  <div class="container">
+  <div class="container" id="show">
     <div class="btn_div">
       <div class="img_btn">
         <div class="return_btn">
-          <button btn-return="return">按我或图片返回</button>
+          <button btn-return="return">
+            <div>按我或图片原路返回</div>
+          </button>
         </div>
         <div class="sort_btn">
-          <button btn-sort="click_count" >按热度</button>
-          <button btn-sort="tid">按编号</button>
-          <button btn-sort="uploader">按上传者</button>
-          <button btn-sort="upload_datetime">按上传时间</button>
+          <button btn-sort="click_count">
+            <div>按热度</div>
+          </button>
+          <button btn-sort="tid">
+            <div>按编号</div>
+          </button>
+          <button btn-sort="uploader">
+            <div>按上传者</div>
+          </button>
+          <button btn-sort="upload_datetime">
+            <div>按上传时间</div>
+          </button>
         </div>
-
       </div>
+      <button class="left c_btn" data-change="-"></button>
+      <button class="right c_btn" data-change="+"></button>
     </div>
     <!-- 图片展示模块 -->
     <div class="main_show">
-       <button class="left c_btn" data-change="-"></button>
-       <button class="right c_btn" data-change="+"></button>
       <div class="main">
+      </div>
+      <!-- 满屏 -->
+      <div class="full_show">
+        <div>
+          <div class="img_show">
+            <img src="" alt="">
+          </div>
+          <div class="img_msg">
+          </div>
+        </div>
       </div>
     </div>
   </div>
   <!-- 脚部 -->
-  <iframe class="my_footer" src="footer.html" frameborder="0" scrolling="no"></iframe>
+  <footer id="footer"></footer>
   <!-- 网易云外部链接 -->
   <div id="music">
     <div>原声音乐</div>
     <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=450
       src="//music.163.com/outchain/player?type=0&id=2782418236&auto=1&height=430"></iframe>
   </div>
+  <script src="./js/common.js"></script>
+  <script src="./js/header.js"></script>
+  <script src="./js/footer.js"></script>
   <script src="./js/tuku.js"></script>
 
 </body>

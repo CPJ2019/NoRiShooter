@@ -14,12 +14,7 @@ body {
 	color: #2c3e50;
 	background: #dadada;
 	position: relative;
-}
-
-section {
-	max-width: 1440px;
-	margin: 0 auto;
-	position: relative;
+	cursor: url("../images/my_default.cur"), default;
 }
 
 ul,
@@ -66,91 +61,18 @@ button {
 
 a {
 	text-decoration: none;
-	color: black
+	color: black;
+	cursor: url("../images/my_pointer.cur"), pointer;
 }
 
 a:hover {
 	text-decoration: none;
 }
 
-/* .container{
-  max-width:1000px;
-	margin:0px auto;
-	padding:0px;
-} */
 .cf:after {
 	content: "";
 	display: block;
 	clear: both;
-}
-
-/* 自定义响应 */
-/* 大屏 */
-@media screen and (min-width:992px) {
-
-	/* header高度 */
-	.my_header {
-		height: 120px;
-	}
-
-	/* footer高度 */
-	.my_footer {
-		height: 208px;
-	}
-}
-
-/* 中屏 */
-@media screen and (min-width:768px) and (max-width:991px) {
-
-	/* header高度 */
-	.my_header {
-		height: 120px;
-	}
-
-	/* footer高度 */
-	.my_footer {
-		height: 292px;
-	}
-}
-
-/* 小屏 */
-@media screen and (min-width:576px) and (max-width:767px) {
-
-	/* header高度 */
-	.my_header {
-		height: 232px;
-	}
-
-	/* 脚部高度 */
-	.my_footer {
-		height: 292px;
-	}
-}
-
-/* 超小屏 */
-@media screen and (max-width:576px) {
-
-	/* header高度 */
-	.my_header {
-		height: 350px;
-	}
-
-	/* 脚部高度 */
-	.my_footer {
-		height: 456px;
-	}
-}
-
-/* 头部宽度 */
-.my_header {
-	width: 100%;
-	vertical-align: bottom;
-}
-
-/* 脚宽度 */
-.my_footer {
-	width: 100%;
-	vertical-align: top;
 }
 
 /* 回滚首页按键 */
@@ -159,8 +81,9 @@ a:hover {
 	height: 70px;
 	position: fixed;
 	right: 5%;
-	bottom: 35%;
+	bottom: 15%;
 	transform: translate(50%, 0%);
+	cursor: url("../images/my_pointer.cur"), pointer;
 }
 
 /* 按钮图片随外框大小变化 */
@@ -229,8 +152,8 @@ a:hover {
 #to_top_btn div {
 	position: absolute;
 	top: 50%;
-	left:50%;
-	transform: translate(-50%,-50%);
+	left: 50%;
+	transform: translate(-50%, -50%);
 	/* 控制在按钮上层 */
 	z-index: 1;
 	width: 0%;
@@ -266,12 +189,12 @@ a:hover {
 #music {
 	position: fixed;
 	z-index: 20;
-	top: 60%;
-	left: 5%;
-	transform: translate(-50px, -50%);
-	width: 90px;
+	top: 230px;
+	left: 72px;
+	transform: translate(-45px, -50%);
+	width:90px;
 	height: 90px;
-	transition: 0.2s;
+	transition: width,height 0.2s;
 	border: 1px solid rgba(0, 0, 0, 0.3);
 	border-radius: 20px;
 	overflow: hidden;
@@ -290,6 +213,7 @@ a:hover {
 	text-align: center;
 	letter-spacing: 5px;
 	padding: 10px;
+	opacity: 1;
 }
 
 #music>iframe {
@@ -303,8 +227,9 @@ a:hover {
 }
 
 #music:hover div {
-	display: none;
+	opacity: 0;
 }
+
 /* 自定义链接样式 */
 a.my_a {
 	color: #0066CC !important;

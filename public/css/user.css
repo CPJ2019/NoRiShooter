@@ -1,9 +1,11 @@
+section{
+  width: 100%;
+  height: 810px;
+}
 /*注册登录背景 */
 .bg {
   margin-top: 10px;
-  max-width: 1440px;
-  min-height: 810px;
-  background: url(../images/bg.jpg);
+  background:#fff url(../images/bg.jpg) no-repeat;
   position: relative;
   z-index: 0;
 }

@@ -196,7 +196,7 @@ function get_effect() {
   // SP加快
   var spp_point = get_point("spp");
   // 游速
-  var wsp_point = get_point("miu");
+  var wsp_point = get_point("wsp");
   //走速
   var rsp_point = get_point("rsp");
   //回墨速度
