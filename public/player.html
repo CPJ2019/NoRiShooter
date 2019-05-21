@@ -1,0 +1,39 @@
+  <div id="music">
+    <div class="tips">
+      <p>游戏OST</p>
+      <marquee behavior="scroll" direction="left" scrollamount="2">
+        {{list[music_i].m_name}} - {{list[music_i].m_author}}
+      </marquee>
+    </div>
+    <div class="audio">
+      <iframe src="./player/null.mp3" frameborder="0"></iframe>
+      <audio id="audio" autoplay controls=true preload="auto" :src="list[music_i].url">
+      </audio>
+      <div class="m_show">
+        <div class="m_img"><img draggable="false" :src="list[music_i].src"></div>
+        <div class="m_msg">
+          <h4>{{list[music_i].m_name}}</h4>
+          <p>作者:{{list[music_i].m_author}}</p>
+          <div class="time_box">
+            <p class="m_now">{{minues}}:{{seconds}}</p>
+            <p class="m_time">{{list[music_i].time}}</p>
+          </div>
+        </div>
+      </div>
+      <div class="m_range">
+        <div>
+          <div :style="range_style"></div>
+        </div>
+      </div>
+      <div class="btn_ground">
+        <button @click="m_last"><img src="./player/m_last.png"></button>
+        <button @click="m_pause"><img v-if="isplay==true" src="./player/m_pause.png"><img v-else
+            src="./player/m_play.png"></button>
+        <button @click="m_next"><img src="./player/m_next.png"></button>
+      </div>
+      <ul class="m_list">
+        <li v-for="(elem,i) of list" @click="m_change(i)" :class=" {active:i==music_i}">{{elem.m_author}} -
+          {{elem.m_name}}</li>
+      </ul>
+    </div>
+  </div>

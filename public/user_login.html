@@ -3,7 +3,7 @@
 
 <head>
 	<meta charset="UTF-8">
-	<title>用户登录-NoRiShooter-为喷友提供更好、更轻松的交流与资讯攻略</title>
+	<title>用户登录-NoRiShooter-为喷友提供更好、更轻松的交流与资讯攻略    </title>
 	<link rel="icon" href="images/favicon.ico" type="image/x-icon">
 	<link rel="stylesheet" href="./css/bootstrap.css">
 	<link rel="stylesheet" href="./css/animate.css">
@@ -13,6 +13,7 @@
 	<script src="./js/jquery.min.js"></script>
 	<script src="./js/popper.min.js"></script>
 	<script src="./js/bootstrap.min.js"></script>
+	<script src="./js/vue.js"></script>
 </head>
 
 <body>
@@ -57,14 +58,14 @@
 				</div>
 			</div>
 			<!-- 这是弹出框 -->
-			<div id="alert_div" class="text-center">
-				<div onclick="login.stop_skip()">
-					<span>留在页面</span>
+			<div id="alert_div">
+				<div>
+					<p>留在页面</p>
 					<span>&times;</span>
 				</div>
 				<p>登录成功</p>
 				<p>网页将在 <span id="show" class="text-danger"></span> 秒后自动跳转</p>
-				<p><a href="javascript:">点我直接跳转</a></p>
+				<p><a class="my_a" href="javascript:">点我直接跳转</a></p>
 			</div>
 		</div>
 	</section>
@@ -72,13 +73,11 @@
 	<footer id="footer"></footer>
 	<!-- 网易云外部链接 -->
 	<div id="music">
-		<div>原声音乐</div>
-		<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=450
-			src="//music.163.com/outchain/player?type=0&id=2782418236&auto=1&height=430"></iframe>
 	</div>
 	<script src="./js/common.js"></script>
 	<script src="./js/header.js"></script>
 	<script src="./js/footer.js"></script>
+	<script src="./js/player.js"></script>
 	<script src="./js/user_login.js"></script>
 </body>
 

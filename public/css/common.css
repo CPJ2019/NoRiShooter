@@ -185,51 +185,6 @@ a:hover {
 	transform: scale(1.1);
 }
 
-/* 网易云外链部分 */
-#music {
-	position: fixed;
-	z-index: 20;
-	top: 230px;
-	left: 72px;
-	transform: translate(-45px, -50%);
-	width:90px;
-	height: 90px;
-	transition: width,height 0.2s;
-	border: 1px solid rgba(0, 0, 0, 0.3);
-	border-radius: 20px;
-	overflow: hidden;
-}
-
-#music div {
-	position: absolute;
-	z-index: 1;
-	background: rgba(0, 0, 0, 0.3);
-	color: #fff;
-	width: 90px;
-	height: 90px;
-	font-size: 25px;
-	font-weight: 900;
-	line-height: 35px;
-	text-align: center;
-	letter-spacing: 5px;
-	padding: 10px;
-	opacity: 1;
-}
-
-#music>iframe {
-	transition: 0.5s;
-	transform: translate(-10px, -10px)
-}
-
-#music:hover {
-	width: 310px;
-	height: 430px;
-}
-
-#music:hover div {
-	opacity: 0;
-}
-
 /* 自定义链接样式 */
 a.my_a {
 	color: #0066CC !important;

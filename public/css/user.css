@@ -1,11 +1,12 @@
-section{
+section {
   width: 100%;
   height: 810px;
 }
+
 /*注册登录背景 */
 .bg {
   margin-top: 10px;
-  background:#fff url(../images/bg.jpg) no-repeat;
+  background: #fff url(../images/bg.jpg) no-repeat;
   position: relative;
   z-index: 0;
 }
@@ -78,7 +79,7 @@ section>div>div:after {
   content: "";
   position: absolute;
   border-radius: 10px;
-  background: linear-gradient(40deg, #ff3838, #ffaf40,  #7efff5,#32ff7e);
+  background: linear-gradient(40deg, #ff3838, #ffaf40, #7efff5, #32ff7e);
 }
 
 /* 内容框 */
@@ -107,6 +108,7 @@ section>div>div a:hover {
   position: relative;
   margin: 28px 0px;
 }
+
 /* 输入框居中 */
 .input_box input {
   position: relative;
@@ -119,6 +121,7 @@ section>div>div a:hover {
   border-radius: 20px;
   transition: 0.3s;
 }
+
 /* 登录页面加载时表单自动填写时内容使其文字不遮挡 */
 /* 点击后js修改为5px 20px */
 #login_form .input_box input {
@@ -147,7 +150,7 @@ div.input_box label {
 
 /* 聚焦文字特效 */
 .input_box input:focus~label {
- color:#0984e3 !important;
+  color: #0984e3 !important;
   width: 100%;
   left: 20px;
 }
@@ -156,20 +159,25 @@ div.input_box label {
 .input_box input:valid~label {
   top: -15px;
 }
+
 /* 通过提示样式 */
-.input_box input.pass{
+.input_box input.pass {
   border-color: #20bf6b;
 }
-.input_box input.pass~label{
-  color:#20bf6b;
+
+.input_box input.pass~label {
+  color: #20bf6b;
 }
+
 /* 错误提示样式 */
-.input_box input.nopass{
+.input_box input.nopass {
   border-color: #ff4d4d;
 }
-.input_box input.nopass~label{
-  color:#ff4d4d;
+
+.input_box input.nopass~label {
+  color: #ff4d4d;
 }
+
 /* 提交按键 */
 #btn {
   width: 100%;
@@ -223,17 +231,19 @@ div.input_box label {
 
 /* 登录限定 */
 /* 自动登录 */
-.chb_box{
+.chb_box {
   display: flex;
   margin-left: 10%;
-  color:#2c3e50;
+  color: #2c3e50;
 }
+
 /* 隐藏勾 */
-.chb_box input{
+.chb_box input {
   display: none;
 }
+
 /* 点击块样式 */
-.chb_box .click_box{
+.chb_box .click_box {
   display: inline-block;
   width: 50px;
   height: 24px;
@@ -244,24 +254,27 @@ div.input_box label {
   transition: 0.4s;
   position: relative;
 }
+
 /* 圈样式 */
-.chb_box .click_box:before{
+.chb_box .click_box:before {
   content: "";
   position: absolute;
   width: 16px;
   height: 16px;
-  border-radius:50%;
-  right:4px;
-  top:4px;
+  border-radius: 50%;
+  right: 4px;
+  top: 4px;
   background: #fff;
   transition: 0.4s;
 }
+
 /* checked的状态 */
-.chb_box input:checked+.click_box{
+.chb_box input:checked+.click_box {
   background: #0984e3;
 }
-.chb_box input:checked+.click_box:before{
- right:30px;
+
+.chb_box input:checked+.click_box:before {
+  right: 30px;
 }
 
 
@@ -284,65 +297,58 @@ div.input_box label {
 
 /* 弹出框 */
 #alert_div {
-  height: 200px;
-  width: 350px;
-  background: #FFFFCC;
+  height: 0px;
+  width: 0px;
+  background: #ffeaa7;
   border-radius: 0.75rem;
   position: fixed;
   z-index: 10;
   top: 50%;
   left: 50.5%;
   transform: translate(-50%, -50%);
-  display: none;
-  padding: 35px 0px;
-  font-size: 18px;
-  line-height: 30px;
+  padding: 0px;
+  font-size: 16px;
+  text-align: center;
+  transition: 0.2s;
+  overflow: hidden;
 }
+
 /* 清除设置表单框阴影层的背景色带来的影响*/
-#alert_div:after{
-  background:none; 
+#alert_div:after {
+  background: none;
+}
+
+#alert_div.active {
+  width: 350px;
+  height: 200px;
 }
 
 #alert_div div {
-  position: absolute;
-  right: 0;
-  top: 0;
-  margin: 0;
-  cursor: pointer;
+  float: right;
   display: flex;
   align-items: center;
+  cursor: pointer;
 }
 
 #alert_div div:hover {
   color: #CC0033;
 }
 
-#alert_div span:first-child {
+#alert_div>div p:first-child {
   font-size: 12px;
-  vertical-align: middle;
 }
 
-#alert_div span~span {
-  font-size: 36px;
-  margin-bottom: 6px;
+#alert_div div span {
+  font-size: 40px;
+  margin-bottom: 5px;
 }
+
 #alert_div p {
-  margin: 10px;
+  white-space:nowrap;
+  clear: both;
+  margin: 10px 0;
 }
 
-#alert_div p a {
-  margin: 10px;
-  text-decoration: underline;
-  color:#0099CC;
-}
-
-#alert_div p a:hover {
-  color: #000;
-}
-
-#alert_div p a:active {
-  color: #FF6666;
-}
-#alert_div #show{
+#alert_div #show {
   font-size: 18px;
 }

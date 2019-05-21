@@ -74,12 +74,13 @@
 						case 1:
 							// 自动跳转
 							// 显示跳转框
-							alert_div.style.display = "block";
+							alert_div.className="active"
 							// 出现读秒
 							var t = 5
 							show.innerHTML = t;
 							// 读秒开始 
 							auto_skip = setInterval(function () {
+								console.log(t)
 								t--;
 								if (t == 0) {
 									// 读秒结束跳转
@@ -104,7 +105,7 @@
 	var stop_skip = document.querySelector("#alert_div>div:first-child")
 	stop_skip.onclick = function () {
 		clearInterval(auto_skip)
-		alert_div.style.display = "none";
+		alert_div.className=""
 	}
 	//直接跳转
 	var skip = document.querySelector("#alert_div a");

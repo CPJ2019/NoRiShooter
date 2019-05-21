@@ -200,7 +200,7 @@
 			if (xhr.readyState == 4 && xhr.status == 200) {
 				var result = xhr.responseText;
 				// 显示跳转框
-				alert_div.style.display = "block";
+				alert_div.className="active"
 				// 跳转读秒
 				var t = 5;
 				show.innerHTML = t;
@@ -219,7 +219,7 @@
 	var stop_skip = document.querySelector("#alert_div>div:first-child");
 	stop_skip.onclick = function () {
 		clearInterval(auto_skip)
-		alert_div.style.display = "none";
+		alert_div.className=""
 		// 提示用户名被使用
 		uname.className = "nopass";
 		uname.nextElementSibling.innerHTML = "用户名已经使用";

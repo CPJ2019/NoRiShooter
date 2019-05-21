@@ -152,7 +152,7 @@ for (var select of selects) {
 window.onclick = function (e) {
   var click = e.target;
   // 点击模拟select
-  if (click.nodeName === "SPAN" && click.nextElementSibling.nodeName === "UL") {
+  if (click.nodeName === "SPAN") {
     click.nextElementSibling.className = "active"
   }
   // 点击模拟option 

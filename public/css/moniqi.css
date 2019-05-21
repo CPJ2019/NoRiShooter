@@ -195,7 +195,7 @@ div.shoes {
   width: 100%;
   box-sizing: border-box;
   border: 1px solid black;
-  transition: 4s;
+  transition: 0.3s;
   overflow: hidden;
   z-index: 0;
 }
@@ -220,7 +220,7 @@ div.shoes {
 .select_box ul li {
   width: 100%;
   height: 0px;
-  transition: 4s;
+  transition: 0.3s;
   position: relative;
   cursor: url("../images/my_this.cur"), pointer;
 }

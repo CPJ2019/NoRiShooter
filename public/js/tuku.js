@@ -163,9 +163,8 @@ $(function () {
           // 添加class 激活状态 向下位移 同时默认渐变上深下浅的背景 :after的content为倒序 默认
           $tar.addClass("active")
             //清除其他排序的激活状态
-            .siblings(".active").removeClass("active")
-            // 清除排序渐变背景
-            .removeClass("asc")
+            .siblings(".active").removeClass("active asc")
+          // 清除排序渐变背景
           // 设置默认排序方式为倒序
           sort = " DESC,"
           // 已激活状态  
@@ -288,7 +287,6 @@ $(function () {
     msg_move = true;
     offsetX = e.offsetX;
     offsetY = e.offsetY;
-    // 获取相对高度
     targetY = document.documentElement.scrollTop || document.body.scrollTop;
   }
   // 在大图展示框上移动时
@@ -299,8 +297,8 @@ $(function () {
       var left = e.clientX
       var top = e.clientY
       // 修改绝对定位位置
-      full_msg.style.left = left - offsetX - 245 + "px"
-      full_msg.style.top = top - offsetY - 215 + targetY + "px"
+      full_msg.style.left = left - 165 - offsetX + "px"
+      full_msg.style.top = top + targetY - 215 - offsetY + "px"
     }
   }
   // 鼠标提起时
