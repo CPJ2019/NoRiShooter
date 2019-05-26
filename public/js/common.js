@@ -1,6 +1,6 @@
 (function () {
   // 获取标题文本
-  var t_txt = document.title
+  var t_txt = document.title+" "
   // 间隔定时器
   setInterval(() => {
     //  拼接字符串 文本向前一位

@@ -3,8 +3,8 @@
     position: fixed;
     z-index: 20;
     top: 230px;
-    left: 72px;
-    transform: translate(-50px, -50%);
+    left: 100%;
+    transform: translate(-100%, -50%);
     border: 1px solid rgba(0, 0, 0, 0.3);
     border-radius: 20px;
     overflow: hidden;
@@ -96,7 +96,7 @@
   /* 文字信息 */
   div.m_msg {
     padding: 10px;
-    width: 200px;
+    width: 210px;
     height: 100px;
     box-sizing: border-box;
   }
@@ -137,6 +137,7 @@
     background: #d1ccc0;
     display: flex;
     align-items: center;
+    cursor: url("../images/my_pointer.cur"), pointer;
   }
 
   /* 完成进度 */
@@ -144,7 +145,6 @@
     height: 10px;
     border-radius: 5px;
     width: 0px;
-    background-image: linear-gradient(to right, #32ff7e, #7efff5, #17c0eb);
     position: relative;
   }
 
@@ -163,15 +163,25 @@
     box-shadow: 0 0 1px 2px #34e7e4;
   }
 
+  /* 进度条样式 */
+  .m_range div div span {
+    display: inline-block;
+    width: 300px;
+    height: 10px;
+    background-image: linear-gradient(to right, #32ff7e 0px, #7efff5 150px, #17c0eb 300px);
+  }
+
+
+
   /* 按键控制组 */
-  div.btn_ground {
+  div.btn_group {
     width: 310px;
     display: flex;
     justify-content: space-around
   }
 
   /* 按键样式 */
-  .btn_ground button {
+  .btn_group button {
     background: #fff;
     width: 40px;
     height: 40px;
@@ -181,16 +191,17 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: url("../images/my_pointer.cur"), pointer;
   }
 
   /* 按键图片 */
-  .btn_ground button img {
+  .btn_group button img {
     width: 100%;
     transition: 0.1s
   }
 
   /* 点击缩小 */
-  .btn_ground button:active img {
+  .btn_group button:active img {
     width: 90%;
   }
 
@@ -213,7 +224,7 @@
     border-radius: 20px;
     text-align: center;
     margin: 10px;
-    cursor: pointer;
+    cursor: url("../images/my_pointer.cur"), pointer;
   }
 
   ul.m_list li:nth-child(1n) {

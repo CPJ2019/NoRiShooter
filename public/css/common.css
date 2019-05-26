@@ -12,7 +12,7 @@ body {
 	line-height: 24px;
 	font-weight: 600;
 	color: #2c3e50;
-	background: #dadada;
+	background: #ecf0f1;
 	position: relative;
 	cursor: url("../images/my_default.cur"), default;
 }
@@ -81,9 +81,16 @@ a:hover {
 	height: 70px;
 	position: fixed;
 	right: 5%;
-	bottom: 15%;
+	bottom: 0%;
 	transform: translate(50%, 0%);
 	cursor: url("../images/my_pointer.cur"), pointer;
+	transition: opacity,bottom, 0.3s;
+	opacity: 0;
+}
+
+#to_top_btn.active {
+	opacity: 1;
+	bottom: 15%;
 }
 
 /* 按钮图片随外框大小变化 */

@@ -4,12 +4,15 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>首页-NoRiShooter-为喷友提供更好、更轻松的交流与资讯攻略 </title>
+	<title>首页-NoRiShooter-为喷友提供更好、更轻松的交流与资讯攻略</title>
 	<link rel="icon" href="images/favicon.ico" type="image/x-icon">
 	<link rel="stylesheet" href="./css/animate.css ">
 	<link rel="stylesheet" href="./css/bootstrap.css">
 	<link rel="stylesheet" href="./css/common.css">
 	<link rel="stylesheet" href="./css/index.css">
+	<link rel="stylesheet" href="./css/floor.css">
+	<link rel="stylesheet" href="css/iconfont.css">
+	<link rel="stylesheet" href="css/intro.css">
 	<script src="./js/jquery.min.js"></script>
 	<script src="./js/popper.min.js"></script>
 	<script src="./js/bootstrap.min.js"></script>
@@ -134,7 +137,7 @@
 	<section class="container">
 		<!-- 资讯展示 -->
 		<div class="zx">
-			<h1 class="text-center" id="zx_header">圈子热事</h1>
+			<h1 class="text-center" id="zx_header" target-floor>圈子热事</h1>
 			<!-- 热事导航 -->
 			<div>
 				<ul class="nav nav-pills nav-justufied">
@@ -270,15 +273,24 @@
 		<!-- 游戏介绍 -->
 		<div id="intro">
 			<h1>游戏介绍</h1>
-			<hr>
-			<h3 id="intro_first">一代介绍</h3>
 			<!-- 一代介绍 -->
-			<div class="row">
-				<div class="intro_img col-4 d-flex justify-content-center">
-					<img class="img-thumbnail" src="images/yidai.jpg">
+			<h3 id="intro_first" target-floor>
+				<span>一</span>
+				<span>代</span>
+				<span>介</span>
+				<span>绍</span>
+			</h3>
+			<div class="intro_box">
+				<div class="intro_img">
+					<div class="one"><img style="max-height:450px; height:100%;width:auto" src="images/yidai1.jpg"></div>
+					<div class="two"><img style="max-height:450px; height:100%;width:auto" src="images/yidai2.jpg"></div>
 				</div>
-				<div class="intro_content col-6 offset-1">
-					<div class="text">
+				<div class="intro_text">
+					<div class="intro_control left">
+						<i class="iconfont icon-zhishi"></i>
+					</div>
+					<div class="text_box">
+						<h4>喷射一代</h4>
 						<p>
 							「喷射战士」是Nintendo(任天堂)制作发行的第三人称油彩动作射击类游戏,由任天堂新一代青年制作人创作；本作基本上采用4Vs4的方式进行战斗，也搭载了专供单人游戏的“英雄模式(ヒーローモード)”。该模式下玩家们需要为所属的军团战斗，并努力使己方变得更加壮大。
 						</p>
@@ -292,10 +304,16 @@
 				</div>
 			</div>
 			<!-- 二代介绍 -->
-			<h3 id="intro_second">二代介绍</h3>
-			<div>
-				<div class="intro_content col-6 offset-1">
-					<div class="text">
+			<h3 id="intro_second" target-floor>
+				<span>二</span>
+				<span>代</span>
+				<span>介</span>
+				<span>绍</span>
+			</h3>
+			<div class="intro_box">
+				<div class="intro_text">
+					<div class="text_box">
+						<h4>喷射二代</h4>
 						<p>
 							《喷射战士2》（Splatoon
 							2），是任天堂游戏公司出版发行的第三人称射击游戏，2017年7月21日独占登陆新主机NS。《喷射战士2》拥有1080P分辨率与60帧率画面，与对新机能“HD振动”的对应。玩家要在对战中展开 4 vs 4
@@ -305,19 +323,33 @@
 							2018年12月截止全球累计销量，《喷射战士2》827万份。
 						</p>
 					</div>
+					<div class="intro_control right">
+						<i class="iconfont icon-zhishi"></i>
+					</div>
 				</div>
-				<div class="intro_img col-4 offset-1">
-					<img class="img-thumbnail" src="images/erdai.jpg">
+				<div class="intro_img">
+					<div class="one"><img style="max-height:450px; height:100%;width:auto" src="images/erdai1.jpg"></div>
+					<div class="two"><img style="max-height:450px; height:100%;width:auto" src="images/erdai2.jpg"></div>
 				</div>
 			</div>
 			<!-- 服装系统 -->
-			<h3>服装系统</h3>
-			<div>
-				<div class="intro_img col-md-4 col-sm-12">
-					<img class="img-thumbnail" src="images/chao.jpg">
+			<h3 target-floor>
+				<span>服</span>
+				<span>装</span>
+				<span>系</span>
+				<span>统</span>
+			</h3>
+			<div class="intro_box">
+				<div class="intro_img">
+					<div class="one"><img src="images/clothes1.jpg"></div>
+					<div class="two"><img src="images/clothes2.jpg"></div>
 				</div>
-				<div class="intro_content col-md-6 offset-md-1 col-sm-12">
-					<div class="text">
+				<div class="intro_text">
+					<div class="intro_control left">
+						<i class="iconfont icon-zhishi"></i>
+					</div>
+					<div class="text_box">
+						<h4>游戏装扮</h4>
 						<p>
 							服装系统分为帽子，衣服，鞋子这3个种类。在本作中登场的服装能供玩家按照自己喜好来设定，而且还有其他作用，就是服装附加技能。
 						</p>
@@ -331,11 +363,16 @@
 				</div>
 			</div>
 			<!-- 经典涂地 -->
-			<h3 id="td">经典涂地</h3>
-			<div>
-				<div class="intro_content col-md-6 offset-md-1 col-sm-12">
-					<div class="text">
-						<h5>常规涂地模式（Regular Battle）</h5>
+			<h3 target-floor id="td">
+				<span>经</span>
+				<span>典</span>
+				<span>涂</span>
+				<span>地</span>
+			</h3>
+			<div class="intro_box">
+				<div class="intro_text">
+					<div class="text_box">
+						<h4>常规涂地模式（Regular Battle）</h4>
 						<p>
 							常规比赛采用的是涂地模式，两队双方各4名队员，在3分钟内用自己队伍颜色的墨水在整个地图喷涂地板，当比赛结束时，将根据最后覆盖率决定胜利者。
 						</p>
@@ -345,22 +382,35 @@
 							使用各种各样的武器把对战场地的地面涂上我方队伍的颜色吧!
 						</p>
 					</div>
+					<div class="intro_control right">
+						<i class="iconfont icon-zhishi"></i>
+					</div>
 				</div>
-				<div class="intro_img col-md-4 offset-md-1 col-sm-12">
-					<img class="img-thumbnail" src="images/Intro_tudi.jpg">
+				<div class="intro_img">
+					<div class="one"><img src="images/Intro_Turf1.jpg"></div>
+					<div class="two"><img src="images/Intro_Turf2.jpg"></div>
 				</div>
 			</div>
 			<!-- 区域模式 -->
-			<h3 id="qy">区域模式</h3>
-			<div>
-				<div class="intro_img col-md-4 col-sm-12">
-					<img class="img-thumbnail" src="images/Intro_Zones.jpg">
+			<h3 id="qy" target-floor>
+				<span>区</span>
+				<span>域</span>
+				<span>模</span>
+				<span>式</span>
+			</h3>
+			<div class="intro_box">
+				<div class="intro_img">
+					<div class="one"><img src="images/Intro_Zones1.jpg"></div>
+					<div class="two"><img src="images/Intro_Zones2.jpg"></div>
 				</div>
-				<div class="intro_content col-md-6 offset-md-1 col-sm-12">
-					<div class="text">
-						<h5>
+				<div class="intro_text">
+					<div class="intro_control left">
+						<i class="iconfont icon-zhishi"></i>
+					</div>
+					<div class="text_box">
+						<h4>
 							区域模式（Splat Zones）
-						</h5>
+						</h4>
 						<p>
 							地图内会配置1-2块被限定的决胜区域，两队伍之间相互争夺占地。进行激烈的战斗。
 						</p>
@@ -371,13 +421,18 @@
 				</div>
 			</div>
 			<!-- 鱼泡模式 -->
-			<h3 id="yp">鱼泡模式</h3>
-			<div>
-				<div class="intro_content col-md-6 offset-md-1 col-sm-12">
-					<div class="text">
-						<h5>
+			<h3 id="yp" target-floor>
+				<span>鱼</span>
+				<span>泡</span>
+				<span>模</span>
+				<span>式</span>
+			</h3>
+			<div class="intro_box">
+				<div class="intro_text">
+					<div class="text_box">
+						<h4>
 							鱼泡模式（Rainmaker）
-						</h5>
+						</h4>
 						<p>
 							比赛开始时地图的中心会有一个被护盾保护的鱼泡。
 						</p>
@@ -391,19 +446,32 @@
 							抢到鱼头后，玩家无法使用自己的武器，但可以使用鱼泡发射一枚子弹，蓄力落地后会爆炸。
 						</p>
 					</div>
+					<div class="intro_control right">
+						<i class="iconfont icon-zhishi"></i>
+					</div>
 				</div>
-				<div class="intro_img col-md-4 offset-md-1 col-sm-12">
-					<img class="img-thumbnail" src="images/Intro_Rainmaker.jpg">
+				<div class="intro_img">
+					<div class="one"><img src="images/Intro_Rainmaker1.jpg"></div>
+					<div class="two"><img src="images/Intro_Rainmaker2.jpg"></div>
 				</div>
 			</div>
 			<!-- 推塔模式 -->
-			<h3 id="tt">推塔模式</h3>
-			<div>
-				<div class="intro_img col-md-4 col-sm-12">
-					<img class="img-thumbnail" src="images/Intro_Tower.jpg">
+			<h3 id="tt" target-floor>
+				<span>抢</span>
+				<span>塔</span>
+				<span>模</span>
+				<span>式</span>
+			</h3>
+			<div class="intro_box">
+				<div class="intro_img">
+					<div class="one"><img src="images/Intro_Tower1.jpg"></div>
+					<div class="two"><img src="images/Intro_Tower2.jpg"></div>
 				</div>
-				<div class="intro_content col-md-6 offset-md-1">
-					<div class="text">
+				<div class="intro_text">
+					<div class="intro_control left">
+						<i class="iconfont icon-zhishi"></i>
+					</div>
+					<div class="text_box">
 						<h5>
 							抢塔模式（Tower Control）
 						</h5>
@@ -416,13 +484,18 @@
 				</div>
 			</div>
 			<!-- 蛤蜊模式 -->
-			<h3 id="gl">蛤蜊模式</h3>
-			<div>
-				<div class="intro_content col-md-6 offset-md-1 col-sm-12">
-					<div class="text">
-						<h5>
+			<h3 id="gl" target-floor>
+				<span>蛤</span>
+				<span>蜊</span>
+				<span>模</span>
+				<span>式</span>
+			</h3>
+			<div class="intro_box">
+				<div class="intro_text">
+					<div class="text_box">
+						<h4>
 							蛤蜊模式（Clam Blitz）
-						</h5>
+						</h4>
 						<p>
 							地图的一些点会有分散的蛤蜊玩家需要收集，10个普通蛤蜊会变成一个橄榄球，并且被标记，类似于鱼泡模式的鱼头，橄榄球可以用于打破对面球框的屏障得分并且进入进攻时间，一个橄榄球可以得20分，一个普通蛤蜊可以得3分，这两个都可以延长进攻时间，进攻时间结束以后进攻方会有一个罚分，类似于区域模式的罚分，防守方的篮筐下会掉落一个橄榄球用来进攻。
 						</p>
@@ -430,19 +503,32 @@
 							当玩家被击杀后，身上的蛤蜊或者橄榄球会自动掉落，如果几秒内未被拾取将会消失，普通蛤蜊双方都可以捡，而橄榄球只有队友可以捡，有一些大招使用（如超级落地）也会掉落蛤蜊或者橄榄球，拿着橄榄球或者普通蛤蜊是可以传送的。按A可以将普通蛤蜊或橄榄球投掷出去，可以传球给队友。己方墨水上的蛤蜊会在地图上显示出来。
 						</p>
 					</div>
+					<div class="intro_control right">
+						<i class="iconfont icon-zhishi"></i>
+					</div>
 				</div>
-				<div class="intro_img col-md-4 offset-md-1 col-sm-12">
-					<img class="img-thumbnail" src="images/Intro_Clam.jpg">
+				<div class="intro_img">
+					<div class="one"><img src="images/Intro_Clam1.jpg"></div>
+					<div class="two"><img src="images/Intro_Clam2.jpg"></div>
 				</div>
 			</div>
-			<!-- 庆典 -->
-			<h3 id="fes">祭典模式</h3>
-			<div>
-				<div class="intro_img col-md-4 col-sm-12">
-					<img class="img-thumbnail" src="images/Intro_fes.png">
+			<!-- 祭典 -->
+			<h3 id="fes" target-floor>
+				<span>祭</span>
+				<span>典</span>
+				<span>模</span>
+				<span>式</span>
+			</h3>
+			<div class="intro_box">
+				<div class="intro_img">
+					<div class="one"><img src="images/Intro_Fes1.jpg"></div>
+					<div class="two"><img src="images/Intro_Fes2.jpg"></div>
 				</div>
-				<div class="intro_content col-md-6 offset-md-1 col-sm-12">
-					<div class="text">
+				<div class="intro_text">
+					<div class="intro_control left">
+						<i class="iconfont icon-zhishi"></i>
+					</div>
+					<div class="text_box">
 						<h4>祭典Festival</h4>
 						<p>
 							祭典是《Splatoon》举办的大型线上活动，庆典一般会在开始前几日在游戏中的公告板中查看相关内容，并选择自己喜欢的一边加入，以涂地战的规则与敌对阵营展开对战。
@@ -460,10 +546,18 @@
 				</div>
 			</div>
 			<!-- 孤单英雄-->
-			<h3 id="drms">孤胆英雄</h3>
-			<div>
-				<div class="intro_content col-md-6 offset-md-1 col-sm-12">
-					<div class="text">
+			<h3 id="drms" target-floor>
+				<span>孤</span>
+				<span>胆</span>
+				<span>英</span>
+				<span>雄</span>
+			</h3>
+			<div class="intro_box">
+				<div class="intro_text">
+					<div class="text_box">
+						<h4>
+							单人模式
+						</h4>
 						<p>
 							这个模式里，你将会扮演孤胆英雄(乌贼)与章鱼军团展开关卡制的战斗。基本操作与在线模式相同，关卡中新增了各种解密要素、Boss战、终点等等，解密与动作要素完美结合。关卡中收集的鱼籽可以给武器装备升级(当然只限英雄模式)，而每关都还有一份“秘密文件”隐藏在深处等着你去收集。
 						</p>
@@ -471,19 +565,34 @@
 							玩家在犹豫该选择哪个武器的时候，还可以到英雄模式自带的靶场试手，最大程度帮助你熟悉每一种武器的使用方式。如果你从未玩过Splatoon，那么英雄模式可以说是体验Splatoon世界的绝佳起点。
 						</p>
 					</div>
+					<div class="intro_control right">
+						<i class="iconfont icon-zhishi"></i>
+					</div>
 				</div>
-				<div class="intro_img col-md-4 offset-md-1 col-sm-12">
-					<img class="img-thumbnail" src="images/Intro_Solo.jpg">
+				<div class="intro_img">
+					<div class="one"><img src="images/Intro_solo1.jpg"></div>
+					<div class="two"><img src="images/Intro_solo2.png"></div>
 				</div>
 			</div>
 			<!-- dlc -->
-			<h3 id="dlc">地铁DLC</h3>
-			<div>
-				<div class="intro_img col-md-4 col-sm-12">
-					<img class="img-thumbnail" src="images/Intro_dlc.jpg">
+			<h3 id="dlc" target-floor>
+				<span>地</span>
+				<span>铁</span>
+				<span>D</span>
+				<span>L</span>
+				<span>C</span>
+			</h3>
+			<div class="intro_box">
+				<div class="intro_img">
+					<div class="one"><img src="images/Intro_dlc1.jpg"></div>
+					<div class="two"><img src="images/Intro_dlc2.jpg"></div>
 				</div>
-				<div class="intro_content col-md-6 offset-md-1">
-					<div class="text">
+				<div class="intro_text">
+					<div class="intro_control left">
+						<i class="iconfont icon-zhishi"></i>
+					</div>
+					<div class="text_box">
+						<h4>章鱼冒险</h4>
 						<p>
 							在章鱼扩展包中，玩家扮演的是一个代号为「八号特工」的Octoling一名角色（这位角色比其他战役中的角色要友善得多），他/她将与胡子花白的墨鱼船长（Captain
 							Cuttlefish）一道，寻找某位盟友的行踪，并从水下的地牢中脱逃。这个故事的许多情节都可以说是精妙而富有趣味，比如一些具有嘻哈风的角色和你互动，还有一台外形搞笑，会说话的电话，一直想要启动「当代语言风格模式」来和年轻Octoling角色套近乎。而你在通过关卡时找到的各种物品实际上被叫做「物品（thangs）」。
@@ -501,6 +610,10 @@
 	</section>
 	<!-- 脚部 -->
 	<footer id="footer"></footer>
+	<!-- 楼层导航 -->
+	<ul id="floor_nav">
+		<li v-for="(f,i) of floor" @click="to_floor(i)" :class="{active:i==f_index}">{{f.fname}}</li>
+	</ul>
 	<!-- 返回首页按钮 -->
 	<div id="to_top_btn">
 		<img src="images/totop.png">
@@ -511,7 +624,9 @@
 	<script src="./js/common.js"></script>
 	<script src="./js/header.js"></script>
 	<script src="./js/index.js"></script>
+	<script src="./js/intro_pic.js"></script>
 	<script src="./js/footer.js"></script>
+	<script src="./js/floor.js"></script>
 	<script src="./js/player.js"></script>
 	<script src="./js/to_top.js"></script>
 </body>

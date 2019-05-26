@@ -348,7 +348,7 @@ div.banner button.btn:hover:before {
   border-radius: 50%;
   border: none;
   outline: none;
-  cursor: url("../images/my_pointer.cur"),pointer;
+  cursor: url("../images/my_pointer.cur"), pointer;
   margin: 10px;
   float: left;
   background: #ffb8b8;
@@ -478,94 +478,4 @@ div.zx table tr td {
 
 #video p a:hover {
   color: #00a1d6;
-}
-
-/* 介绍内容#intro */
-#intro {
-  background: #fff;
-  padding: 20px;
-  margin-top: 30px;
-}
-
-#intro div {
-  box-sizing: border-box;
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-}
-
-/* 标题 */
-#intro h1 {
-  text-align: center;
-  margin: 15px;
-  font-weight: 800;
-}
-
-/* 二级标题 */
-#intro h3 {
-  text-align: center;
-  margin: 50px 0;
-  font-weight: 800;
-  color: #2C3A47;
-  position: relative;
-}
-
-/* 二级标题上下的三角 */
-
-#intro h3::before,
-#intro h3:after {
-  content: "";
-  display: inline-block;
-  margin: 0 auto;
-  position: absolute;
-  left: 50%;
-  transform: translate(-25px);
-  border-left: 25px solid transparent;
-  border-right: 25px solid transparent;
-}
-
-/* 上三角 */
-#intro h3::before {
-  top: -10px;
-  border-top: 5px solid #e74c3c;
-  border-bottom: 0px solid transparent;
-}
-
-/* 下三角 */
-#intro h3:after {
-  top: 38px;
-  border-bottom: 5px solid #e74c3c;
-  border-top: 0px solid transparent;
-}
-
-/* 锚点跳转抖动 */
-#intro h3:target {
-  animation: bounce 0.8s 0.1s;
-}
-
-#intro h5 {
-  font-weight: 700;
-  color: #343a40;
-}
-
-/* 介绍图片宽度位置 */
-#intro div div.intro_img img {
-  max-width: 100%;
-  vertical-align: middle;
-}
-
-/* 介绍文字 */
-/* 标题 */
-#intro div h5 {
-  margin: 10px;
-}
-
-#intro div.intro_content .text {
-  margin-bottom: 10px;
-}
-
-#intro div.intro_content .text p {
-  font-size: 16px;
-  text-indent: 2em;
-  margin: 5px;
 }

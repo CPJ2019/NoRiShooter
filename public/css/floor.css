@@ -1,0 +1,122 @@
+/* 楼层主样式 */
+#floor_nav {
+  list-style-type: none;
+  width: 80px;
+  text-align: center;
+  position: fixed;
+  left: 0px;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0;
+  transition: 0.3s
+}
+
+/* 当被激活显示时 */
+#floor_nav.active {
+  left: 60px;
+  opacity: 1;
+}
+
+/* 整体阴影 */
+#floor_nav:after {
+  content: "";
+  position: absolute;
+  top: 3px;
+  right: -2px;
+  width: 100%;
+  height: 100%;
+  background: #2f3640;
+}
+
+/* 单层样式 */
+#floor_nav li {
+  box-sizing: border-box;
+  background: #fad390;
+  width: 100%;
+  padding: 5px;
+  transition: .4s;
+  margin-left: 0px;
+  cursor: pointer;
+  position: relative;
+  border-bottom: 1px solid #2f3640;
+  box-shadow: 0px 0px 0 0 #2f3640;
+  z-index: 1;
+}
+
+
+/* 楼层被激活时 */
+#floor_nav li.active {
+  background: #fa983a;
+  margin-left: -5px;
+  box-shadow: 5px 3px 0 0 #2f3640;
+  border-bottom: 1px solid transparent;
+  z-index: 2
+}
+
+/* 楼层悬停时 */
+#floor_nav li:hover {
+  background: #e55039;
+}
+
+/* 顶楼补全阴影 */
+#floor_nav li:first-child:before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  right: -2px;
+  width: 0px;
+  height: 0px;
+  border-bottom: 3px solid #2f3640;
+  border-right: 2px solid transparent;
+  transition: .4s
+}
+
+/* 顶楼被激活时 */
+#floor_nav li.active:first-child::before {
+  right: -7px;
+  border-right: 7px solid transparent;
+}
+
+/* 补全单楼阴影 */
+#floor_nav li:after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 0px;
+  width: 0px;
+  height: 0;
+  border-top: 0px solid #2f3640;
+  border-left: 0px solid transparent;
+  transition: .4s;
+}
+
+/* 被激活时阴影显露 */
+#floor_nav li.active:after {
+  border-top: 3px solid #2f3640;
+  border-left: 5px solid transparent;
+  bottom: -4px;
+}
+
+/* 底层 */
+#floor_nav li:last-child {
+  border-bottom: 1px solid transparent;
+}
+
+
+/* 补全底楼阴影 */
+#floor_nav li:last-child:after {
+  bottom: -4px;
+  border-top: 3px solid #2f3640;
+  border-left: 2px solid transparent;
+}
+
+/* 底楼被激活时 */
+#floor_nav li:last-child.active {
+  box-shadow: 0px 0px 0 0 #2f3640;
+}
+
+/* 底楼被激活时 */
+#floor_nav li:last-child.active:after {
+  left: 0px;
+  border-left: 7px solid transparent;
+}

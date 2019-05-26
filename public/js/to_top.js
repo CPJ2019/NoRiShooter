@@ -1,6 +1,15 @@
 (function () {
-	// 回顶部
 	var to_top_btn = document.getElementById("to_top_btn");
+	window.addEventListener("scroll", function () {
+		// var timer;
+		var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+		// console.log("滚动距离" + scrollTop);
+		// 屏幕滚动距离大于600的时候 按键显示
+		if (scrollTop >= 600) {
+			to_top_btn.className = "active";
+		} 
+	})
+	// 回顶部
 	to_top_btn.onclick = function () {
 		// 防止还在回顶部的过程中重复设置定时器
 		// 需要先清除定时器
@@ -25,6 +34,8 @@
 				// 恢复原样后回到首页字样重新显示 0.5s更舒适
 				setTimeout(function () {
 					to_top_hover.style.display = "block";
+					// 按键隐藏
+					to_top_btn.className = "";
 				}, 500)
 			}
 		}, 5);

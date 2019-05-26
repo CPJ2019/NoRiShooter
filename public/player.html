@@ -1,36 +1,60 @@
   <div id="music">
+    <!-- 提示 -->
     <div class="tips">
       <p>游戏OST</p>
+      <!-- 滚动歌曲信息 -->
       <marquee behavior="scroll" direction="left" scrollamount="2">
         {{list[music_i].m_name}} - {{list[music_i].m_author}}
       </marquee>
     </div>
+    <!-- 播放器 -->
     <div class="audio">
+      <!-- 引入无内容 触发交互 -->
       <iframe src="./player/null.mp3" frameborder="0"></iframe>
+      <!-- 播放器 -->
       <audio id="audio" autoplay controls=true preload="auto" :src="list[music_i].url">
       </audio>
+      <!-- 歌曲内容展示 -->
       <div class="m_show">
+        <!-- 歌曲图片 -->
         <div class="m_img"><img draggable="false" :src="list[music_i].src"></div>
+        <!-- 歌曲信息 -->
         <div class="m_msg">
+          <!-- 标题 -->
           <h4>{{list[music_i].m_name}}</h4>
+          <!-- 作者 -->
           <p>作者:{{list[music_i].m_author}}</p>
+          <!-- 时长 -->
           <div class="time_box">
             <p class="m_now">{{minues}}:{{seconds}}</p>
-            <p class="m_time">{{list[music_i].time}}</p>
+            <p class="m_time">{{total_time}}</p>
           </div>
         </div>
       </div>
+      <!-- 进度条 -->
       <div class="m_range">
+        <!-- 底下灰色 -->
         <div>
-          <div :style="range_style"></div>
+          <!-- 滑动 -->
+          <div :style="range_style">
+            <!-- 进度条 -->
+            <span></span>
+          </div>
         </div>
       </div>
-      <div class="btn_ground">
+      <!-- 按键组 -->
+      <div class="btn_group">
+        <!-- 上一首 -->
         <button @click="m_last"><img src="./player/m_last.png"></button>
-        <button @click="m_pause"><img v-if="isplay==true" src="./player/m_pause.png"><img v-else
-            src="./player/m_play.png"></button>
+        <!-- 播放暂停 -->
+        <button @click="m_pause">
+          <img v-if="isplay==true" src="./player/m_pause.png">
+          <img v-else src="./player/m_play.png">
+        </button>
+        <!-- 下一首 -->
         <button @click="m_next"><img src="./player/m_next.png"></button>
       </div>
+      <!-- 歌单 -->
       <ul class="m_list">
         <li v-for="(elem,i) of list" @click="m_change(i)" :class=" {active:i==music_i}">{{elem.m_author}} -
           {{elem.m_name}}</li>

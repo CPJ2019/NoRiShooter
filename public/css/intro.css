@@ -1,0 +1,284 @@
+/* 介绍内容#intro */
+#intro {
+  background: #fff;
+  margin-top: 30px;
+}
+
+/* 定义所有介绍内容的文本 */
+#intro p {
+  font-size: 16px;
+  text-indent: 16px;
+  margin: 20px;
+}
+
+/* 标题 */
+#intro h1 {
+  text-align: center;
+  margin: 15px;
+  font-weight: 800;
+}
+
+/* 二级标题 */
+#intro h3 {
+  margin: 50px 0;
+  height: 40px;
+  margin: 50px auto;
+  font-weight: 800;
+  color: #2C3A47;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+/* 二级标题文字 */
+#intro h3 span {
+  text-align: center;
+  width: 30px;
+  height: 20px;
+  display: inline-block;
+  animation: text_jump 0.6s ease infinite alternate;
+  margin-top: 0px;
+  text-shadow: 0 1px 0 #CCC,
+    0 2px 0 #CCC,
+    0 3px 0 transparent,
+    0 4px 0 transparent,
+    0 5px 5px rgba(0, 0, 0, .4);
+}
+
+/* 动画延时 实现顺序跳动 */
+#intro h3 span:nth-child(2) {
+  animation-delay: 0.1s
+}
+
+#intro h3 span:nth-child(3) {
+  animation-delay: 0.2s
+}
+
+#intro h3 span:nth-child(4) {
+  animation-delay: 0.3s
+}
+
+#intro h3 span:nth-child(5) {
+  animation-delay: 0.4s
+}
+
+/* 文字跳动动画 */
+@keyframes text_jump {
+  100% {
+    margin-top: -10px;
+    text-shadow: 0 1px 0 #CCC,
+      0 2px 0 #CCC,
+      0 3px 0 transparent,
+      0 4px 0 transparent,
+      0 15px 15px rgba(0, 0, 0, .2);
+  }
+}
+
+/* 二级标题上下的三角 */
+
+#intro h3::before,
+#intro h3:after {
+  content: "";
+  display: inline-block;
+  margin: 0 auto;
+  position: absolute;
+  left: 50%;
+  transform: translate(-25px);
+  border-left: 25px solid transparent;
+  border-right: 25px solid transparent;
+}
+
+/* 上三角 */
+#intro h3::before {
+  top: -10px;
+  border-top: 5px solid #e74c3c;
+  border-bottom: 0px solid transparent;
+}
+
+/* 下三角 */
+#intro h3:after {
+  top: 38px;
+  border-bottom: 5px solid #e74c3c;
+  border-top: 0px solid transparent;
+}
+
+/* 锚点跳转抖动 */
+#intro h3:target {
+  animation: bounce 0.8s 0.1s;
+}
+
+/* 介绍盒子 */
+#intro .intro_box {
+  margin: 10px 0;
+  height: 500px;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap
+}
+
+/* 图片盒子 */
+#intro .intro_box .intro_img {
+  width: 90%;
+  height: 100%;
+  transition: 0.8s;
+  position: relative;
+}
+
+/* 大盒子激活后 图片盒子宽度改变 */
+#intro .intro_box.active .intro_img {
+  width: 45%;
+}
+
+/* 包裹单张图片的盒子 */
+#intro .intro_box .intro_img div {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 第一张图片默认 */
+#intro .intro_box .intro_img div.one {
+  width: 95%;
+  position: relative;
+  top: 0px;
+  left: 0;
+  z-index: 5;
+  transition: 0.4s
+}
+
+/* 第二张图片默认 */
+#intro .intro_box .intro_img div.two {
+  width: 95%;
+  position: absolute;
+  top: 20px;
+  left: 5%;
+  z-index: 1;
+  transition: 0.4s
+}
+
+/* 点击后样式  两图改变位置*/
+#intro .intro_box .intro_img.active div.one {
+  width: 95%;
+  position: absolute;
+  top: 20px;
+  left: 5%;
+  z-index: 1;
+  transition: 0.4s
+}
+
+#intro .intro_box .intro_img.active div.two {
+  width: 95%;
+  position: relative;
+  top: 0px;
+  left: 0;
+  z-index: 5;
+  transition: 0.4s
+}
+
+/* 图片尺寸 */
+#intro .intro_box .intro_img div img {
+  width: 70%;
+  padding: 3px;
+  background: #ecf0f1;
+  border-radius: 10px;
+  border: 1px solid #7f8c8d;
+}
+
+/* 介绍文本  默认不显示*/
+#intro .intro_box .intro_text {
+  height: 100%;
+  width: 40px;
+  overflow: hidden;
+  /* white-space: nowrap; */
+  transition: 0.8s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+/* 文本控制器 */
+#intro .intro_box .intro_control {
+  width: 40px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: 80px 100%;
+  background-image: linear-gradient(to right, #dff9fb 0px, #7ed6df 40px, #dff9fb 80px);
+  transition: 0.8s
+}
+
+/* 指示器标志 */
+#intro .intro_box .intro_control i {
+  transition: 0.8s;
+}
+
+/* 指示器向左 */
+/* 盒子背景以及弧度样式 */
+#intro .intro_box .intro_control.left {
+  border-radius: 40px 0 0px 40px;
+  background-position: 0px 0px
+}
+
+/* 指示器本体指向角度 */
+#intro .intro_box .intro_control.left i {
+  transform: rotateY(0deg)
+}
+
+/* 指示器向右 */
+#intro .intro_box .intro_control.right {
+  border-radius: 0px 40px 40px 0px;
+  background-position: 40px 0px
+}
+
+#intro .intro_box .intro_control.right i {
+  transform: rotateY(-180deg)
+}
+
+/* 大盒子被激活时改变文本盒子宽度 显示 */
+#intro .intro_box.active .intro_text {
+  width: 55%;
+}
+
+/* 文本里面的文本内容 */
+#intro .intro_box .intro_text div.text_box {
+  box-sizing: border-box;
+  overflow: hidden;
+  width: 0;
+  position: relative;
+  z-index: 1;
+  transition: 0.8s
+}
+
+/* 文本标题 */
+#intro .intro_box .text_box h4 {
+  margin: 20px;
+}
+
+/* 激活后文本显示 */
+#intro .intro_box.active .intro_text div.text_box {
+  width: 100%;
+}
+
+/* after 遮挡 */
+#intro .intro_box .intro_text .text_box:after {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  opacity: 1;
+
+}
+
+/* 激活后延时消失 */
+#intro .intro_box.active .text_box:after {
+  transition: 0.2s 0.8s;
+  opacity: 0;
+  z-index: -1
+}
