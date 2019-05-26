@@ -175,7 +175,9 @@
           },
         },
       })
-      var m_audio = document.getElementById("audio")
+      var m_audio = document.getElementById("audio");
+      // 音量30%
+      m_audio.volume = 0.3;
       m_audio.addEventListener("canplay", function () {
         time = parseInt(audio.duration);
         console.log(time)
