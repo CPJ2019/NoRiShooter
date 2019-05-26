@@ -84,16 +84,16 @@
           m_name: "Undertow",
           m_author: "峰岸透",
           src: "./player/p03.png",
-          url: "./player/峰岸透 - Undertow.mp3.mp3",
+          url: "./player/峰岸透 - Undertow.mp3",
         },
         {
-          m_name: "Seafoam Shanty ～荒波ロデオ～",
+          m_name: "Seafoam Shanty 荒波ロデオ",
           m_author: "永松亮",
           src: "./player/p03.png",
-          url: "./player/永松亮 - Seafoam Shanty ～荒波ロデオ～.mp3.mp3",
+          url: "./player/永松亮 - Seafoam Shanty ～荒波ロデオ～.mp3",
         },
         {
-          m_name: "Shipwreckin' ～沈まばもろとも～",
+          m_name: "Shipwreckin 沈まばもろとも",
           m_author: "永松亮",
           src: "./player/p03.png",
           url: "./player/永松亮 - Shipwreckin' ～沈まばもろとも～.mp3",
@@ -177,21 +177,24 @@
       })
       var m_audio = document.getElementById("audio");
       // 音量30%
-      m_audio.volume = 0.3;
+      m_audio.volume = 0.5;
       m_audio.addEventListener("canplay", function () {
-        time = parseInt(audio.duration);
-        console.log(time)
+        time = Math.floor(audio.duration);
+        // console.log(time)
         vm.total = time
       })
       var m_timer;
       function play() {
         clearInterval(m_timer)
-        var i = vm.music_i
         var total = vm.total
         m_timer = setInterval(() => {
+          // 修改歌曲已播放时间
           vm.now_time = Math.ceil(m_audio.currentTime)
-          if (vm.now_time >= total && total != 0) {
-            vm.m_next();
+          if (vm.now_time >= total && total!=0) {
+            // 0.5秒后下一首
+            setTimeout(() => {
+              vm.m_next()
+            }, 500)
           }
         }, 1000)
       }
@@ -249,7 +252,7 @@
         music_move = false;
       }
       // 加载自动
-      play()
+        play()
     }
   })
 })()
