@@ -189,14 +189,12 @@
         var total = vm.total
         m_timer = setInterval(() => {
           // 修改歌曲已播放时间
-          vm.now_time = Math.ceil(m_audio.currentTime)
-          if (vm.now_time >= total && total!=0) {
-            // 0.5秒后下一首
-            setTimeout(() => {
-              vm.m_next()
-            }, 500)
+          vm.now_time = Math.floor(m_audio.currentTime)
+          // 如果播放完毕
+          if (vm.now_time >= total && total != 0) {
+            vm.m_next()
           }
-        }, 1000)
+        }, 500)
       }
       var m_range_move = false;
       var m_down;
@@ -252,7 +250,7 @@
         music_move = false;
       }
       // 加载自动
-        play()
+      play()
     }
   })
 })()
