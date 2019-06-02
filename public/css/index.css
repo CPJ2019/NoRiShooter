@@ -368,22 +368,172 @@ div.banner button.btn:hover:before {
 }
 
 /* 资讯  */
-/* 胶囊被选中的颜色 */
-.nav-pills .nav-link.active {
-  background: #0984e3;
+section div.zx div.news_box {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: relative;
 }
 
-/* 胶囊没被选中的颜色 */
-.nav-pills .nav-link:not(.active) {
-  background: #9AECDB;
+section div.zx div.news_box ul {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+section div.zx div.news_box ul li {
+  width: 100px;
+  height: 40px;
+}
+
+section div.zx div.news_box ul li label {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  background: #74b9ff;
+  cursor: url("../images/my_pointer.cur"), pointer;
+  position: relative;
+  text-align: center;
+}
+
+section div.zx div.news_box ul li input:checked~label {
+  background: #0097e6;
+}
+
+section div.zx div.news_box ul li label:before,
+section div.zx div.news_box ul li label:after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  transition: 0.2s;
+  background: transparent;
+  border-radius: 2px;
+  opacity: 0;
+}
+
+section div.zx div.news_box ul li label:before {
+  top: 0px;
+  left: 0px;
+  border-top: 3px solid #fff;
+  border-left: 3px solid #fff;
+}
+
+section div.zx div.news_box ul li label:after {
+  bottom: 0px;
+  right: 0px;
+  border-right: 3px solid #fff;
+  border-bottom: 3px solid #fff;
+}
+
+section div.zx div.news_box ul li label:hover:before {
+  opacity: 1;
+  top: 5px;
+  left: 5px;
+}
+
+section div.zx div.news_box ul li label:hover:after {
+  opacity: 1;
+  bottom: 5px;
+  right: 5px;
+}
+
+section div.zx div.news_box ul li label span {
+  color: #fff;
+  font-size: 16px;
+  line-height: 40px;
+}
+
+section div.zx div.news_box ul li input:checked~label span:before,
+section div.zx div.news_box ul li input:checked~label span:after {
+  content: '';
+  border: 2px solid #55efc4;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: -10px;
+  animation: borderClip 8s linear infinite;
+}
+
+section div.zx div.news_box ul li input:checked~label span:after {
+  animation-delay: -4s;
+}
+
+/* section div.zx div.news_box ul li:hover input~label span:before,
+section div.zx div.news_box ul li:hover input~label span:after {
+  animation-play-state: paused
+} */
+
+@keyframes borderClip {
+
+  0%,
+  100% {
+    clip: rect(0px, 120px, 60px, 118px);
+  }
+
+  25% {
+    clip: rect(0px, 120px, 2px, 0px);
+  }
+
+  50% {
+    clip: rect(0px, 2px, 60px, 0px);
+  }
+
+  75% {
+    clip: rect(58px, 120px, 60px, 0px);
+  }
+}
+
+section div.zx div.news_box .news_content {
+  position: absolute;
+  top: 60px;
+  left: 0;
+  z-index: 2;
+  width: 100%;
+  height: 380px;
+  padding: 30px 0;
+  opacity: 0;
+  transition: 0.3s;
+  overflow: scroll
+}
+
+/* 隐藏滚动条 */
+section div.zx div.news_box .news_content::-webkit-scrollbar {
+  display: none;
+}
+
+
+/* #news~.news_content {
+  background: red;
+}
+
+#fes~.news_content {
+  background: green;
+}
+
+#bbs~.news_content {
+  background: orange
+} */
+
+section div.zx div.news_box ul li input {
+  display: none;
+}
+
+section div.zx div.news_box ul li input:checked~div.news_content {
+  opacity: 1;
+  z-index: 4;
 }
 
 /* 热事新闻,论坛 */
 section div.zx {
   margin-bottom: 20px;
   background: #fff;
-  min-height: 520px;
+  height: 850px;
   color: #343a40;
+  overflow: hidden;
 }
 
 section div.zx:before {
@@ -396,12 +546,6 @@ section div.zx h1 {
 }
 
 /* 公共表格样式 */
-#news_content,
-#bbs_content {
-  margin-top: 50px;
-  width: 100%;
-}
-
 div.zx table {
   width: 100%;
   font-size: 14px;
@@ -415,67 +559,134 @@ div.zx table tr td {
 }
 
 /* 新闻表格细节  */
-#news_content table tr td:nth-child(1) {
+#news~.news_content table tr td:nth-child(1) {
   text-align: left;
 }
 
-#news_content tr td:nth-child(2) {
+#news~.news_content tr td:nth-child(2) {
   min-width: 120px;
   text-align: left;
 }
 
-#news_content tr td:nth-child(2) span {
+#news~.news_content tr td:nth-child(2) span {
   display: inline-block;
   width: 40px;
 }
 
-#news_content tr td:nth-child(3) {
+#news~.news_content tr td:nth-child(3) {
   min-width: 110px;
 }
 
-#news_content tr td a {
+#news~.news_content tr td a {
   color: #663300;
 }
 
-#news_content tr td:hover a {
+#news~.news_content tr td:hover a {
   color: #FF9966;
 }
 
-#news_content tr td a:hover {
+#news~.news_content tr td a:hover {
   color: #FF6666;
 }
 
 /* 热帖表格 */
-#bbs_content tr td:nth-child(3) span:first-child {
+#bbs~.news_content tr td:nth-child(3) span:first-child {
   color: red;
 }
 
 /* 热事祭典 */
-#fes_publish div div div {
-  padding: 20px;
+/* 祭典介绍文本 */
+.news_content .fes_text {
+  padding: 30px
 }
 
-/* 祭典介绍文本 */
-#fes_publish p {
+.news_content p {
   font-size: 18px;
   margin: 5px;
   font-weight: 500;
+  text-indent: 20px
 }
 
 /* 视频框 */
-#video iframe {
+#video~.news_content iframe {
   width: 480px;
   height: 360px;
 }
 
-#video h6 {
+#video~.news_content h6 {
   font-weight: 600;
 }
 
-#video p a {
+#video~.news_content p a {
   color: #da5d83;
 }
 
-#video p a:hover {
+#video~.news_content p a:hover {
   color: #00a1d6;
+}
+
+div.zx div.weibo {
+  margin-top: 400px;
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+  border: 1px solid #b2bec3;
+}
+
+div.zx div.weibo ul {
+  width: 200%;
+  height: 100%;
+  margin-left: -50%;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+ 
+}
+
+div.zx div.weibo ul li.weibo_box {
+  display: flex;
+  height: 100%;
+  width: 25%;
+  padding: 10px;
+  box-sizing: border-box;
+  border: 1px solid #b2bec3;
+  /* border-right:none; */
+  transition: 0.5s;
+}
+
+div.zx div.weibo ul li.weibo_box .weibo_pic {
+  width: 70%;
+  height: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-around;
+  align-items: center
+}
+
+div.zx div.weibo ul li.weibo_box .weibo_pic img {
+  width: 100%;
+  border: 1px solid #666
+}
+
+div.zx div.weibo ul li.weibo_box .weibo_text {
+  width: 30%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+div.zx div.weibo ul li.weibo_box .weibo_text a {
+  display: block;
+  padding: 10px;
+  color: #2f3542;
+  font-size: 14px;
+}
+
+div.zx div.weibo ul li.weibo_box .weibo_text a:hover {
+  color: #ff6348;
+}
+
+div.zx div.weibo ul li.weibo_box .weibo_text a p {
+  text-indent: 18px;
 }

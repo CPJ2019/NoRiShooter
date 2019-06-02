@@ -1,5 +1,5 @@
 (() => {
-	//轮播图部分
+	//盒子轮播图部分
 
 	// 定义原始角度
 	var y_angle = -3600;
@@ -68,6 +68,32 @@
 			banner_auto()
 		}
 	}
+
+	// 微博轮播
+	let weibo_auto;
+	function w_banner() {
+		let $weibo_b = $("div.weibo ul")
+		weibo_auto = setInterval(() => {
+			let $li = $weibo_b.children("li:first-child")
+			// console.log($li)
+			let $new_li = $li.clone()
+			$li.css({
+				width: 0,
+				padding: 0
+			})
+			setTimeout(() => {
+				$weibo_b.append($new_li)
+				$li.remove();
+			}, 500)
+		}, 3000)
+	}
+	$("div.weibo ul").mouseenter(function () {
+		clearInterval(weibo_auto)
+	});
+	$("div.weibo ul").mouseleave(function () {
+		w_banner()
+	});
 	// 网页自动加载
-	window.onload = banner_auto()
+	banner_auto()
+	w_banner()
 })()

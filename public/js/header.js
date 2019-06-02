@@ -11,8 +11,10 @@ $.ajax({
 		if (uname) {
 			console.log(uname + "登录");
 			var uname = uname.slice(0, 4);
+			var login_msg=document.getElementById("login_msg")
 			login_msg.innerHTML = `欢迎回来 <a href="javascript:;" class="login_uname">${uname}</a>`;
-			reg_msg.innerHTML = `<a href="#" title="点击登录">个人中心</a>`;
+			var reg_msg=document.getElementById("reg_msg")
+			reg_msg.innerHTML = `<a href="#" title="点击注销用户">注销</a>`;
 		}
 	}
 })

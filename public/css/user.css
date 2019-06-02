@@ -79,7 +79,7 @@ section>div>div:after {
   content: "";
   position: absolute;
   border-radius: 10px;
-  background: linear-gradient(40deg, #ff3838, #ffaf40, #7efff5, #32ff7e);
+  background: linear-gradient(40deg, #ff7979, #e056fd, #7efff5, #32ff7e);
 }
 
 /* 内容框 */
@@ -297,19 +297,20 @@ div.input_box label {
 
 /* 弹出框 */
 #alert_div {
-  height: 0px;
-  width: 0px;
+  width: 350px;
+  height: 200px;
   background: #ffeaa7;
   border-radius: 0.75rem;
   position: fixed;
   z-index: 10;
-  top: 50%;
+  top: 0%;
   left: 50.5%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -100%);
   padding: 0px;
   font-size: 16px;
   text-align: center;
-  transition: 0.2s;
+  opacity: 0;
+  transition: 0.4s;
   overflow: hidden;
 }
 
@@ -319,8 +320,9 @@ div.input_box label {
 }
 
 #alert_div.active {
-  width: 350px;
-  height: 200px;
+  top: 50%;
+  transform: translate(-50%, -100%);
+  opacity: 1;
 }
 
 #alert_div div {
@@ -344,7 +346,7 @@ div.input_box label {
 }
 
 #alert_div p {
-  white-space:nowrap;
+  white-space: nowrap;
   clear: both;
   margin: 10px 0;
 }

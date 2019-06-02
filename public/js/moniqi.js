@@ -148,11 +148,18 @@ var option_html = `
 for (var select of selects) {
   select.nextElementSibling.innerHTML = option_html;
 }
+
 // 给window绑定事件 冒泡
 window.onclick = function (e) {
   var click = e.target;
   // 点击模拟select
   if (click.nodeName === "SPAN") {
+    // 获取所有已经激活的下拉菜单
+    var uls = document.querySelectorAll(".select_box ul.active")
+    for (let u of uls) {
+      u.className = ""
+    }
+    console.log(uls)
     click.nextElementSibling.className = "active"
   }
   // 点击模拟option 
@@ -286,53 +293,53 @@ function set_effect() {
 // 定义已选择选择技能以及技能点
 function set_select_skill() {
   skill_selected = [{
-      skill_name: 0,
-      point: 10
-    },
-    {
-      skill_name: 0,
-      point: 3
-    },
-    {
-      skill_name: 0,
-      point: 3
-    },
-    {
-      skill_name: 0,
-      point: 3
-    },
-    {
-      skill_name: 0,
-      point: 10
-    },
-    {
-      skill_name: 0,
-      point: 3
-    },
-    {
-      skill_name: 0,
-      point: 3
-    },
-    {
-      skill_name: 0,
-      point: 3
-    },
-    {
-      skill_name: 0,
-      point: 10
-    },
-    {
-      skill_name: 0,
-      point: 3
-    },
-    {
-      skill_name: 0,
-      point: 3
-    },
-    {
-      skill_name: 0,
-      point: 3
-    },
+    skill_name: 0,
+    point: 10
+  },
+  {
+    skill_name: 0,
+    point: 3
+  },
+  {
+    skill_name: 0,
+    point: 3
+  },
+  {
+    skill_name: 0,
+    point: 3
+  },
+  {
+    skill_name: 0,
+    point: 10
+  },
+  {
+    skill_name: 0,
+    point: 3
+  },
+  {
+    skill_name: 0,
+    point: 3
+  },
+  {
+    skill_name: 0,
+    point: 3
+  },
+  {
+    skill_name: 0,
+    point: 10
+  },
+  {
+    skill_name: 0,
+    point: 3
+  },
+  {
+    skill_name: 0,
+    point: 3
+  },
+  {
+    skill_name: 0,
+    point: 3
+  },
   ]
 }
 // 网页加载时定义技能初始效果effect

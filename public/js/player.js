@@ -7,8 +7,7 @@
       $(`<link rel="stylesheet" href="css/player.css">`)
         .appendTo("head")
       // 定义歌单
-      var list = [
-        {
+      var list = [{
           m_name: "Into The Light",
           m_author: "Vgr",
           src: "./player/p02.png",
@@ -133,6 +132,7 @@
             } else {
               this.music_i = this.list.length - 1
             }
+            this.isplay = true;
             this.now_time = 0
             play(this.music_i)
           },
@@ -142,6 +142,7 @@
             } else {
               this.music_i = 0
             }
+            this.isplay = true;
             this.now_time = 0
             play(this.music_i)
           },
@@ -182,14 +183,16 @@
         time = Math.floor(audio.duration);
         // console.log(time)
         vm.total = time
+        play()
       })
       var m_timer;
+
       function play() {
         clearInterval(m_timer)
         var total = vm.total
         m_timer = setInterval(() => {
           // 修改歌曲已播放时间
-          vm.now_time = Math.floor(m_audio.currentTime)
+          vm.now_time = Math.ceil(m_audio.currentTime)
           // 如果播放完毕
           if (vm.now_time >= total && total != 0) {
             vm.m_next()
@@ -249,8 +252,6 @@
       window.onmouseup = function () {
         music_move = false;
       }
-      // 加载自动
-      play()
     }
   })
 })()

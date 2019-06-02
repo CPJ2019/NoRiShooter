@@ -4,8 +4,8 @@
 		// var timer;
 		var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
 		// console.log("滚动距离" + scrollTop);
-		// 屏幕滚动距离大于600的时候 按键显示
-		if (scrollTop >= 600) {
+		// 屏幕滚动距离大于1000的时候 按键显示
+		if (scrollTop >= 1000) {
 			to_top_btn.className = "active";
 		} 
 	})

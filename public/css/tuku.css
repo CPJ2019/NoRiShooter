@@ -154,7 +154,7 @@ button.c_btn {
 
 /* 按键悬浮 */
 button.c_btn:hover {
-  background: #ecf0f1;
+  background: #ced6e0;
 }
 
 /* 按键三角 */
@@ -179,7 +179,7 @@ button.c_btn.left {
 /* 形成三角 */
 button.c_btn.left:after {
   margin-left: -58px;
-  border-right: 35px solid #ecf0f1;
+  border-right: 35px solid #ced6e0;
   border-left: 35px solid transparent;
 }
 
@@ -189,7 +189,7 @@ button.c_btn.right {
 
 button.c_btn.right:after {
   margin-left: -12px;
-  border-left: 35px solid #ecf0f1;
+  border-left: 35px solid #ced6e0;
   border-right: 35px solid transparent;
 }
 
@@ -201,6 +201,7 @@ button.c_btn.left:hover:after {
 button.c_btn.right:hover:after {
   border-left-color: #e55039;
 }
+
 /***************************************图片**********************************************/
 /* 图片展示 */
 div.main_show {

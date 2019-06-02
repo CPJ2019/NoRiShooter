@@ -1,107 +1,132 @@
 /* 头信息布局 */
-header{
-  background-color:#fff;
+header {
+  background-color: #fff;
 }
-header>div{
+
+header>div {
   padding: 5px 0px;
 }
+
 /* 自定义响应 */
 /* 大屏 */
-@media screen and (min-width:992px){
+@media screen and (min-width:992px) {
+
   /* 头部信息字体大小及行高 */
-  ul.hmsg li{font-size: 16px;}
+  ul.hmsg li {
+    font-size: 16px;
+  }
 }
+
 /* 中屏 */
-@media screen and  (min-width:768px) and (max-width:991px) {
-  ul.hmsg li{font-size: 14px} 
+@media screen and (min-width:768px) and (max-width:991px) {
+  ul.hmsg li {
+    font-size: 14px
+  }
 }
+
 /* 小屏 */
-@media screen and (min-width:576px) and (max-width:767px){
-  ul.hmsg li{font-size: 20px} 
+@media screen and (min-width:576px) and (max-width:767px) {
+  ul.hmsg li {
+    font-size: 20px
+  }
 }
+
 /* logo */
-header div.logo span{
-  display:block;
-  width: 100%;
-  height:110px;
-  background:url(../images/logo.png) no-repeat center;
-}
-header div.logo span a{
+header div.logo span {
   display: block;
-  height:100%;
-  width:100%;
+  width: 100%;
+  height: 110px;
+  background: url(../images/logo.png) no-repeat center;
 }
+
+header div.logo span a {
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+
 /* gif  */
-div.top_gif{
+div.top_gif {
   margin-top: 10px;
 }
-div.top_gif img{
+
+div.top_gif img {
   display: block;
   max-width: 100%;
 }
+
 /* 右上信息栏 */
-div.hr{
+div.hr {
   text-align: center;
 }
-div.hr ul{
-  display:inline-block;
-}
-ul.hmsg li{
-  box-sizing: border-box;
-  float:left;
-  padding:0 6px;
-  line-height:60px;
-}
-/* 信息图标*/
-li.message span{
+
+div.hr ul {
   display: inline-block;
-  background: url(../images/iconlist.png) no-repeat -200px 0px ;
-  width: 18px;
-  height:18px;
-  vertical-align: middle;
 }
+
+ul.hmsg li {
+  box-sizing: border-box;
+  float: left;
+  padding: 0 6px;
+  line-height: 60px;
+}
+
+ul.hmsg li a {
+  color: #2c3e50;
+}
+
+/* 信息图标*/
+.icon-xinxi {
+  font-size: 12px;
+  margin-right: 2px;
+}
+
 /* 登录注册 */
-#login_msg a.login_uname{
-  color:#df484d;
+#login_msg a.login_uname {
+  color: #df484d;
 }
 
 /* 搜索栏 */
-div.search{
+div.search {
   margin-top: -10px;
-  margin-bottom:16px;
+  margin-bottom: 16px;
 }
-#search{
-  margin:  0 0 0 0;
-  width:50%;
+
+#search {
+  margin: 0 0 0 0;
+  width: 50%;
   height: 36px;
   margin-left: 25%;
   /* margin-bottom: 24.5px; */
-  transform:translateX(-18px);
+  transform: translateX(-18px);
   box-sizing: border-box;
   padding: 5px;
   background: #54849638;
-  border:1px solid #e89aa8;
+  border: 1px solid #e89aa8;
   font-size: 14px;
   /* margin-bottom: 16px; */
   /* margin-top: -10px; */
 }
+
 .form-control:focus {
   box-shadow: 0 0 0 0.2rem #e89aa850;
 }
+
 /* 搜索按钮 */
-#search_b{
-  width:34px;
-  height:34px;
-  border-radius:1px;
+#search_b {
+  width: 34px;
+  height: 34px;
+  border-radius: 1px;
   margin-top: -2px;
   transform: translateX(-19px);
-  vertical-align:middle; 
-  background:url(../images/iconlist.png) no-repeat -134px 0px;
+  vertical-align: middle;
+  background: url(../images/iconlist.png) no-repeat -134px 0px;
   transition: all 0.1s;
   box-shadow: 1px 1px 0px 1px #e89aa8;
-  cursor:url("../images/my_pointer.cur"), pointer;
+  cursor: url("../images/my_pointer.cur"), pointer;
 }
+
 /* 搜索按键点击效果 */
-#search_b:active{
+#search_b:active {
   box-shadow: 1px 1px 0px 1px #000;
 }

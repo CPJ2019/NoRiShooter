@@ -8,20 +8,24 @@
 	var auto_skip = null;
 	// 获取弹窗
 	var alert_div = document.getElementById("alert_div")
+	// 获取跳转计时
+	var show = document.getElementById("show")
+	// 获取登录后名字显示
+	var login_name = document.getElementById("login_name")
 	// 获取需要绑定函数的表单元素input
 	var uname = document.getElementById("uname")
 	var upwd = document.getElementById("upwd")
 	// 用户名提示
 	uname.onfocus = function () {
-		this.nextElementSibling = "请输入你的用户名";
+		this.nextElementSibling.innerHTML = "请输入你的用户名";
 	};
 	// 密码提示
 	upwd.onfocus = function () {
-		this.nextElementSibling = "请输入你的密码";
+		this.nextElementSibling.innerHTML = "请输入你的密码";
 	};
 	//网页验证用户名是否正确
 	uname.onblur = uname_check = function () {
-		if (uname.value.length != 0) {
+		if (uname.value !== "") {
 			uname.className = "pass";
 			uname.style.padding = "5px 15px";
 			uname.nextElementSibling.innerHTML = "用户名通过";
@@ -29,21 +33,21 @@
 		} else {
 			uname.className = "nopass";
 			uname.style.padding = "5px 15px";
-			uname.nextElementSibling = "*用户名不能为空";
+			uname.nextElementSibling.innerHTML = "*用户名不能为空";
 			uname_pass = 0;
 		}
 	}
 	//网页验证密码是否为空
 	upwd.onblur = function () {
-		if (upwd.value.length != 0) {
+		if (upwd.value !== "") {
 			upwd.className = "pass";
 			upwd.style.padding = "5px 15px";
-			upwd.nextElementSibling = "密码通过";
+			upwd.nextElementSibling.innerHTML = "密码通过";
 			upwd_pass = 1;
 		} else {
 			upwd.className = "nopass";
 			upwd.style.padding = "5px 15px";
-			upwd.nextElementSibling = "*密码不能为空";
+			upwd.nextElementSibling.innerHTML = "*密码不能为空";
 			upwd_pass = 0;
 		}
 	}
@@ -63,8 +67,11 @@
 			xhr.send(formdata);
 			xhr.onreadystatechange = function () {
 				if (xhr.readyState == 4 && xhr.status == 200) {
-					var result = xhr.responseText;
-					var code = Number(result);
+					var json = xhr.responseText;
+					var res = JSON.parse(json)
+					// console.log(res)
+					var code = Number(res.code);
+					var login_name_text = res.msg
 					switch (code) {
 						case 0:
 							upwd.className = "nopass";
@@ -74,13 +81,14 @@
 						case 1:
 							// 自动跳转
 							// 显示跳转框
-							alert_div.className="active"
+							alert_div.className = "active"
+							login_name.innerHTML = login_name_text
 							// 出现读秒
 							var t = 5
 							show.innerHTML = t;
 							// 读秒开始 
 							auto_skip = setInterval(function () {
-								console.log(t)
+								// console.log(t)
 								t--;
 								if (t == 0) {
 									// 读秒结束跳转
@@ -105,7 +113,7 @@
 	var stop_skip = document.querySelector("#alert_div>div:first-child")
 	stop_skip.onclick = function () {
 		clearInterval(auto_skip)
-		alert_div.className=""
+		alert_div.className = ""
 	}
 	//直接跳转
 	var skip = document.querySelector("#alert_div a");
